@@ -13,7 +13,7 @@
         public string TelefoneCliente { get; set; }
 
         public string EmailCliente { get; set; }
-
         public string CEP { get; set; }
+
     }
 }

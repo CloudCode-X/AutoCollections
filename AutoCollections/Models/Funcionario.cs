@@ -7,7 +7,6 @@
         public string NomeFuncionairo { get; set; }
 
         public string CPF { get; set; }
-
         public string TelefoneFuncionario { get; set; }
 
         public string EmailFuncionario { get; set; }
