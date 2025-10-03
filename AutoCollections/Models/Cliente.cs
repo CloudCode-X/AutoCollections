@@ -4,16 +4,18 @@
     {
         public int IdCliente { get; set; }
 
-        public string CPF { get; set; }
+        public string CPFCliente { get; set; }
 
         public string NomeCliente { get; set; }
+
+        public string SenhaCliente {  get; set; }
 
         public DateOnly DataNascimento { get; set; }
 
         public string TelefoneCliente { get; set; }
 
         public string EmailCliente { get; set; }
-        public string CEP { get; set; }
+        public string CEPCliente { get; set; }
 
     }
 }

@@ -145,3 +145,5 @@ DataEntrega date,
 StatusEntrega varchar(30) not null,
 constraint fk_entrega_pedido foreign key (Id_Pedido) references tbPedido (Id_Pedido)
 );
+
+alter table tbCliente add Senha_Cliente varchar(20) not null
