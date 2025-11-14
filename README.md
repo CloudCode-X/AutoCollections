@@ -3,9 +3,8 @@
 <p>E-commerce desenvolvido para a empresa AutoCollections</p>
 
 <h1>Desenvolvedores</h1>
-<p>Daniel Dias Bueno
-Giovani Amorim de Sousa
-Isaque Sérgio da Silva
-Juliana da Silva Oliveira
-Rafael Henrique Oliveira Rocha
-</p>
+<p>Daniel Dias Bueno</p>
+<p>Giovani Amorim de Sousa</p>
+<p>Isaque Sérgio da Silva</p>
+<p>Juliana da Silva Oliveira</p>
+<p>Rafael Henrique Oliveira Rocha</p>
