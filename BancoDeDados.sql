@@ -62,8 +62,8 @@ CREATE TABLE tbNivelAcesso(
 	IdNivel INT PRIMARY KEY AUTO_INCREMENT,
     NomeNivel VARCHAR(50) NOT NULL
 );
-INSERT INTO tbNivelAcesso(NomeNivel)
-VALUES ('Nivel l'), ('Nivel 2'), ('Nivel 3');
+
+INSERT INTO tbNivelAcesso(NomeNivel) VALUES ('Administrador'), ('Funcionário'), ('Cliente');
 
 -- TABELA DE REFERENCIA DO NIVEL DE ACESSO DO USUARIO
 
@@ -218,8 +218,6 @@ CREATE TABLE tbCartao (
 );
 
 -- Procedures 
--- IN => Valor de entrada
--- OUT => Valor de saída
 
 -- procedure para adicionar a estado
 -- drop procedure sp_CadastroEstado
@@ -230,18 +228,22 @@ CREATE PROCEDURE sp_CadastroEstado(
 	IN vUF CHAR(2)
 )
 BEGIN
-	INSERT INTO tbEstado(UF)
-    VALUES (vUF);SET 
+	INSERT INTO tbEstado(UF) VALUES (vUF);SET 
     
     vUFId = LAST_INSERT_ID();
 END $$
 
 
-CALL sp_CadastroEstado(
-	@vUFId,
-    "SP"
-);
-
+CALL sp_CadastroEstado(@vUFId, "SP");
+CALL sp_CadastroEstado(@vUFId, "RJ");
+CALL sp_CadastroEstado(@vUFId, "MG");
+CALL sp_CadastroEstado(@vUFId, "RS");
+CALL sp_CadastroEstado(@vUFId, "RN");
+CALL sp_CadastroEstado(@vUFId, "CE");
+CALL sp_CadastroEstado(@vUFId, "PE");
+CALL sp_CadastroEstado(@vUFId, "BA");
+CALL sp_CadastroEstado(@vUFId, "ES");
+CALL sp_CadastroEstado(@vUFId, "PR");
 SELECT * FROM tbEstado;
 -- procedure para adicionar o cidade
 -- drop procedure sp_CadastroCidade
@@ -253,17 +255,21 @@ CREATE PROCEDURE sp_CadastroCidade(
     IN vUFId INT
 )
 BEGIN
-    INSERT INTO tbCidade(Cidade, IdUF)
-    VALUES (vCidade, vUFId);
+    INSERT INTO tbCidade(Cidade, IdUF) VALUES (vCidade, vUFId);
     
     SET vCidadeId = LAST_INSERT_ID();
 END $$
 
-CALL sp_CadastroCidade(
-	@vCidadeId,
-    "São Paulo",
-    3
-);
+CALL sp_CadastroCidade(@vCidadeId, "São Paulo", 1);
+CALL sp_CadastroCidade(@vCidadeId, "Rio de Janeiro", 2);
+CALL sp_CadastroCidade(@vCidadeId, "Belo Horizonte", 3);
+CALL sp_CadastroCidade(@vCidadeId, "Porto Alegre", 4);
+CALL sp_CadastroCidade(@vCidadeId, "Natal", 5);
+CALL sp_CadastroCidade(@vCidadeId, "Fortaleza", 6);
+CALL sp_CadastroCidade(@vCidadeId, "Recife", 7);
+CALL sp_CadastroCidade(@vCidadeId, "Salvador", 8);
+CALL sp_CadastroCidade(@vCidadeId, "Vitória", 9);
+CALL sp_CadastroCidade(@vCidadeId, "Curitiba", 10);
 
 SELECT * FROM tbCidade;
 
@@ -277,20 +283,23 @@ CREATE PROCEDURE sp_CadastroBairro(
     IN vCidadeId INT
 )
 BEGIN
-    INSERT INTO tbBairro(Bairro, IdCidade)
-    VALUES (vBairro, vCidadeId);
+    INSERT INTO tbBairro(Bairro, IdCidade) VALUES (vBairro, vCidadeId);
     
     SET vBairroId = LAST_INSERT_ID();
 END $$
 
-CALL sp_CadastroBairro(
-	@vBairroId,
-    "Morro Doce",
-    2
-);
+CALL sp_CadastroBairro(@vBairroId, "Pinheiros", 1);
+CALL sp_CadastroBairro(@vBairroId, "Copacabana", 2);
+CALL sp_CadastroBairro(@vBairroId, "Savassi", 3);
+CALL sp_CadastroBairro(@vBairroId, "Moinhos de Vento", 4);
+CALL sp_CadastroBairro(@vBairroId, "Ponta Negra", 5);
+CALL sp_CadastroBairro(@vBairroId, "Meireles", 6);
+CALL sp_CadastroBairro(@vBairroId, "Boa Viagem", 7);
+CALL sp_CadastroBairro(@vBairroId, "Pelourinho", 8);
+CALL sp_CadastroBairro(@vBairroId, "Jardim da Penha", 9);
+CALL sp_CadastroBairro(@vBairroId, "Batel", 10);
 
 SELECT * FROM tbBairro;
-
 
 -- procedure para adicionar o endereço
 -- drop procedure sp_CadastroEndereco
@@ -312,42 +321,25 @@ BEGIN
     SELECT CidadeId INTO vCidadeId FROM tbCidade WHERE Cidade = vCidade;
     SELECT BairroId INTO vBairroId FROM tbBairro WHERE Bairro = vBairro;
     
-    INSERT INTO tbEndereco(Logradouro, CEP, IdUf, IdCidade, IdBairro)
-    VALUES (vLogradouro, vCEP, vUFId, vCidadeId, vBairroId);
+    INSERT INTO tbEndereco(Logradouro, CEP, IdUf, IdCidade, IdBairro) VALUES (vLogradouro, vCEP, vUFId, vCidadeId, vBairroId);
     
 END $$
 
 CREATE OR REPLACE VIEW vwEndereco AS
-SELECT  
-    e.Logradouro, 
-    e.CEP, 
-    e.IdUF, 
-    es.UF AS Estado, 
-    e.IdCidade, 
-    c.Cidade AS Cidade, 
-    e.IdBairro, 
-    b.Bairro AS Bairro
-
-FROM tbEndereco e INNER JOIN tbEstado es ON e.IdUF = es.UFId
-				INNER JOIN tbCidade c ON e.IdCidade = c.CidadeId
-				INNER JOIN tbBairro b ON e.IdBairro = b.BairroId;
+SELECT  e.Logradouro, e.CEP, e.IdUF, es.UF AS Estado, e.IdCidade, c.Cidade AS Cidade, e.IdBairro, b.Bairro AS Bairro
+FROM tbEndereco e INNER JOIN tbEstado es ON e.IdUF = es.UFId INNER JOIN tbCidade c ON e.IdCidade = c.CidadeId INNER JOIN tbBairro b ON e.IdBairro = b.BairroId;
 
 
-CALL sp_CadastroEndereco(
-	"Rua Amitola",
-    "05274090",
-    "SP",
-    "São Paulo",
-    "Morro Doce"
-);
-
-CALL sp_CadastroEndereco(
-	"Rua Pirapora",
-    "05275090",
-    "SP",
-    "São Paulo",
-    "Morro Doce"
-);
+CALL sp_CadastroEndereco("Rua dos Pinheiros", "05422001", "SP", "São Paulo", "Pinheiros");
+CALL sp_CadastroEndereco("Avenida Atlântica","22021001","RJ","Rio de Janeiro","Copacabana");
+CALL sp_CadastroEndereco("Praça Diogo de Vasconcelos","30112010","MG","Belo Horizonte","Savassi");
+CALL sp_CadastroEndereco("Rua Padre Chagas","90570080","RS","Porto Alegre","Moinhos de Vento");
+CALL sp_CadastroEndereco("Rua Aristides Porpino Filho","59090720","RN","Natal","Ponta Negra");
+CALL sp_CadastroEndereco("Avenida Beira Mar","60165121","CE","Fortaleza","Meireles");
+CALL sp_CadastroEndereco("Avenida Boa Viagem","51021000","PE","Recife","Boa Viagem");
+CALL sp_CadastroEndereco("Largo do Pelourinho","40026280","BA","Salvador","Pelourinho");
+CALL sp_CadastroEndereco("Avenida Fernando Ferrari","29075505","ES","Vitória","Jardim da Penha");
+CALL sp_CadastroEndereco("Avenida do Batel","80420090","PR","Curitiba","Batel");
 
 SELECT * FROM vwEndereco;
 
@@ -368,25 +360,53 @@ CREATE PROCEDURE sp_CadastroUsuario(
     IN vCep CHAR(8)
 )
 BEGIN
-	INSERT INTO tbUsuario(CPF, Nome, DataNascimento, Telefone, Email, Senha, NumeroEndereco, ComplementoEndereco, Cep)
+	INSERT INTO tbUsuario(CPF, Nome, DataNascimento, Telefone, Email, Senha, NumeroEndereco, ComplementoEndereco, Cep) 
     VALUES(vCPF, vNome, (STR_TO_DATE(vDataNascimento, '%d/%m/%Y')), vTelefone, vEmail, vSenha, vNumeroEndereco, vComplementoEndereco, vCep);
     
     SET vIdUsuario = LAST_INSERT_ID();
 END$$
 
-CALL sp_CadastroUsuario(
-    @vIdUsuario,
-    '39847256100',
-    'Maria Silva',
-    '20/02/2000',
-    '11987456320',
-    'maria@gmail.com',
-    '12345678',
-    '132',
-    'Ap 45B',
-    '05275090'
-);
+CALL sp_CadastroUsuario(@vIdUsuario, '12345678901', 'Mariana Ribeiro', '15/03/1998', '11987654321', 'mariana.ribeiro@gmail.com', 'senha123', '791', 'Apto 12B', '05422001');
+CALL sp_CadastroUsuario(@vIdUsuario, '98765432100', 'Lucas Azevedo', '08/11/1995', '21999887766', 'lucas.azevedo@gmail.com', 'senha123', '1702', 'Bloco C', '22021001');
+CALL sp_CadastroUsuario(@vIdUsuario, '32165498700', 'Bianca Martins', '22/07/2000', '31988776655', 'bianca.martins@gmail.com', 'senha123', '300', 'Sala 10', '30112010');
+CALL sp_CadastroUsuario(@vIdUsuario, '15975346800', 'Carlos Menezes', '10/01/1990', '51998877665', 'carlos.menezes@gmail.com', 'senha123', '300', NULL, '90570080');
+CALL sp_CadastroUsuario(@vIdUsuario, '25836914700', 'Juliana Barros', '05/09/2002', '84988776655', 'juliana.barros@gmail.com', 'senha123', '2199', 'Casa 02', '59090720');
+CALL sp_CadastroUsuario(@vIdUsuario,'74185296300','Renato Albuquerque','19/04/1988','85999887755','renato.albuquerque@gmail.com','senha123','2500','Cobertura','60165121');
+CALL sp_CadastroUsuario(@vIdUsuario,'85236974100','Paula Freitas','30/06/1997','81988776644','paula.freitas@gmail.com','senha123','4000','Apto 501','51021000');
+CALL sp_CadastroUsuario(@vIdUsuario,'96325874100','Rafael Santos','12/12/1999','71988776611','rafael.santos@gmail.com','senha123','22',NULL,'40026280');
+CALL sp_CadastroUsuario(@vIdUsuario,'45612378900','Larissa Gomes','17/02/2001','27999887766','larissa.gomes@gmail.com','senha123','514','Fundos','29075505');
+CALL sp_CadastroUsuario(@vIdUsuario,'65498732100','Thiago Moraes','09/10/1994','41988776655','thiago.moraes@gmail.com','senha123','1230','Apto 34A','80420090');
+
+-- ARRUMAR O STR TO DATE
 
 SELECT * FROM tbUsuario;
 
 -- procedure para definir o nivel do usuario
+-- drop procedure sp_NivelUsuario
+
+DELIMITER $$
+CREATE PROCEDURE sp_NivelUsuario(
+	vIdUsuario INT,
+    vIdNivel INT
+)
+BEGIN
+	INSERT INTO tbUsuNivel(IdUsuario, IdNivel)
+    VALUES(vIdUsuario, vIdNivel);
+END $$
+
+CREATE OR REPLACE VIEW vwUsu AS
+SELECT u.IdUsuario AS Codigo, u.CPF, u.Nome, u.Telefone, u.Email, u.Senha, u.Cep, n.IdNivel, n.NomeNivel 
+FROM tbUsuario u INNER JOIN tbUsuNivel un ON u.IdUsuario = un.IdUsuario INNER JOIN tbNivelAcesso n ON n.IdNivel = un.IdNivel;
+
+CALL sp_NivelUsuario(1,1);
+CALL sp_NivelUsuario(2,2);
+CALL sp_NivelUsuario(3,2);
+CALL sp_NivelUsuario(4,3);
+CALL sp_NivelUsuario(5,3);
+CALL sp_NivelUsuario(6,3);
+CALL sp_NivelUsuario(7,3);
+CALL sp_NivelUsuario(8,3);
+CALL sp_NivelUsuario(9,3);
+CALL sp_NivelUsuario(10,3);
+
+SELECT * FROM vwUsu;
