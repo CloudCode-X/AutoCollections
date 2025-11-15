@@ -132,6 +132,18 @@ CREATE TABLE tbImagemProduto (
     FOREIGN KEY (ProdutoId) REFERENCES tbProduto(IdProduto)
 );
 
+-- TABELA DE STATUS DO PEDIDO
+
+CREATE TABLE tbStatusPedido(
+	IdStatus INT PRIMARY KEY AUTO_INCREMENT,
+    NomeStatus VARCHAR(50) NOT NULL
+);
+
+INSERT INTO tbStatusPedido (NomeStatus) VALUES ('Em processamento'), ('Pago'), ('Enviado'), ('Finalizado'), ('Cancelado');
+
+ALTER TABLE tbPedido ADD IdStatus INT NOT NULL, ADD CONSTRAINT fk_pedido_status FOREIGN KEY (IdStatus) REFERENCES tbStatusPedido(IdStatus);
+ALTER TABLE tbPedido MODIFY COLUMN IdStatus INT NOT NULL DEFAULT 1;
+ALTER TABLE tbPedido DROP COLUMN PedidoStatus;
 -- TABELA PEDIDO
 
 CREATE TABLE tbPedido (
@@ -586,4 +598,85 @@ CALL sp_CadastroImagemProduto(@vImagemId, 15, 'img/produto15.jpg');
 
 SELECT * FROM tbImagemProduto;
 
--- 
+-- procedure para criacao dos pedidos
+-- drop procedure sp_CriarPedido
+
+DELIMITER $$
+CREATE PROCEDURE sp_CriarPedido(
+    OUT vIdPedido INT,
+    IN vIdUsuario INT,
+    IN vIdStatus INT
+)
+BEGIN
+    INSERT INTO tbPedido(DataPedido, ValorTotal, IdUsuario, IdStatus)
+    VALUES (CURRENT_DATE(), 0, vIdUsuario, vIdStatus);
+
+    SET vIdPedido = LAST_INSERT_ID();
+END $$
+CREATE OR REPLACE VIEW vwPedido AS
+SELECT p.IdPedido, p.DataPedido, p.ValorTotal, u.Nome AS Usuario, s.IdStatus, s.NomeStatus FROM tbPedido p INNER JOIN tbUsuario u ON p.IdUsuario = u.IdUsuario INNER JOIN tbStatusPedido s ON p.IdStatus = s.IdStatus;
+
+CALL sp_CriarPedido(@vIdPedido, 4, 1);
+CALL sp_CriarPedido(@vIdPedido, 1, 1);
+CALL sp_CriarPedido(@vIdPedido, 2, 2);
+CALL sp_CriarPedido(@vIdPedido, 3, 1);
+CALL sp_CriarPedido(@vIdPedido, 4, 3);
+CALL sp_CriarPedido(@vIdPedido, 5, 2);
+CALL sp_CriarPedido(@vIdPedido, 6, 1);
+CALL sp_CriarPedido(@vIdPedido, 7, 2);
+CALL sp_CriarPedido(@vIdPedido, 8, 3);
+CALL sp_CriarPedido(@vIdPedido, 9, 1);
+CALL sp_CriarPedido(@vIdPedido, 10, 2);
+
+SELECT * FROM vwPedido;
+
+-- procedure de cadastro do carrinho
+-- drop procedure sp_CadastroCarrinho
+
+DELIMITER $$
+CREATE PROCEDURE sp_CadastroCarrinho(
+	OUT vIdCarrinho INT,
+    IN vIdUsuario INT
+)
+BEGIN
+	INSERT INTO tbCarrinho(IdUsuario, ValorTotal) VALUES (vIdUsuario, 0);
+    
+    SET vIdCarrinho = LAST_INSERT_ID();
+END $$
+
+CALL sp_CadastroCarrinho(@vIdCarrinho, 1);
+CALL sp_CadastroCarrinho(@vIdCarrinho, 2);
+CALL sp_CadastroCarrinho(@vIdCarrinho, 3);
+CALL sp_CadastroCarrinho(@vIdCarrinho, 4);
+CALL sp_CadastroCarrinho(@vIdCarrinho, 5);
+
+SELECT * FROM tbCarrinho;
+
+-- procedure para adicionar itens no carrinho
+-- drop procedure sp_AdicionarItemCarrinho
+
+DELIMITER $$
+CREATE PROCEDURE sp_AdicionarItemCarrinho(
+	IN vIdCarrinho INT,
+    IN vIdProduto INT,
+    IN vQuantidade INT
+)
+BEGIN
+	DECLARE vPreco DECIMAL(10,2);
+    DECLARE vSubTotal DECIMAL(10,2);
+    
+    SELECT PrecoUnitario INTO vPreco FROM tbProduto WHERE IdProduto = vIdProduto;
+    
+    SET vSubTotal = vPreco * vQuantidade;
+    
+    INSERT INTO tbItemCarrinho(IdCarrinho, IdProduto, QuantidadeProduto, PrecoUnitario, SubTotal) VALUES (vIdCarrinho, vIdProduto, vQuantidade, vPreco, vSubTotal);
+    
+END $$
+
+CALL sp_AdicionarItemCarrinho(1, 1, 2);
+CALL sp_AdicionarItemCarrinho(1, 3, 1); 
+CALL sp_AdicionarItemCarrinho(2, 2, 4); 
+CALL sp_AdicionarItemCarrinho(2, 5, 2); 
+CALL sp_AdicionarItemCarrinho(3, 4, 1);
+
+SELECT * FROM tbItemCarrinho;
