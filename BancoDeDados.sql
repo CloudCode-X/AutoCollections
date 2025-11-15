@@ -351,4 +351,42 @@ CALL sp_CadastroEndereco(
 
 SELECT * FROM vwEndereco;
 
+-- procedure de Cadastro do Usuario
+-- drop procedure sp_CadastroUsuario
 
+DELIMITER $$
+CREATE PROCEDURE sp_CadastroUsuario(
+	OUT vIdUsuario INT,
+    IN vCPF CHAR(11),
+    IN vNome VARCHAR(150),
+    IN vDataNascimento CHAR(10),
+	IN vTelefone VARCHAR(15),
+    IN vEmail VARCHAR(150),
+    IN vSenha VARCHAR(100),
+    IN vNumeroEndereco CHAR(6),
+    IN vComplementoEndereco VARCHAR(50),
+    IN vCep CHAR(8)
+)
+BEGIN
+	INSERT INTO tbUsuario(CPF, Nome, DataNascimento, Telefone, Email, Senha, NumeroEndereco, ComplementoEndereco, Cep)
+    VALUES(vCPF, vNome, (STR_TO_DATE(vDataNascimento, '%d/%m/%Y')), vTelefone, vEmail, vSenha, vNumeroEndereco, vComplementoEndereco, vCep);
+    
+    SET vIdUsuario = LAST_INSERT_ID();
+END$$
+
+CALL sp_CadastroUsuario(
+    @vIdUsuario,
+    '39847256100',
+    'Maria Silva',
+    '20/02/2000',
+    '11987456320',
+    'maria@gmail.com',
+    '12345678',
+    '132',
+    'Ap 45B',
+    '05275090'
+);
+
+SELECT * FROM tbUsuario;
+
+-- procedure para definir o nivel do usuario
