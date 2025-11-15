@@ -216,3 +216,139 @@ CREATE TABLE tbCartao (
     DataCadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_cartao_usuario FOREIGN KEY (IdUsuario) REFERENCES tbUsuario(IdUsuario)
 );
+
+-- Procedures 
+-- IN => Valor de entrada
+-- OUT => Valor de saída
+
+-- procedure para adicionar a estado
+-- drop procedure sp_CadastroEstado
+
+DELIMITER $$
+CREATE PROCEDURE sp_CadastroEstado(
+	OUT vUFId INT,
+	IN vUF CHAR(2)
+)
+BEGIN
+	INSERT INTO tbEstado(UF)
+    VALUES (vUF);SET 
+    
+    vUFId = LAST_INSERT_ID();
+END $$
+
+
+CALL sp_CadastroEstado(
+	@vUFId,
+    "SP"
+);
+
+SELECT * FROM tbEstado;
+-- procedure para adicionar o cidade
+-- drop procedure sp_CadastroCidade
+
+DELIMITER $$
+CREATE PROCEDURE sp_CadastroCidade(
+	OUT vCidadeId INT,
+	IN vCidade VARCHAR(200),
+    IN vUFId INT
+)
+BEGIN
+    INSERT INTO tbCidade(Cidade, IdUF)
+    VALUES (vCidade, vUFId);
+    
+    SET vCidadeId = LAST_INSERT_ID();
+END $$
+
+CALL sp_CadastroCidade(
+	@vCidadeId,
+    "São Paulo",
+    3
+);
+
+SELECT * FROM tbCidade;
+
+-- procedure para adicionar o bairro
+-- drop procedure sp_CadastroBairro
+
+DELIMITER $$
+CREATE PROCEDURE sp_CadastroBairro(
+	OUT vBairroId INT,
+	IN vBairro VARCHAR(200),
+    IN vCidadeId INT
+)
+BEGIN
+    INSERT INTO tbBairro(Bairro, IdCidade)
+    VALUES (vBairro, vCidadeId);
+    
+    SET vBairroId = LAST_INSERT_ID();
+END $$
+
+CALL sp_CadastroBairro(
+	@vBairroId,
+    "Morro Doce",
+    2
+);
+
+SELECT * FROM tbBairro;
+
+
+-- procedure para adicionar o endereço
+-- drop procedure sp_CadastroEndereco
+
+DELIMITER $$
+CREATE PROCEDURE sp_CadastroEndereco(
+    IN vLogradouro varchar(200),
+    IN vCEP CHAR(9), -- com traço
+    IN vUF VARCHAR(200),
+    IN vCidade VARCHAR(200),
+    IN vBairro VARCHAR(200)
+)
+BEGIN
+	DECLARE vUFId INT;
+    DECLARE vCidadeId INT;
+    DECLARE vBairroId INT;
+
+	SELECT UFId INTO vUFId FROM tbEstado WHERE UF = vUF;
+    SELECT CidadeId INTO vCidadeId FROM tbCidade WHERE Cidade = vCidade;
+    SELECT BairroId INTO vBairroId FROM tbBairro WHERE Bairro = vBairro;
+    
+    INSERT INTO tbEndereco(Logradouro, CEP, IdUf, IdCidade, IdBairro)
+    VALUES (vLogradouro, vCEP, vUFId, vCidadeId, vBairroId);
+    
+END $$
+
+CREATE OR REPLACE VIEW vwEndereco AS
+SELECT  
+    e.Logradouro, 
+    e.CEP, 
+    e.IdUF, 
+    es.UF AS Estado, 
+    e.IdCidade, 
+    c.Cidade AS Cidade, 
+    e.IdBairro, 
+    b.Bairro AS Bairro
+
+FROM tbEndereco e INNER JOIN tbEstado es ON e.IdUF = es.UFId
+				INNER JOIN tbCidade c ON e.IdCidade = c.CidadeId
+				INNER JOIN tbBairro b ON e.IdBairro = b.BairroId;
+
+
+CALL sp_CadastroEndereco(
+	"Rua Amitola",
+    "05274090",
+    "SP",
+    "São Paulo",
+    "Morro Doce"
+);
+
+CALL sp_CadastroEndereco(
+	"Rua Pirapora",
+    "05275090",
+    "SP",
+    "São Paulo",
+    "Morro Doce"
+);
+
+SELECT * FROM vwEndereco;
+
+
