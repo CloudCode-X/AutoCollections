@@ -680,3 +680,39 @@ CALL sp_AdicionarItemCarrinho(2, 5, 2);
 CALL sp_AdicionarItemCarrinho(3, 4, 1);
 
 SELECT * FROM tbItemCarrinho;
+
+-- procedure para pagamento
+-- drop procedure sp_RegistrarPagamento
+
+DELIMITER $$
+CREATE PROCEDURE sp_RegistrarPagamento(
+    OUT vIdPagamento INT,
+    IN vIdPedido INT,
+    IN vMetodoPagamento VARCHAR(30),
+    IN vValorPagamento DECIMAL(10,2),
+    IN vStatusPagamento VARCHAR(20), 
+    IN vCodigoTransacao VARCHAR(100)
+)
+BEGIN
+    DECLARE vDataConfirmacao DATETIME;
+
+    IF vStatusPagamento = 'Pago' THEN 
+		SET vDataConfirmacao = NOW();
+		UPDATE tbPedido SET IdStatus = 2 WHERE IdPedido = vIdPedido;
+    ELSEIF vStatusPagamento = 'Cancelado' THEN
+        SET vDataConfirmacao = NULL;
+        UPDATE tbPedido SET IdStatus = 5 WHERE IdPedido = vIdPedido;
+    ELSE
+        SET vDataConfirmacao = NULL;
+    END IF;
+
+    INSERT INTO tbPagamento(IdPedido, MetodoPagamento, ValorPagamento, StatusPagamento, CodigoTransacao, DataConfirmacao) VALUES (vIdPedido, vMetodoPagamento, vValorPagamento, vStatusPagamento, vCodigoTransacao, vDataConfirmacao);
+
+    SET vIdPagamento = LAST_INSERT_ID();
+END $$
+
+CALL sp_RegistrarPagamento(@vIdPagamento, 1, 'Cartão', 1200.00, 'Pago', 'TX123456');
+CALL sp_RegistrarPagamento(@vIdPagamento, 2, 'Pix', 450.00, 'Pendente', 'PIX987654');
+CALL sp_RegistrarPagamento(@vIdPagamento, 3, 'Boleto', 950.00, 'Cancelado', 'BLT567890');
+
+SELECT * FROM tbPagamento;
