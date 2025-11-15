@@ -553,3 +553,37 @@ CALL sp_CadastroProduto(@vIdProduto, 5, "Ford GT", 1250.00, "1:18", 1500, "Metal
 
 SELECT * FROM vwProduto;
 
+-- procedure para o cadastro de imagens
+-- drop procedure sp_CadastroImagemProduto
+
+DELIMITER $$
+CREATE PROCEDURE sp_CadastroImagemProduto(
+	OUT vImagemId INT,
+    IN vProdutoId INT,
+    IN vCaminhoImagem VARCHAR(255)
+)
+BEGIN
+	INSERT INTO tbImagemProduto(ProdutoId, CaminhoImagem) VALUES (vProdutoId, vCaminhoImagem);
+    
+    SET vImagemId = LAST_INSERT_ID();
+END $$
+
+CALL sp_CadastroImagemProduto(@vImagemId, 1, 'img/produto1.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 2, 'img/produto2.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 3, 'img/produto3.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 4, 'img/produto4.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 5, 'img/produto5.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 6, 'img/produto6.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 7, 'img/produto7.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 8, 'img/produto8.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 9, 'img/produto9.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 10, 'img/produto10.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 11, 'img/produto11.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 12, 'img/produto12.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 13, 'img/produto13.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 14, 'img/produto14.jpg');
+CALL sp_CadastroImagemProduto(@vImagemId, 15, 'img/produto15.jpg');
+
+SELECT * FROM tbImagemProduto;
+
+-- 
