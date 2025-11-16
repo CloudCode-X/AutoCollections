@@ -245,18 +245,6 @@ BEGIN
     vUFId = LAST_INSERT_ID();
 END $$
 
-CALL sp_CadastroEstado(@vUFId, "SP");
-CALL sp_CadastroEstado(@vUFId, "RJ");
-CALL sp_CadastroEstado(@vUFId, "MG");
-CALL sp_CadastroEstado(@vUFId, "RS");
-CALL sp_CadastroEstado(@vUFId, "RN");
-CALL sp_CadastroEstado(@vUFId, "CE");
-CALL sp_CadastroEstado(@vUFId, "PE");
-CALL sp_CadastroEstado(@vUFId, "BA");
-CALL sp_CadastroEstado(@vUFId, "ES");
-CALL sp_CadastroEstado(@vUFId, "PR");
-CALL sp_CadastroEstado(@vUFId, "PA");
-SELECT * FROM tbEstado;
 -- procedure para adicionar o cidade
 -- drop procedure sp_CadastroCidade
 
@@ -271,18 +259,6 @@ BEGIN
     
     SET vCidadeId = LAST_INSERT_ID();
 END $$
-
-CALL sp_CadastroCidade(@vCidadeId, "São Paulo", 1);
-CALL sp_CadastroCidade(@vCidadeId, "Rio de Janeiro", 2);
-CALL sp_CadastroCidade(@vCidadeId, "Belo Horizonte", 3);
-CALL sp_CadastroCidade(@vCidadeId, "Porto Alegre", 4);
-CALL sp_CadastroCidade(@vCidadeId, "Natal", 5);
-CALL sp_CadastroCidade(@vCidadeId, "Fortaleza", 6);
-CALL sp_CadastroCidade(@vCidadeId, "Recife", 7);
-CALL sp_CadastroCidade(@vCidadeId, "Salvador", 8);
-CALL sp_CadastroCidade(@vCidadeId, "Vitória", 9);
-CALL sp_CadastroCidade(@vCidadeId, "Curitiba", 10);
-CALL sp_CadastroCidade(@vCidadeId, "Belém", 11);
 
 SELECT * FROM tbCidade;
 
@@ -300,21 +276,6 @@ BEGIN
     
     SET vBairroId = LAST_INSERT_ID();
 END $$
-
-CALL sp_CadastroBairro(@vBairroId, "Pinheiros", 1);
-CALL sp_CadastroBairro(@vBairroId, "Jardins", 1);
-CALL sp_CadastroBairro(@vBairroId, "Bela Vista", 1);
-CALL sp_CadastroBairro(@vBairroId, "Copacabana", 2);
-CALL sp_CadastroBairro(@vBairroId, "Centro", 2);
-CALL sp_CadastroBairro(@vBairroId, "Savassi", 3);
-CALL sp_CadastroBairro(@vBairroId, "Moinhos de Vento", 4);
-CALL sp_CadastroBairro(@vBairroId, "Ponta Negra", 5);
-CALL sp_CadastroBairro(@vBairroId, "Meireles", 6);
-CALL sp_CadastroBairro(@vBairroId, "Boa Viagem", 7);
-CALL sp_CadastroBairro(@vBairroId, "Pelourinho", 8);
-CALL sp_CadastroBairro(@vBairroId, "Jardim da Penha", 9);
-CALL sp_CadastroBairro(@vBairroId, "Batel", 10);
-CALL sp_CadastroBairro(@vBairroId, "Umarizal", 11);
 
 SELECT * FROM tbBairro;
 
@@ -346,23 +307,6 @@ CREATE OR REPLACE VIEW vwEndereco AS
 SELECT  e.Logradouro, e.CEP, e.IdUF, es.UF AS Estado, e.IdCidade, c.Cidade AS Cidade, e.IdBairro, b.Bairro AS Bairro
 FROM tbEndereco e INNER JOIN tbEstado es ON e.IdUF = es.UFId INNER JOIN tbCidade c ON e.IdCidade = c.CidadeId INNER JOIN tbBairro b ON e.IdBairro = b.BairroId;
 
-
-CALL sp_CadastroEndereco("Rua dos Pinheiros", "05422001", "SP", "São Paulo", "Pinheiros");
-CALL sp_CadastroEndereco("Avenida Atlântica","22021001","RJ","Rio de Janeiro","Copacabana");
-CALL sp_CadastroEndereco("Praça Diogo de Vasconcelos","30112010","MG","Belo Horizonte","Savassi");
-CALL sp_CadastroEndereco("Rua Padre Chagas","90570080","RS","Porto Alegre","Moinhos de Vento");
-CALL sp_CadastroEndereco("Rua Aristides Porpino Filho","59090720","RN","Natal","Ponta Negra");
-CALL sp_CadastroEndereco("Avenida Beira Mar","60165121","CE","Fortaleza","Meireles");
-CALL sp_CadastroEndereco("Avenida Boa Viagem","51021000","PE","Recife","Boa Viagem");
-CALL sp_CadastroEndereco("Largo do Pelourinho","40026280","BA","Salvador","Pelourinho");
-CALL sp_CadastroEndereco("Avenida Fernando Ferrari","29075505","ES","Vitória","Jardim da Penha");
-CALL sp_CadastroEndereco("Avenida do Batel","80420090","PR","Curitiba","Batel");
-CALL sp_CadastroEndereco('Rua das Flores', '01001000', 'SP', 'São Paulo', 'Jardins');
-CALL sp_CadastroEndereco('Avenida Rio Branco', '20020020', 'RJ', 'Rio de Janeiro', 'Centro');
-CALL sp_CadastroEndereco('Avenida Beira Mar', '60060060', 'CE', 'Fortaleza', 'Meireles');
-CALL sp_CadastroEndereco('Rua Amazonas', '70070070', 'PA', 'Belém', 'Umarizal');
-CALL sp_CadastroEndereco('Avenida Paulista', '80080080', 'SP', 'São Paulo', 'Bela Vista');
-
 SELECT * FROM vwEndereco;
 
 -- procedure de Cadastro do Usuario
@@ -390,17 +334,6 @@ BEGIN
     SET vIdUsuario = LAST_INSERT_ID();
 END$$
 
-CALL sp_CadastroUsuario(@vIdUsuario, '12345678901', 'Mariana Ribeiro', '15/03/1998', '11987654321', 'mariana.ribeiro@gmail.com', 'senha123', '791', 'Apto 12B', '05422001');
-CALL sp_CadastroUsuario(@vIdUsuario, '98765432100', 'Lucas Azevedo', '08/11/1995', '21999887766', 'lucas.azevedo@gmail.com', 'senha123', '1702', 'Bloco C', '22021001');
-CALL sp_CadastroUsuario(@vIdUsuario, '32165498700', 'Bianca Martins', '22/07/2000', '31988776655', 'bianca.martins@gmail.com', 'senha123', '300', 'Sala 10', '30112010');
-CALL sp_CadastroUsuario(@vIdUsuario, '15975346800', 'Carlos Menezes', '10/01/1990', '51998877665', 'carlos.menezes@gmail.com', 'senha123', '300', NULL, '90570080');
-CALL sp_CadastroUsuario(@vIdUsuario, '25836914700', 'Juliana Barros', '05/09/2002', '84988776655', 'juliana.barros@gmail.com', 'senha123', '2199', 'Casa 02', '59090720');
-CALL sp_CadastroUsuario(@vIdUsuario,'74185296300','Renato Albuquerque','19/04/1988','85999887755','renato.albuquerque@gmail.com','senha123','2500','Cobertura','60165121');
-CALL sp_CadastroUsuario(@vIdUsuario,'85236974100','Paula Freitas','30/06/1997','81988776644','paula.freitas@gmail.com','senha123','4000','Apto 501','51021000');
-CALL sp_CadastroUsuario(@vIdUsuario,'96325874100','Rafael Santos','12/12/1999','71988776611','rafael.santos@gmail.com','senha123','22',NULL,'40026280');
-CALL sp_CadastroUsuario(@vIdUsuario,'45612378900','Larissa Gomes','17/02/2001','27999887766','larissa.gomes@gmail.com','senha123','514','Fundos','29075505');
-CALL sp_CadastroUsuario(@vIdUsuario,'65498732100','Thiago Moraes','09/10/1994','41988776655','thiago.moraes@gmail.com','senha123','1230','Apto 34A','80420090');
-
 -- ARRUMAR O STR TO DATE
 
 SELECT * FROM tbUsuario;
@@ -422,17 +355,6 @@ CREATE OR REPLACE VIEW vwUsu AS
 SELECT u.IdUsuario AS Codigo, u.CPF, u.Nome, u.Telefone, u.Email, u.Senha, u.Cep, n.IdNivel, n.NomeNivel 
 FROM tbUsuario u INNER JOIN tbUsuNivel un ON u.IdUsuario = un.IdUsuario INNER JOIN tbNivelAcesso n ON n.IdNivel = un.IdNivel;
 
-CALL sp_NivelUsuario(1,1);
-CALL sp_NivelUsuario(2,2);
-CALL sp_NivelUsuario(3,2);
-CALL sp_NivelUsuario(4,3);
-CALL sp_NivelUsuario(5,3);
-CALL sp_NivelUsuario(6,3);
-CALL sp_NivelUsuario(7,3);
-CALL sp_NivelUsuario(8,3);
-CALL sp_NivelUsuario(9,3);
-CALL sp_NivelUsuario(10,3);
-
 SELECT * FROM vwUsu;
 
 -- procedure para cadastro de Fornecedor
@@ -453,12 +375,6 @@ BEGIN
     SET vIdFornecedor = LAST_INSERT_ID();
 END $$
 
-CALL sp_CadastroFornecedor(@vIdFornecedor, 'Turbo Motors', '12345678000111', '11987654321', 'contato@turbomotors.com.br', '01001000');
-CALL sp_CadastroFornecedor(@vIdFornecedor, 'Prime Auto Parts', '23456789000122', '21998765432', 'vendas@primeautoparts.com.br', '20020020');
-CALL sp_CadastroFornecedor(@vIdFornecedor, 'Auto Premium', '67890123000166', '61999887766', 'info@autopremium.com.br', '60060060');
-CALL sp_CadastroFornecedor(@vIdFornecedor, 'CarMaster', '78901234000177', '71988776611', 'contato@carmaster.com.br', '70070070');
-CALL sp_CadastroFornecedor(@vIdFornecedor, 'Velocity Motors', '89012345000188', '81987654322', 'vendas@velocitymotors.com.br', '80080080');
-
 SELECT * FROM tbFornecedor;
 
 -- procedure para cadastro das marcas
@@ -476,17 +392,6 @@ BEGIN
     SET vIdMarca = LAST_INSERT_ID();
 END$$
 
-CALL sp_CadastroMarca(@vIdMarca, 'Ferrari', 'imagens/marcas/ferrari.png');
-CALL sp_CadastroMarca(@vIdMarca, 'Lamborghini', 'imagens/marcas/lamborghini.png');
-CALL sp_CadastroMarca(@vIdMarca, 'Porsche', 'imagens/marcas/porsche.png');
-CALL sp_CadastroMarca(@vIdMarca, 'BMW', 'imagens/marcas/bmw.png');
-CALL sp_CadastroMarca(@vIdMarca, 'Mercedes-Benz', 'imagens/marcas/mercedes.png');
-CALL sp_CadastroMarca(@vIdMarca, 'Audi', 'imagens/marcas/audi.png');
-CALL sp_CadastroMarca(@vIdMarca, 'Ford', 'imagens/marcas/ford.png');
-CALL sp_CadastroMarca(@vIdMarca, 'Chevrolet', 'imagens/marcas/chevrolet.png');
-CALL sp_CadastroMarca(@vIdMarca, 'Toyota', 'imagens/marcas/toyota.png');
-CALL sp_CadastroMarca(@vIdMarca, 'Honda', 'imagens/marcas/honda.png');
-
 SELECT * FROM tbMarca;
 
 -- procedure para cadastro das categorias
@@ -502,15 +407,6 @@ BEGIN
     
     SET vIdCategoria = LAST_INSERT_ID();
 END $$
-
-CALL sp_CadastroCategoria(@vIdCategoria, 'Carros Esportivos');
-CALL sp_CadastroCategoria(@vIdCategoria, 'Carros Clássicos');
-CALL sp_CadastroCategoria(@vIdCategoria, 'Carros de Luxo');
-CALL sp_CadastroCategoria(@vIdCategoria, 'Carros de Corrida');
-CALL sp_CadastroCategoria(@vIdCategoria, 'SUV');
-CALL sp_CadastroCategoria(@vIdCategoria, 'Conversível');
-CALL sp_CadastroCategoria(@vIdCategoria, 'Edições Limitadas');
-CALL sp_CadastroCategoria(@vIdCategoria, 'Kits Montáveis');
 
 SELECT * FROM tbCategoria;
 
@@ -546,22 +442,6 @@ SELECT p.IdProduto, p.NomeProduto, p.PrecoUnitario, p.Escala, p.Peso, p.Material
 FROM tbProduto p INNER JOIN tbCategoria c on p.IdCategoria = c.IdCategoria
 				INNER JOIN tbMarca m on p.IdMarca = m.IdMarca
                 INNER JOIN tbFornecedor f on p.IdFornecedor = f.IdFornecedor;
-                
-CALL sp_CadastroProduto(@vIdProduto, 1, "Ferrari F8 Tributo", 1200.00, "1:18", 1500, "Metal", "Esportivo", 1, 10, 1, "Carro", 1, 1);
-CALL sp_CadastroProduto(@vIdProduto, 2, "Lamborghini Aventador", 140.00, "1:18", 1600, "Metal", "Esportivo", 1, 8, 2, "Carro", 2, 1);
-CALL sp_CadastroProduto(@vIdProduto, 3, "Porsche 911 Carrera", 9500.00, "1:18", 1400, "Metal", "Esportivo", 1, 12, 3, "Carro", 3, 1);
-CALL sp_CadastroProduto(@vIdProduto, 4, "Chevrolet Camaro SS", 4500.00, "1:18", 1300, "Metal", "Esportivo", 1, 15, 4, "Carro", 4, 1);
-CALL sp_CadastroProduto(@vIdProduto, 5, "Ford Mustang GT", 400.00, "1:18", 1350, "Metal", "Esportivo", 1, 7, 5, "Carro", 5, 1);
-CALL sp_CadastroProduto(@vIdProduto, 2, "Mercedes-Benz AMG GT", 1100000.00, "1:18", 1450, "Metal", "Esportivo", 1, 6, 6, "Carro", 6, 1);
-CALL sp_CadastroProduto(@vIdProduto, 4, "Audi R8", 1000.00, "1:18", 1500, "Metal", "Esportivo", 1, 9, 7, "Carro", 7, 1);
-CALL sp_CadastroProduto(@vIdProduto, 5, "BMW M8", 900.00, "1:18", 1450, "Metal", "Esportivo", 1, 11, 8, "Carro", 8, 1);
-CALL sp_CadastroProduto(@vIdProduto, 5, "Jaguar F-Type", 850.00, "1:18", 1400, "Metal", "Esportivo", 1, 5, 9, "Carro", 8, 1);
-CALL sp_CadastroProduto(@vIdProduto, 1, "Maserati GranTurismo", 920.00, "1:18", 1450, "Metal", "Esportivo", 1, 4, 10, "Carro", 1, 1);
-CALL sp_CadastroProduto(@vIdProduto, 1, "Ferrari Roma", 1300.00, "1:18", 1520, "Metal", "Esportivo", 1, 3, 1, "Carro", 1, 1);
-CALL sp_CadastroProduto(@vIdProduto, 1, "Lamborghini Huracan", 1350.00, "1:18", 1550, "Metal", "Esportivo", 1, 6, 2, "Carro", 2, 1);
-CALL sp_CadastroProduto(@vIdProduto, 3, "Porsche Taycan", 970.00, "1:18", 1430, "Metal", "Esportivo", 1, 8, 3, "Carro", 3, 1);
-CALL sp_CadastroProduto(@vIdProduto, 4, "Chevrolet Corvette", 480.00, "1:18", 1370, "Metal", "Esportivo", 1, 5, 4, "Carro", 4, 1);
-CALL sp_CadastroProduto(@vIdProduto, 5, "Ford GT", 1250.00, "1:18", 1500, "Metal", "Esportivo", 1, 2, 5, "Carro", 5, 1);
 
 SELECT * FROM vwProduto;
 
@@ -579,22 +459,6 @@ BEGIN
     
     SET vImagemId = LAST_INSERT_ID();
 END $$
-
-CALL sp_CadastroImagemProduto(@vImagemId, 1, 'img/produto1.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 2, 'img/produto2.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 3, 'img/produto3.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 4, 'img/produto4.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 5, 'img/produto5.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 6, 'img/produto6.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 7, 'img/produto7.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 8, 'img/produto8.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 9, 'img/produto9.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 10, 'img/produto10.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 11, 'img/produto11.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 12, 'img/produto12.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 13, 'img/produto13.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 14, 'img/produto14.jpg');
-CALL sp_CadastroImagemProduto(@vImagemId, 15, 'img/produto15.jpg');
 
 SELECT * FROM tbImagemProduto;
 
@@ -616,18 +480,6 @@ END $$
 CREATE OR REPLACE VIEW vwPedido AS
 SELECT p.IdPedido, p.DataPedido, p.ValorTotal, u.Nome AS Usuario, s.IdStatus, s.NomeStatus FROM tbPedido p INNER JOIN tbUsuario u ON p.IdUsuario = u.IdUsuario INNER JOIN tbStatusPedido s ON p.IdStatus = s.IdStatus;
 
-CALL sp_CriarPedido(@vIdPedido, 4, 1);
-CALL sp_CriarPedido(@vIdPedido, 1, 1);
-CALL sp_CriarPedido(@vIdPedido, 2, 2);
-CALL sp_CriarPedido(@vIdPedido, 3, 1);
-CALL sp_CriarPedido(@vIdPedido, 4, 3);
-CALL sp_CriarPedido(@vIdPedido, 5, 2);
-CALL sp_CriarPedido(@vIdPedido, 6, 1);
-CALL sp_CriarPedido(@vIdPedido, 7, 2);
-CALL sp_CriarPedido(@vIdPedido, 8, 3);
-CALL sp_CriarPedido(@vIdPedido, 9, 1);
-CALL sp_CriarPedido(@vIdPedido, 10, 2);
-
 SELECT * FROM vwPedido;
 
 -- procedure de cadastro do carrinho
@@ -643,12 +495,6 @@ BEGIN
     
     SET vIdCarrinho = LAST_INSERT_ID();
 END $$
-
-CALL sp_CadastroCarrinho(@vIdCarrinho, 1);
-CALL sp_CadastroCarrinho(@vIdCarrinho, 2);
-CALL sp_CadastroCarrinho(@vIdCarrinho, 3);
-CALL sp_CadastroCarrinho(@vIdCarrinho, 4);
-CALL sp_CadastroCarrinho(@vIdCarrinho, 5);
 
 SELECT * FROM tbCarrinho;
 
@@ -672,14 +518,6 @@ BEGIN
     INSERT INTO tbItemCarrinho(IdCarrinho, IdProduto, QuantidadeProduto, PrecoUnitario, SubTotal) VALUES (vIdCarrinho, vIdProduto, vQuantidade, vPreco, vSubTotal);
     
 END $$
-
-CALL sp_AdicionarItemCarrinho(1, 1, 2);
-CALL sp_AdicionarItemCarrinho(1, 3, 1); 
-CALL sp_AdicionarItemCarrinho(2, 2, 4); 
-CALL sp_AdicionarItemCarrinho(2, 5, 2); 
-CALL sp_AdicionarItemCarrinho(3, 4, 1);
-
-SELECT * FROM tbItemCarrinho;
 
 -- procedure para pagamento
 -- drop procedure sp_RegistrarPagamento
@@ -710,9 +548,3 @@ BEGIN
 
     SET vIdPagamento = LAST_INSERT_ID();
 END $$
-
-CALL sp_RegistrarPagamento(@vIdPagamento, 1, 'Cartão', 1200.00, 'Pago', 'TX123456');
-CALL sp_RegistrarPagamento(@vIdPagamento, 2, 'Pix', 450.00, 'Pendente', 'PIX987654');
-CALL sp_RegistrarPagamento(@vIdPagamento, 3, 'Boleto', 950.00, 'Cancelado', 'BLT567890');
-
-SELECT * FROM tbPagamento;
