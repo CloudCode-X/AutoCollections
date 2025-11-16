@@ -141,9 +141,7 @@ CREATE TABLE tbStatusPedido(
 
 INSERT INTO tbStatusPedido (NomeStatus) VALUES ('Em processamento'), ('Pago'), ('Enviado'), ('Finalizado'), ('Cancelado');
 
-ALTER TABLE tbPedido ADD IdStatus INT NOT NULL, ADD CONSTRAINT fk_pedido_status FOREIGN KEY (IdStatus) REFERENCES tbStatusPedido(IdStatus);
-ALTER TABLE tbPedido MODIFY COLUMN IdStatus INT NOT NULL DEFAULT 1;
-ALTER TABLE tbPedido DROP COLUMN PedidoStatus;
+
 -- TABELA PEDIDO
 
 CREATE TABLE tbPedido (
@@ -155,6 +153,9 @@ CREATE TABLE tbPedido (
     CONSTRAINT fk_pedido_usuario FOREIGN KEY (IdUsuario) REFERENCES tbUsuario(IdUsuario)
 );
 
+ALTER TABLE tbPedido ADD IdStatus INT NOT NULL, ADD CONSTRAINT fk_pedido_status FOREIGN KEY (IdStatus) REFERENCES tbStatusPedido(IdStatus);
+ALTER TABLE tbPedido MODIFY COLUMN IdStatus INT NOT NULL DEFAULT 1;
+ALTER TABLE tbPedido DROP COLUMN PedidoStatus;
 -- TABELA ITEM PEDIDO
 
 CREATE TABLE tbItemPedido (
@@ -215,10 +216,6 @@ CREATE TABLE tbPagamento (
     CONSTRAINT fk_pagamento_pedido FOREIGN KEY (IdPedido) REFERENCES tbPedido(IdPedido)
 );
 
-ALTER TABLE tbPagamento
-ADD IdCartao INT NULL,
-ADD CONSTRAINT fk_pagamento_cartao FOREIGN KEY (IdCartao) REFERENCES tbCartao(IdCartao);
-
 -- TABELA CARTAO
 
 CREATE TABLE tbCartao (
@@ -233,6 +230,7 @@ CREATE TABLE tbCartao (
     CONSTRAINT fk_cartao_usuario FOREIGN KEY (IdUsuario) REFERENCES tbUsuario(IdUsuario)
 );
 
+ALTER TABLE tbPagamento ADD IdCartao INT NULL, ADD CONSTRAINT fk_pagamento_cartao FOREIGN KEY (IdCartao) REFERENCES tbCartao(IdCartao);
 -- Procedures 
 
 -- procedure para adicionar a estado
@@ -310,8 +308,6 @@ END $$
 CREATE OR REPLACE VIEW vwEndereco AS
 SELECT  e.Logradouro, e.CEP, e.IdUF, es.UF AS Estado, e.IdCidade, c.Cidade AS Cidade, e.IdBairro, b.Bairro AS Bairro
 FROM tbEndereco e INNER JOIN tbEstado es ON e.IdUF = es.UFId INNER JOIN tbCidade c ON e.IdCidade = c.CidadeId INNER JOIN tbBairro b ON e.IdBairro = b.BairroId;
-
-SELECT * FROM vwEndereco;
 
 -- procedure de Cadastro do Usuario
 -- drop procedure sp_CadastroUsuario
@@ -486,6 +482,30 @@ SELECT p.IdPedido, p.DataPedido, p.ValorTotal, u.Nome AS Usuario, s.IdStatus, s.
 
 SELECT * FROM vwPedido;
 
+DELIMITER $$
+CREATE PROCEDURE sp_AdicionarItemPedido(
+	IN vIdPedido INT,
+    IN vIdProduto INT,
+    IN vQuantidade INT
+)
+BEGIN
+	DECLARE vPreco DECIMAL(10,2);
+    DECLARE vSubTotal DECIMAL(10,2);
+    DECLARE vEstoque INT;
+    
+    SELECT QuantidadeEstoque INTO vEstoque FROM tbProduto WHERE IdProduto = vIdProduto;
+    
+    IF vEstoque < vQuantidade THEN
+		SIGNAL SQLSTATE '45000'
+		SET MESSAGE_TEXT = 'Produto fora de estoque.';
+	END IF;
+    
+    SELECT PrecoUnitario INTO vPreco FROM tbProduto WHERE IdProduto = vIdProduto;
+    SET vSubTotal = vPreco * vQuantidade;
+    
+    INSERT INTO tbItemPedido(IdPedido, IdProduto, QuantidadeProduto, PrecoUnitario, SubTotal) VALUES (vIdPedido, vIdProduto, vQuantidade, vPreco, vSubTotal);
+END $$
+
 -- procedure de cadastro do carrinho
 -- drop procedure sp_CadastroCarrinho
 
@@ -523,6 +543,45 @@ BEGIN
     
 END $$
 
+DELIMITER $$
+CREATE PROCEDURE sp_CadastrarCartao(
+	OUT vIdCartao INT,
+    IN vIdUsuario INT,
+    IN vBandeira VARCHAR(20),
+    IN vUltimosDigitos CHAR(4),
+    IN vNomeTitular VARCHAR(100),
+    IN vValidadeMes CHAR(7),
+    IN vTokenCartao VARCHAR(255)
+)
+BEGIN
+	INSERT INTO tbCartao(IdUsuario, Bandeira, UltimosDigitos, NomeTitular, ValidadeMes, TokenCartao, DataCadastro)
+    VALUES(vIdUsuario, vBandeira, vUltimosDigitos, vNomeTitular, vValidadeMes, vTokenCartao, NOW());
+    
+    SET vIdCartao = LAST_INSERT_ID();
+END $$
+
+DELIMITER $$
+CREATE PROCEDURE sp_GerarPagamentoCartao(
+	OUT vIdPagamento INT,
+    IN vIdPedido INT,
+    IN vIdCartao INT,
+    IN vValorPagamento DECIMAL(10,2)
+)
+BEGIN
+	DECLARE vIdUsuarioPedido INT;
+    DECLARE vIdUsuarioCartao INT;
+    DECLARE vCodigoTransacao VARCHAR(100);
+    
+	SET vCodigoTransacao = CONCAT('TX', FLOOR(RAND() * 1000000));
+
+    SELECT IdUsuario INTO vIdUsuarioPedido FROM tbPedido WHERE IdPedido = vIdPedido;
+    SELECT IdUsuario INTO vIdUsuarioCartao FROM tbCartao WHERE IdCartao = vIdCartao;
+    
+    INSERT INTO tbPagamento(IdPedido, MetodoPagamento, ValorPagamento, IdCartao, StatusPagamento, CodigoTransacao, DataCriacao) VALUES(vIdPedido, 'Cartão', vValorPagamento, vIdCartao, 'Pago', vCodigoTransacao, NOW());
+    
+    SET vIdPagamento = LAST_INSERT_ID();
+END $$
+
 -- procedure para pagamento
 -- drop procedure sp_RegistrarPagamento
 
@@ -552,3 +611,103 @@ BEGIN
 
     SET vIdPagamento = LAST_INSERT_ID();
 END $$
+
+DELIMITER $$
+CREATE TRIGGER trg_AtualizarEstoque -- INSERT
+AFTER INSERT ON tbItemPedido
+FOR EACH ROW
+BEGIN
+	UPDATE tbProduto SET QuantidadeEstoque = QuantidadeEstoque - NEW.QuantidadeProduto WHERE IdProduto = NEW.IdProduto;
+END $$
+
+DELIMITER $$
+CREATE TRIGGER trg_AtualizarValorPedido
+AFTER INSERT ON tbItemPedido
+FOR EACH ROW
+BEGIN
+	UPDATE tbPedido SET ValorTotal = (SELECT SUM(SubTotal) FROM tbItemPedido WHERE IdPedido = NEW.IdPedido) WHERE IdPedido = NEW.IdPedido;
+END $$
+
+DELIMITER $$
+CREATE TRIGGER trg_AtualizarValorCarrinho
+AFTER INSERT ON tbItemCarrinho
+FOR EACH ROW
+BEGIN
+	UPDATE tbCarrinho SET ValorTotal = (SELECT COALESCE(SUM(SubTotal), 0) FROM tbItemCarrinho WHERE IdCarrinho = NEW.IdCarrinho) WHERE IdCarrinho = NEW.IdCarrinho;
+END $$
+
+DELIMITER $$
+CREATE TRIGGER trg_ConfirmarPagamento
+AFTER INSERT ON tbPagamento
+FOR EACH ROW
+BEGIN
+	IF NEW.StatusPagamento = 'Pago' THEN 
+		UPDATE tbPedido SET IdStatus = 2 WHERE IdPedido = NEW.IdPedido;
+    ELSEIF NEW.StatusPagamento = 'Cancelado' THEN
+		UPDATE tbPedido SET IdStatus = 5 WHERE IdPedido = NEW.IdPedido;
+	END IF;
+
+END $$    
+
+DELIMITER $$
+CREATE TRIGGER trg_GerarNotaFiscal
+AFTER INSERT ON tbPedido
+FOR EACH ROW
+BEGIN
+	INSERT INTO tbNotaFiscal(ValorTotal, DataEmissao, NumeroSerie, IdPedido) VALUES(NEW.ValorTotal, CURRENT_DATE(), FLOOR(RAND() * 1000000), NEW.IdPedido);
+END $$   
+
+
+CALL sp_CadastroEstado(@UFId, 'SP');
+SELECT * FROM tbEstado;
+
+CALL sp_CadastroCidade(@CidadeId, 'São Paulo', @UFId);
+SELECT * FROM tbCidade;
+
+CALL sp_CadastroBairro(@BairroId, 'Centro', @CidadeId);
+SELECT * FROM tbBairro;
+
+CALL sp_CadastroEndereco('Rua Teste', '12345678', 'SP', 'São Paulo', 'Centro');
+SELECT * FROM vwEndereco;
+
+CALL sp_CadastroUsuario(@IdUsuario,'12345678901', 'João da Silva', '20/02/2000', '(11)99999-9999', 'joao@email.com', 'senha123', '123', NULL, '12345678');
+SELECT * FROM tbUsuario;
+
+CALL sp_NivelUsuario(@IdUsuario, 3);
+SELECT * FROM vwUsu;
+
+CALL sp_CadastroFornecedor(@IdFornecedor, 'Fornecedor X', '12345678000199', '(11)98888-7777', 'fornecedor@teste.com', '12345678');
+SELECT * FROM tbFornecedor;
+
+CALL sp_CadastroMarca(@IdMarca, 'Hot Wheels', NULL);
+SELECT * FROM tbMarca;
+
+CALL sp_CadastroCategoria(@IdCategoria, 'Carros');
+SELECT * FROM tbCategoria;
+
+CALL sp_CadastroProduto(@IdProduto, @IdFornecedor, 'Camaro SS Miniatura', 250.00, '1:18', 500.00, 'Metal', 'Esportivo', 45, 20, 5, 'Miniatura réplica em escala 1:18.', @IdCategoria, @IdMarca);
+SELECT * FROM vwProduto;
+
+CALL sp_CadastroImagemProduto(@IdImg, @IdProduto, '/imagens/camaro.jpg');
+SELECT * FROM tbImagemProduto
+
+CALL sp_CriarPedido(@IdPedido, @IdUsuario, 1);
+SELECT * FROM vwPedido;
+
+CALL sp_AdicionarItemPedido(@IdPedido, 1, 2);
+SELECT * FROM tbItemPedido;
+
+CALL sp_CadastroCarrinho(@IdCarrinho, @IdUsuario);
+SELECT * FROM tbCarrinho;
+
+CALL sp_AdicionarItemCarrinho(@IdCarrinho, 1, 2);
+SELECT * FROM tbItemCarrinho;
+
+CALL sp_CadastrarCartao(@IdCartao, @IdUsuario, 'Visa', '1122', 'João da Silva', '10/2030', 'TOKEN123');
+SELECT * FROM tbCartao;
+
+CALL sp_RegistrarPagamento(@IdPag, @IdPedido, 'Cartão', 500.00, 'Pago', 'ABC123XYZ');
+SELECT * FROM tbPagamento;
+
+CALL sp_GerarPagamentoCartao(@IdPagamento, @IdPedido, @IdCartao, 500.00);
+SELECT * FROM tbPagamento;
