@@ -215,6 +215,10 @@ CREATE TABLE tbPagamento (
     CONSTRAINT fk_pagamento_pedido FOREIGN KEY (IdPedido) REFERENCES tbPedido(IdPedido)
 );
 
+ALTER TABLE tbPagamento
+ADD IdCartao INT NULL,
+ADD CONSTRAINT fk_pagamento_cartao FOREIGN KEY (IdCartao) REFERENCES tbCartao(IdCartao);
+
 -- TABELA CARTAO
 
 CREATE TABLE tbCartao (
