@@ -1,0 +1,44 @@
+﻿@model List<AutoCollections.Models.Produto>
+
+<div class="carrinho-container">
+
+    <div class="lista-produtos">
+        <h2>Produtos</h2>
+
+        @foreach (var item in Model)
+        {
+            <div class="produto-card">
+                <img class="produto-img" src="@item.ImgProduto" alt="@item.NomeProduto" />
+
+                <div class="produto-info">
+                    <h3>@item.NomeProduto</h3>
+                    <p>Cor: @item.Cor &nbsp;&nbsp;&nbsp; Escala: @item.Escala</p>
+                </div>
+
+                <div class="produto-qtd">
+                    <button class="btn-qtd">-</button>
+                    <span>@item.Quantidade</span>
+                    <button class="btn-qtd">+</button>
+                </div>
+
+                <div class="produto-preco">
+                    R$ @item.PrecoUnitario
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="resumo-compra">
+        <h3>Resumo da Compra</h3>
+
+        <div class="linha-resumo">
+            <span>Produtos (@ViewBag.QuantidadeTotal)</span>
+            <span class="valor">R$ @ViewBag.Total</span>
+        </div>
+
+        <button class="btn-finalizar">Finalizar Compra</button>
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="/css/Carrinho.css" />

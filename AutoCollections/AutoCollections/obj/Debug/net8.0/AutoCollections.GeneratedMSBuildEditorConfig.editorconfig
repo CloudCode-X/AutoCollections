@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\giova\Desktop\AutoCollections\AutoCollections\AutoCollections
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Carrinho/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmluaG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Categorias.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yaWFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Produto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdXRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Shared/Error.cshtml]

@@ -1,0 +1,37 @@
+﻿@model AutoCollections.Models.Produto
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="produto-container">
+
+    <div class="produto-imagens">
+        <img class="img-principal" src="@Model.ImgProduto[0]" alt="@Model.NomeProduto" />
+
+        <div class="imagens-minis">
+            @foreach (var img in Model.ImgProduto)
+            {
+                <img class="mini" src="@img" alt="@Model.NomeProduto" />
+            }
+        </div>
+    </div>
+
+    <div class="produto-dados">
+        <h2>@Model.NomeProduto</h2>
+
+        <div class="avaliacao">
+            <span>@Model.Avaliacao</span>
+            <span class="estrelas">★★★★★</span>
+        </div>
+
+        <h1 class="preco">R$ @Model.PrecoUnitario</h1>
+
+        <p class="descricao">@Model.Descricao</p>
+
+        <button class="btn-carrinho">Adicionar ao carrinho</button>
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="/css/Produto.css" />

@@ -1,0 +1,100 @@
+.carrinho-container {
+    display: flex;
+    gap: 40px;
+    margin: 40px;
+}
+
+.lista-produtos {
+    flex: 3;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+    .lista-produtos h2 {
+        margin-bottom: 20px;
+    }
+
+.produto-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dcdcdc;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.produto-img {
+    width: 150px;
+}
+
+.produto-info {
+    flex: 2;
+}
+
+    .produto-info h3 {
+        margin-bottom: 5px;
+    }
+
+.produto-qtd {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-qtd {
+    width: 28px;
+    height: 24px;
+    border: 1px solid #c76255;
+    background-color: white;
+    color: #c76255;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.produto-preco {
+    font-size: 20px;
+    font-weight: bold;
+    width: 120px;
+    text-align: right;
+}
+
+.resumo-compra {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 25px;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+    .resumo-compra h3 {
+        margin-bottom: 20px;
+    }
+
+.linha-resumo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.valor {
+    color: #b43e2b;
+    font-weight: bold;
+}
+
+.btn-finalizar {
+    width: 100%;
+    padding: 15px;
+    background-color: #8A1C0A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+    .btn-finalizar:hover {
+        background-color: #6c1508;
+    }

@@ -1,11 +1,36 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+﻿@model SeuProjeto.Models.LoginViewModel
+
+<div class="login-container">
+
+    <div class="login-texto">
+        <h1>Digite seu e-mail e senha<br />para iniciar sessão</h1>
+
+        <a class="btn-colaborador" href="/Conta/LoginColaborador">
+            Colaborador? Clique aqui
+        </a>
+    </div>
+
+    <div class="login-card">
+        <form method="post">
+
+            <label>E-mail:</label>
+            <input type="text" name="Email" class="input-text" />
+
+            <label>Senha:</label>
+            <input type="password" name="Senha" class="input-text" />
+
+            <a class="criar-conta" href="/Conta/CriarConta">Criar Conta</a>
+
+            <button type="submit" class="btn-continuar">Continuar</button>
+
+        </form>
+
+        @if (ViewBag.Erro != null)
+        {
+            <p class="erro">@ViewBag.Erro</p>
+        }
+    </div>
+
 </div>
-<label for="inputPassword5" class="form-label">Password</label>
-<input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+
+<link rel="stylesheet" href="/css/login.css" />
