@@ -329,8 +329,6 @@ BEGIN
 	INSERT INTO tbUsuario(CPF, Nome, DataNascimento, Telefone, Email, Senha, NumeroEndereco, ComplementoEndereco, Cep) 
     VALUES(vCPF, vNome, (STR_TO_DATE(vDataNascimento, '%d/%m/%Y')), vTelefone, vEmail, vSenha, vNumeroEndereco, vComplementoEndereco, vCep);
     
-    SELECT DATE_FORMAT(vDataNascimento, '%d/%m/%Y') AS DataNascimento;
-    
     SET vIdUsuario = LAST_INSERT_ID();
 END$$
 
@@ -658,56 +656,158 @@ BEGIN
 END $$   
 
 
-CALL sp_CadastroEstado(@UFId, 'SP');
+CALL sp_CadastroEstado(@UF1, 'SP');
+CALL sp_CadastroEstado(@UF2, 'RJ');
+CALL sp_CadastroEstado(@UF3, 'MG');
+CALL sp_CadastroEstado(@UF4, 'RS');
+CALL sp_CadastroEstado(@UF5, 'PR');
+CALL sp_CadastroEstado(@UF6, 'AL');
 SELECT * FROM tbEstado;
 
-CALL sp_CadastroCidade(@CidadeId, 'São Paulo', @UFId);
+CALL sp_CadastroCidade(@Cidade1, 'São Paulo', @UF1);
+CALL sp_CadastroCidade(@Cidade2, 'Rio de Janeiro', @UF2);
+CALL sp_CadastroCidade(@Cidade3, 'Belo Horizonte', @UF3);
+CALL sp_CadastroCidade(@Cidade4, 'Porto Alegre', @UF4);
+CALL sp_CadastroCidade(@Cidade5, 'Curitiba', @UF5);
+CALL sp_CadastroCidade(@Cidade6, 'Maceió', @UF6);
 SELECT * FROM tbCidade;
 
-CALL sp_CadastroBairro(@BairroId, 'Centro', @CidadeId);
+CALL sp_CadastroBairro(@Bairro1, 'Jardins', @Cidade1);
+CALL sp_CadastroBairro(@Bairro2, 'Ipanema', @Cidade2);
+CALL sp_CadastroBairro(@Bairro3, 'Savassi', @Cidade3);
+CALL sp_CadastroBairro(@Bairro4, 'Moinhos de Vento', @Cidade4);
+CALL sp_CadastroBairro(@Bairro5, 'Batel', @Cidade5);
+CALL sp_CadastroBairro(@Bairro6, 'Tabuleiro do Martins', @Cidade6);
 SELECT * FROM tbBairro;
 
-CALL sp_CadastroEndereco('Rua Teste', '12345678', 'SP', 'São Paulo', 'Centro');
+CALL sp_CadastroEndereco('Rua das Palmeiras', '16203127', 'SP', 'São Paulo', 'Jardins');
+CALL sp_CadastroEndereco('Av. Vieira Souto', '22420004', 'RJ', 'Rio de Janeiro', 'Ipanema');
+CALL sp_CadastroEndereco('Av. Afonso Pena', '34128910', 'MG', 'Belo Horizonte', 'Savassi');
+CALL sp_CadastroEndereco('Rua Padre Chagas', '90425590', 'RS', 'Porto Alegre', 'Moinhos de Vento');
+CALL sp_CadastroEndereco('Rua Joaquim Nabuco', '89720310', 'PR', 'Curitiba', 'Batel');
+CALL sp_CadastroEndereco('Rua José Lôbo de Medeiros', '57061100', 'AL', 'Maceió', 'Tabuleiro do Martins');
 SELECT * FROM vwEndereco;
 
-CALL sp_CadastroUsuario(@IdUsuario,'12345678901', 'João da Silva', '20/02/2000', '(11)99999-9999', 'joao@email.com', 'senha123', '123', NULL, '12345678');
+CALL sp_CadastroUsuario(@User1, '15492367885', 'Lucas Ferreira', '12/04/1990', '(11)98765-0001', 'lucas.ferreira@mail.com', '12345678', '12', 'Apto 101', '16203127');
+CALL sp_CadastroUsuario(@User2, '97513286570', 'Mariana Alves', '05/09/1985', '(21)98888-0002', 'mariana.alves@mail.com', 'mariana123', '200', NULL, '22420004');
+CALL sp_CadastroUsuario(@User3, '48393038759', 'Rafael Costa', '30/11/1992', '(31)97777-0003', 'rafael.costa@mail.com', 'rafinhaCosta', '5', NULL, '34128910');
+CALL sp_CadastroUsuario(@User4, '28174197079', 'Bianca Rocha', '18/07/1995', '(51)96666-0004', 'bianca.rocha@mail.com', '56123', '88', NULL, '90425590');
+CALL sp_CadastroUsuario(@User5, '19430170007', 'Leonardo Pires', '02/02/1988', '(41)95555-0005', 'leo.pires@mail.com', 'adolfo', '10', 'Bloco B', '16203127');
 SELECT * FROM tbUsuario;
 
-CALL sp_NivelUsuario(@IdUsuario, 3);
+
+CALL sp_NivelUsuario(@User1, 1);
+CALL sp_NivelUsuario(@User2, 2);
+CALL sp_NivelUsuario(@User3, 2);
+CALL sp_NivelUsuario(@User4, 3);
+CALL sp_NivelUsuario(@User5, 3);
 SELECT * FROM vwUsu;
 
-CALL sp_CadastroFornecedor(@IdFornecedor, 'Fornecedor X', '12345678000199', '(11)98888-7777', 'fornecedor@teste.com', '12345678');
+CALL sp_CadastroFornecedor(@For1, 'AutoParts Distribuição', '56103473000179', '(11)91234-0001', 'contato@autoparts.com', '57061100');
+CALL sp_CadastroFornecedor(@For2, 'Colecionáveis BR', '57548424000102', '(21)92345-0002', 'vendas@colecionaveis.com', '22041001'); -- criar
+CALL sp_CadastroFornecedor(@For3, 'MiniWorld Import', '71669202000179', '(31)93456-0003', 'import@miniworld.com', '30110010'); -- criar
+CALL sp_CadastroFornecedor(@For4, 'ScaleModels SA', '96121841000126', '(51)94567-0004', 'sac@scalemodels.com', '90420090'); -- criar
+CALL sp_CadastroFornecedor(@For5, 'PremiumDiecast', '62689228000198', '(41)95678-0005', 'suporte@premiumdiecast.com', '80020310'); -- criar
 SELECT * FROM tbFornecedor;
 
-CALL sp_CadastroMarca(@IdMarca, 'Hot Wheels', NULL);
+CALL sp_CadastroMarca(@IdMarcaA, 'Mercedes-Benz', './img/logoMercedes');
+CALL sp_CadastroMarca(@IdMarcaB, 'Porsche', '/logos/logoPorsche.png');
+CALL sp_CadastroMarca(@IdMarcaC, 'BMW', '/logos/logoBmw.png');
+CALL sp_CadastroMarca(@IdMarcaD, 'Audi', '/logos/logoAudi.png');
+CALL sp_CadastroMarca(@IdMarcaE, 'Lamborghini', '/logos/logoLamborghini.png');
 SELECT * FROM tbMarca;
 
-CALL sp_CadastroCategoria(@IdCategoria, 'Carros');
+CALL sp_CadastroCategoria(@IdCatA, 'Edição limitada');
+CALL sp_CadastroCategoria(@IdCatB, 'Pré-montado');
+CALL sp_CadastroCategoria(@IdCatC, 'Montável');
+CALL sp_CadastroCategoria(@IdCatD, 'Personalizáveis');
+CALL sp_CadastroCategoria(@IdCatE, 'Colecionáveis Vintage');
 SELECT * FROM tbCategoria;
 
-CALL sp_CadastroProduto(@IdProduto, @IdFornecedor, 'Camaro SS Miniatura', 250.00, '1:18', 500.00, 'Metal', 'Esportivo', 45, 20, 5, 'Miniatura réplica em escala 1:18.', @IdCategoria, @IdMarca);
+CALL sp_CadastroProduto(
+    @ProdA, @For1,
+    'Miniatura Mercedes-Benz 300 SL Gullwing', 549.90, '1:43', 320.00,
+    'Ferro', 'Edição limitada', 1, 11, 1,
+    'Miniatura Mercedes-Benz 300 SL “Gullwing” em ferro, edição de colecionador.', @IdCatA, @IdMarcaA
+);
+CALL sp_CadastroProduto(
+    @ProdB, @For2,
+    'Miniatura Porsche 356 Coupe', 289.90, '1:43', 200.00,
+    'Metal', 'Edição limitada', 1, 16, 1,
+    'Miniatura Lucky Porsche 356 1952 Escala 1/43. Ideal para colecionadores.', @IdCatA, @IdMarcaB
+);
+CALL sp_CadastroProduto(
+    @ProdC, @For3,
+    'Miniatura BMW M6 GT3', 289.90, '1:24', 450.00,
+    'Plástico', 'Edição limitada', 1, 13, 1,
+    'Miniatura BMW M6 GT3 com acabamento detalhado.', @IdCatA, @IdMarcaC
+);
+CALL sp_CadastroProduto(
+    @ProdD, @For4,
+    'Miniatura Audi Q7 (Madeira)', 1149.90, '1:18', 1200.00,
+    'Madeira', 'Pré-montado', 1, 6, 1,
+    'Miniatura Audi Q7 em madeira, acabamento premium.', @IdCatB, @IdMarcaD
+);
+CALL sp_CadastroProduto(
+    @ProdE, @For5,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
 SELECT * FROM vwProduto;
 
-CALL sp_CadastroImagemProduto(@IdImg, @IdProduto, '/imagens/camaro.jpg');
-SELECT * FROM tbImagemProduto
+CALL sp_CadastroImagemProduto(@ImgA, @ProdA, './img/miniMercedesSL');
+CALL sp_CadastroImagemProduto(@ImgB, @ProdB, '/assets/img/miniPorscheCoupe.png');
+CALL sp_CadastroImagemProduto(@ImgC, @ProdC, '/assets/img/miniBmwM6.png');
+CALL sp_CadastroImagemProduto(@ImgD, @ProdD, '/assets/img/miniAudiMadeira.png');
+CALL sp_CadastroImagemProduto(@ImgE, @ProdE, '/assets/img/miniLamboHybrid.png');
+SELECT * FROM tbImagemProduto;
 
-CALL sp_CriarPedido(@IdPedido, @IdUsuario, 1);
-SELECT * FROM vwPedido;
-
-CALL sp_AdicionarItemPedido(@IdPedido, 1, 2);
-SELECT * FROM tbItemPedido;
-
-CALL sp_CadastroCarrinho(@IdCarrinho, @IdUsuario);
-SELECT * FROM tbCarrinho;
-
-CALL sp_AdicionarItemCarrinho(@IdCarrinho, 1, 2);
+CALL sp_AdicionarItemCarrinho(@Cart1, @ProdA, 1);
+CALL sp_AdicionarItemCarrinho(@Cart2, @ProdB, 2);
+CALL sp_AdicionarItemCarrinho(@Cart3, @ProdC, 1);
+CALL sp_AdicionarItemCarrinho(@Cart4, @ProdD, 1);
+CALL sp_AdicionarItemCarrinho(@Cart5, @ProdE, 3);
 SELECT * FROM tbItemCarrinho;
 
-CALL sp_CadastrarCartao(@IdCartao, @IdUsuario, 'Visa', '1122', 'João da Silva', '10/2030', 'TOKEN123');
+CALL sp_CadastroCarrinho(@Cart1, @User1);
+CALL sp_CadastroCarrinho(@Cart2, @User2);
+CALL sp_CadastroCarrinho(@Cart3, @User3);
+CALL sp_CadastroCarrinho(@Cart4, @User4);
+CALL sp_CadastroCarrinho(@Cart5, @User5);
+SELECT * FROM tbCarrinho;
+
+CALL sp_CriarPedido(@Pedido1, @User1, 1);
+CALL sp_CriarPedido(@Pedido2, @User2, 1);
+CALL sp_CriarPedido(@Pedido3, @User3, 1);
+CALL sp_CriarPedido(@Pedido4, @User4, 1);
+CALL sp_CriarPedido(@Pedido5, @User5, 1);
+SELECT * FROM vwPedido;
+
+CALL sp_AdicionarItemPedido(@Pedido1, @ProdA, 1);
+CALL sp_AdicionarItemPedido(@Pedido2, @ProdB, 2);
+CALL sp_AdicionarItemPedido(@Pedido3, @ProdC, 1);
+CALL sp_AdicionarItemPedido(@Pedido4, @ProdD, 1);
+CALL sp_AdicionarItemPedido(@Pedido5, @ProdE, 2);
+SELECT * FROM tbItemPedido;
+
+CALL sp_CadastrarCartao(@Card1, @User1, 'Visa', '1234', 'Lucas Ferreira', '12/2030', '166');
+CALL sp_CadastrarCartao(@Card2, @User2, 'MasterCard', '2222', 'Mariana Alves', '11/2029', 'TOKEN_MARIANA_2');
+CALL sp_CadastrarCartao(@Card3, @User3, 'Visa', '3333', 'Rafael Costa', '10/2031', 'TOKEN_RAFAEL_3');
+CALL sp_CadastrarCartao(@Card4, @User4, 'Elo', '4444', 'Bianca Rocha', '09/2028', 'TOKEN_BIANCA_4');
+CALL sp_CadastrarCartao(@Card5, @User5, 'Amex', '5555', 'Gustavo Lima', '08/2032', 'TOKEN_GUSTAVO_5');
 SELECT * FROM tbCartao;
 
-CALL sp_RegistrarPagamento(@IdPag, @IdPedido, 'Cartão', 500.00, 'Pago', 'ABC123XYZ');
+CALL sp_GerarPagamentoCartao(@Pay1, @Pedido1, @Card1, 549.90);
+CALL sp_GerarPagamentoCartao(@Pay2, @Pedido2, @Card2, 579.80);
+CALL sp_GerarPagamentoCartao(@Pay3, @Pedido3, @Card3, 289.90);
+CALL sp_GerarPagamentoCartao(@Pay4, @Pedido4, @Card4, 1149.90);
+CALL sp_GerarPagamentoCartao(@Pay5, @Pedido5, @Card5, 879.80);
 SELECT * FROM tbPagamento;
 
-CALL sp_GerarPagamentoCartao(@IdPagamento, @IdPedido, @IdCartao, 500.00);
+CALL sp_RegistrarPagamento(@Reg1, @Pedido1, 'PIX', 549.90, 'Pago', 'PIX-2025001');
+CALL sp_RegistrarPagamento(@Reg2, @Pedido2, 'Boleto', 579.80, 'Pago', 'BOLETO-2025002');
+CALL sp_RegistrarPagamento(@Reg3, @Pedido3, 'PIX', 289.90, 'Pago', 'PIX-2025003');
+CALL sp_RegistrarPagamento(@Reg4, @Pedido4, 'Boleto', 1149.90, 'Pago', 'BOLETO-2025004');
+CALL sp_RegistrarPagamento(@Reg5, @Pedido5, 'PIX', 879.80, 'Pago', 'PIX-2025005');
 SELECT * FROM tbPagamento;
