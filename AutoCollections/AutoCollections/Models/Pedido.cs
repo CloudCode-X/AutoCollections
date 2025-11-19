@@ -14,9 +14,9 @@ namespace AutoCollections.Models
         public decimal ValorTotal { get; set; }
 
         [Display(Description = "Id do Cliente")]
-        public int IdCliente { get; set; }
+        public int IdUsuario { get; set; }
 
-        [Display(Description = "Status do Pedido")]
-        public string PedidoStatus { get; set; }
+        [Display(Description = "Id do Status")]
+        public int IdStatus { get; set; }
     }
 }

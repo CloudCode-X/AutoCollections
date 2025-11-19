@@ -12,11 +12,13 @@ namespace AutoCollections.Models
 
         [Display(Description = "Quantidade de Item")]
         public int QuantidadeProduto { get; set; }
+        
+        [Display(Description = "SubtTotal da quantidade de Itens")]
+        public decimal SubTotal { get; set; }
 
         [Display(Description = "Preço Unitário do Item")]
         public decimal PrecoUnitario { get; set; }
 
-        [Display(Description = "SubtTotal da quantidade de Itens")]
-        public decimal SubTotal { get; set; }
+        
     }
 }

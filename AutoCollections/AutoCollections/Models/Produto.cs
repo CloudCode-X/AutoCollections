@@ -30,24 +30,20 @@ namespace AutoCollections.Models
 
         [Display(Description = "Quantidade de peças do produto")]
         public int QuantidadePecas { get; set; }
-
-        [Display(Description = "Marca do produto")]
-        public string Marca { get; set; }
-
-        [Display(Description = "Imagem do produto")]
-        public string ImgProduto { get; set; }
-
-
-        [Display(Description = "Categoria do produto")]
-        public string Categoria { get; set; }
-
+        
         [Display(Description = "Quantidade do produto em estoque")]
         public int QuantidadeEstoque { get; set; }
 
-        [Display(Description = "Quantidade mínima do produto em estoque")]
-        public int QuantidadeMinima { get; set; }
+        [Display(Description = "Quantidade mínima do produto no estoque")]
+        public string QuantidadeMinima { get; set; }
 
         [Display(Description = "Descrição do produto")]
         public string Descricao { get; set; }
+
+        [Display(Description = "Id da Marca")]
+        public int IdMarca { get; set; }
+
+        [Display(Description = "Id da Categoria")]
+        public int IdCategoria { get; set; }
     }
 }

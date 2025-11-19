@@ -20,6 +20,6 @@ namespace AutoCollections.Models
         public string EmailFornecedor { get; set; }
 
         [Display(Description = "CEP do Fornecedor")]
-        public string CEP { get; set; }
+        public string CEPFornecedor { get; set; }
     }
 }

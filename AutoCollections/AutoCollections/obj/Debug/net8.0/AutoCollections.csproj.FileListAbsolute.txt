@@ -28,3 +28,16 @@ C:\Users\giova\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug
 C:\Users\giova\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.pdb
 C:\Users\giova\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.genruntimeconfig.cache
 C:\Users\giova\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\ref\AutoCollections.dll
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.AssemblyInfoInputs.cache
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.AssemblyInfo.cs
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.csproj.CoreCompileInputs.cache
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.RazorAssemblyInfo.cache
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.RazorAssemblyInfo.cs
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.sourcelink.json
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.dll
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\refint\AutoCollections.dll
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.pdb
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Téo\Desktop\AutoCollections\AutoCollections\AutoCollections\obj\Debug\net8.0\AutoCollections.csproj.AssemblyReference.cache

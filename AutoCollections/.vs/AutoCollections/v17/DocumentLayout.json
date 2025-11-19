@@ -1,114 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\",
+  "WorkspaceRootPath": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\views\\home\\produto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\home\\produto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\views\\carrinho\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\carrinho\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\wwwroot\\css\\carrinho.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\wwwroot\\css\\carrinho.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\wwwroot\\css\\produto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\wwwroot\\css\\produto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\itemcarrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\itemcarrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\itempedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\itempedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\t\u00E9o\\desktop\\autocollections\\autocollections\\autocollections\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\views\\home\\categorias.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\home\\categorias.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\views\\home\\marcas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\home\\marcas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\pagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\pagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\notafiscal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\notafiscal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\entrega.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\entrega.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\cartao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\cartao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\t\u00E9o\\desktop\\autocollections\\autocollections\\autocollections\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -118,344 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Produto.css",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\wwwroot\\css\\Produto.css",
-              "RelativeDocumentMoniker": "AutoCollections\\wwwroot\\css\\Produto.css",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\wwwroot\\css\\Produto.css",
-              "RelativeToolTip": "AutoCollections\\wwwroot\\css\\Produto.css",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAswFEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-18T21:00:17.755Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Carrinho.css",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\wwwroot\\css\\Carrinho.css",
-              "RelativeDocumentMoniker": "AutoCollections\\wwwroot\\css\\Carrinho.css",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\wwwroot\\css\\Carrinho.css",
-              "RelativeToolTip": "AutoCollections\\wwwroot\\css\\Carrinho.css",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAswGQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-18T20:59:59.713Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.css",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\wwwroot\\css\\Login.css",
-              "RelativeDocumentMoniker": "AutoCollections\\wwwroot\\css\\Login.css",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\wwwroot\\css\\Login.css",
-              "RelativeToolTip": "AutoCollections\\wwwroot\\css\\Login.css",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAswFAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-18T20:59:08.864Z",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Program.cs",
+              "RelativeDocumentMoniker": "AutoCollections\\Program.cs",
+              "ToolTip": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Program.cs",
+              "RelativeToolTip": "AutoCollections\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T00:29:50.784Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Produto.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Produto.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Home\\Produto.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Produto.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Home\\Produto.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-18T20:50:59.307Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Carrinho\\Index.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Carrinho\\Index.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Carrinho\\Index.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Carrinho\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACsAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-18T20:42:14.095Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CarrinhoController.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\CarrinhoController.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\CarrinhoController.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\CarrinhoController.cs",
-              "RelativeToolTip": "AutoCollections\\Controllers\\CarrinhoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T20:42:03.103Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Login.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Home\\Login.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Login.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Home\\Login.cshtml",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAwCQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-23T01:09:10.583Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ItemCarrinho.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\ItemCarrinho.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\ItemCarrinho.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\ItemCarrinho.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\ItemCarrinho.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T20:43:42.494Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Produto.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Produto.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Produto.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Produto.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Produto.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAwDIAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:53:15.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "AutoCollections\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "AutoCollections\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-22T23:28:45.283Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\appsettings.json",
               "RelativeDocumentMoniker": "AutoCollections\\appsettings.json",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\appsettings.json",
+              "ToolTip": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\appsettings.json",
               "RelativeToolTip": "AutoCollections\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-11-18T20:38:46.073Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "AutoCollections\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAmwCMAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:56:17.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Carrinho.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Carrinho.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Carrinho.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Carrinho.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Carrinho.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:43:55.835Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Marcas.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Marcas.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Home\\Marcas.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Marcas.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Home\\Marcas.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-23T00:28:51.633Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ItemPedido.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\ItemPedido.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\ItemPedido.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\ItemPedido.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\ItemPedido.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:50:13.887Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T23:48:36.501Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Categorias.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Categorias.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Home\\Categorias.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Categorias.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Home\\Categorias.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBkAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-23T00:35:37.35Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABYAAAAAAAAAAADwvyAAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T00:55:26.796Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Pedido.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Pedido.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Pedido.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Pedido.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Pedido.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBMAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:52:27.54Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Pagamento.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Pagamento.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Pagamento.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Pagamento.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Pagamento.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA8wBwAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:51:55.233Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "NotaFiscal.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\NotaFiscal.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\NotaFiscal.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\NotaFiscal.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\NotaFiscal.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:51:07.941Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Funcionario.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Funcionario.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Funcionario.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Funcionario.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Funcionario.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAuwCcAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:48:28.725Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Fornecedor.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Fornecedor.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Fornecedor.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Fornecedor.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Fornecedor.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBYAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:47:57.583Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Entrega.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Entrega.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Entrega.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Entrega.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Entrega.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAYwBYAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:47:23.657Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Endereco.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Endereco.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Endereco.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Endereco.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Endereco.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBkAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:46:48.673Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Cliente.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Cliente.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Cliente.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Cliente.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAkwCYAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:46:02.844Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Cartao.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Cartao.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Cartao.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Cartao.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Cartao.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAYwBwAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T00:44:35.461Z"
             }
           ]
         }

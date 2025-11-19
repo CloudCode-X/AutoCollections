@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\AutoCollections.csproj": {}
+    "C:\\Users\\Téo\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\AutoCollections.csproj": {}
   },
   "projects": {
-    "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\AutoCollections.csproj": {
+    "C:\\Users\\Téo\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\AutoCollections.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\AutoCollections.csproj",
+        "projectUniqueName": "C:\\Users\\Téo\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\AutoCollections.csproj",
         "projectName": "AutoCollections",
-        "projectPath": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\AutoCollections.csproj",
-        "packagesPath": "C:\\Users\\giova\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\obj\\",
+        "projectPath": "C:\\Users\\Téo\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\AutoCollections.csproj",
+        "packagesPath": "C:\\Users\\Téo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Téo\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\giova\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Téo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,11 +44,26 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.66, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.5.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -68,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

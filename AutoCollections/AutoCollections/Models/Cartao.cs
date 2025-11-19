@@ -8,7 +8,7 @@ namespace AutoCollections.Models
         public int IdCartao { get; set; }
 
         [Display(Description = "Código do Cliente")]
-        public int IdCliente { get; set; }
+        public int IdUsuario { get; set; }
 
         [Display(Description = "Bandeira do Cartão")]
         public string Bandeira { get; set; }
@@ -20,12 +20,12 @@ namespace AutoCollections.Models
         public string NomeTitular { get; set; }
 
         [Display(Description = "Validade do cartão em mês e ano")]
-        public string Validade { get; set; }
+        public string ValidadeMes { get; set; }
+
+        [Display(Description = "Token do Cartão")]
+        public int TokenCartao { get; set; }
 
         [Display(Description = "Data de cadastro do cartão")]
         public DateTime DataCadastro { get; set; }
-
-        [Display(Description = "Data de alguma atualização no cartão (vencimento ou exclusão)")]
-        public DateTime DataAtualizacao { get; set; }
     }
 }
