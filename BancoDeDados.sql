@@ -703,79 +703,183 @@ CALL sp_NivelUsuario(@User4, 3);
 CALL sp_NivelUsuario(@User5, 3);
 SELECT * FROM vwUsu;
 
-CALL sp_CadastroFornecedor(@For1, 'AutoParts Distribuição', '56103473000179', '(11)91234-0001', 'contato@autoparts.com', '57061100');
-CALL sp_CadastroFornecedor(@For2, 'Colecionáveis BR', '57548424000102', '(21)92345-0002', 'vendas@colecionaveis.com', '22041001'); -- criar
-CALL sp_CadastroFornecedor(@For3, 'MiniWorld Import', '71669202000179', '(31)93456-0003', 'import@miniworld.com', '30110010'); -- criar
-CALL sp_CadastroFornecedor(@For4, 'ScaleModels SA', '96121841000126', '(51)94567-0004', 'sac@scalemodels.com', '90420090'); -- criar
-CALL sp_CadastroFornecedor(@For5, 'PremiumDiecast', '62689228000198', '(41)95678-0005', 'suporte@premiumdiecast.com', '80020310'); -- criar
+CALL sp_CadastroFornecedor(@For1, 'AutoParts Distribuição', '56103473000179', '(11)91234-0001', 'contato@autoparts.com', '16203127');
+CALL sp_CadastroFornecedor(@For2, 'Colecionáveis BR', '57548424000102', '(21)92345-0002', 'vendas@colecionaveis.com', '22420004'); 
+CALL sp_CadastroFornecedor(@For3, 'MiniWorld Import', '71669202000179', '(31)93456-0003', 'import@miniworld.com', '34128910');
+CALL sp_CadastroFornecedor(@For4, 'ScaleModels SA', '96121841000126', '(51)94567-0004', 'sac@scalemodels.com', '90425590');
+CALL sp_CadastroFornecedor(@For5, 'PremiumDiecast', '62689228000198', '(41)95678-0005', 'suporte@premiumdiecast.com', '89720310');
 SELECT * FROM tbFornecedor;
 
-CALL sp_CadastroMarca(@IdMarcaA, 'Mercedes-Benz', './img/logoMercedes');
-CALL sp_CadastroMarca(@IdMarcaB, 'Porsche', '/logos/logoPorsche.png');
-CALL sp_CadastroMarca(@IdMarcaC, 'BMW', '/logos/logoBmw.png');
-CALL sp_CadastroMarca(@IdMarcaD, 'Audi', '/logos/logoAudi.png');
-CALL sp_CadastroMarca(@IdMarcaE, 'Lamborghini', '/logos/logoLamborghini.png');
+CALL sp_CadastroMarca(@IdMarca1, 'Mercedes-Benz', './img/logoMercedes');
+CALL sp_CadastroMarca(@IdMarca2, 'Porsche', '/logos/logoPorsche.png');
+CALL sp_CadastroMarca(@IdMarca3, 'BMW', '/logos/logoBmw.png');
+CALL sp_CadastroMarca(@IdMarca4, 'Audi', '/logos/logoAudi.png');
+CALL sp_CadastroMarca(@IdMarca5, 'Lamborghini', '/logos/logoLamborghini.png');
 SELECT * FROM tbMarca;
 
-CALL sp_CadastroCategoria(@IdCatA, 'Edição limitada');
-CALL sp_CadastroCategoria(@IdCatB, 'Pré-montado');
-CALL sp_CadastroCategoria(@IdCatC, 'Montável');
-CALL sp_CadastroCategoria(@IdCatD, 'Personalizáveis');
-CALL sp_CadastroCategoria(@IdCatE, 'Colecionáveis Vintage');
+CALL sp_CadastroCategoria(@IdCat1, 'Edição limitada');
+CALL sp_CadastroCategoria(@IdCat2, 'Pré-montado');
+CALL sp_CadastroCategoria(@IdCat3, 'Montável');
+CALL sp_CadastroCategoria(@IdCat4, 'Personalizáveis');
+CALL sp_CadastroCategoria(@IdCat5, 'Colecionáveis Vintage');
 SELECT * FROM tbCategoria;
 
 CALL sp_CadastroProduto(
-    @ProdA, @For1,
+    @Prod1, @For1,
     'Miniatura Mercedes-Benz 300 SL Gullwing', 549.90, '1:43', 320.00,
     'Ferro', 'Edição limitada', 1, 11, 1,
     'Miniatura Mercedes-Benz 300 SL “Gullwing” em ferro, edição de colecionador.', @IdCatA, @IdMarcaA
 );
 CALL sp_CadastroProduto(
-    @ProdB, @For2,
+    @Prod2, @For2,
     'Miniatura Porsche 356 Coupe', 289.90, '1:43', 200.00,
     'Metal', 'Edição limitada', 1, 16, 1,
     'Miniatura Lucky Porsche 356 1952 Escala 1/43. Ideal para colecionadores.', @IdCatA, @IdMarcaB
 );
 CALL sp_CadastroProduto(
-    @ProdC, @For3,
+    @Prod3, @For3,
     'Miniatura BMW M6 GT3', 289.90, '1:24', 450.00,
     'Plástico', 'Edição limitada', 1, 13, 1,
     'Miniatura BMW M6 GT3 com acabamento detalhado.', @IdCatA, @IdMarcaC
 );
 CALL sp_CadastroProduto(
-    @ProdD, @For4,
+    @Prod4, @For4,
     'Miniatura Audi Q7 (Madeira)', 1149.90, '1:18', 1200.00,
     'Madeira', 'Pré-montado', 1, 6, 1,
     'Miniatura Audi Q7 em madeira, acabamento premium.', @IdCatB, @IdMarcaD
 );
 CALL sp_CadastroProduto(
-    @ProdE, @For5,
+    @Prod5, @For5,
     'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
     'Metal', 'Edição limitada', 1, 39, 1,
     'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
 );
+CALL sp_CadastroProduto(
+    @Prod6, @For5,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod7, @For5,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod8, @For4,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod9, @For3,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod10, @For3,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod11, @For3,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod12, @For1,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod13, @For1,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod14, @For1,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod15, @For1,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod16, @For2,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod17, @For2,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod18, @For2,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod19, @For2,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
+CALL sp_CadastroProduto(
+    @Prod20, @For4,
+    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
+);
+
 SELECT * FROM vwProduto;
 
-CALL sp_CadastroImagemProduto(@ImgA, @ProdA, './img/miniMercedesSL');
-CALL sp_CadastroImagemProduto(@ImgB, @ProdB, '/assets/img/miniPorscheCoupe.png');
-CALL sp_CadastroImagemProduto(@ImgC, @ProdC, '/assets/img/miniBmwM6.png');
-CALL sp_CadastroImagemProduto(@ImgD, @ProdD, '/assets/img/miniAudiMadeira.png');
-CALL sp_CadastroImagemProduto(@ImgE, @ProdE, '/assets/img/miniLamboHybrid.png');
+CALL sp_CadastroImagemProduto(@Img1, @Prod1, './img/miniMercedesSL');
+CALL sp_CadastroImagemProduto(@Img2, @Prod2, '/assets/img/miniPorscheCoupe.png');
+CALL sp_CadastroImagemProduto(@Img3, @Prod3, '/assets/img/miniBmwM6.png');
+CALL sp_CadastroImagemProduto(@Img4, @Prod4, '/assets/img/miniAudiMadeira.png');
+CALL sp_CadastroImagemProduto(@Img5, @Prod5, '/assets/img/miniLamboHybrid.png');
 SELECT * FROM tbImagemProduto;
 
-CALL sp_AdicionarItemCarrinho(@Cart1, @ProdA, 1);
-CALL sp_AdicionarItemCarrinho(@Cart2, @ProdB, 2);
-CALL sp_AdicionarItemCarrinho(@Cart3, @ProdC, 1);
-CALL sp_AdicionarItemCarrinho(@Cart4, @ProdD, 1);
-CALL sp_AdicionarItemCarrinho(@Cart5, @ProdE, 3);
-SELECT * FROM tbItemCarrinho;
+CALL sp_CadastroCarrinho(@Carrinho1, 1);
+CALL sp_CadastroCarrinho(@Carrinho2, 2);
+CALL sp_CadastroCarrinho(@Carrinho3, 3);
+CALL sp_CadastroCarrinho(@Carrinho4, 4);
+CALL sp_CadastroCarrinho(@Carrinho5, 5);
 
-CALL sp_CadastroCarrinho(@Cart1, @User1);
-CALL sp_CadastroCarrinho(@Cart2, @User2);
-CALL sp_CadastroCarrinho(@Cart3, @User3);
-CALL sp_CadastroCarrinho(@Cart4, @User4);
-CALL sp_CadastroCarrinho(@Cart5, @User5);
-SELECT * FROM tbCarrinho;
+CALL sp_AdicionarItemCarrinho(1, @Prod1, 1);
+CALL sp_AdicionarItemCarrinho(2, @Prod2, 2);
+CALL sp_AdicionarItemCarrinho(3, @Prod3, 1);
+CALL sp_AdicionarItemCarrinho(4, @Prod4, 1);
+CALL sp_AdicionarItemCarrinho(5, @Prod5, 3);
+SELECT * FROM tbItemCarrinho;   
 
 CALL sp_CriarPedido(@Pedido1, @User1, 1);
 CALL sp_CriarPedido(@Pedido2, @User2, 1);
@@ -784,25 +888,25 @@ CALL sp_CriarPedido(@Pedido4, @User4, 1);
 CALL sp_CriarPedido(@Pedido5, @User5, 1);
 SELECT * FROM vwPedido;
 
-CALL sp_AdicionarItemPedido(@Pedido1, @ProdA, 1);
-CALL sp_AdicionarItemPedido(@Pedido2, @ProdB, 2);
-CALL sp_AdicionarItemPedido(@Pedido3, @ProdC, 1);
-CALL sp_AdicionarItemPedido(@Pedido4, @ProdD, 1);
-CALL sp_AdicionarItemPedido(@Pedido5, @ProdE, 2);
+CALL sp_AdicionarItemPedido(@Pedido1, @Prod1, 1);
+CALL sp_AdicionarItemPedido(@Pedido2, @Prod2, 2);
+CALL sp_AdicionarItemPedido(@Pedido3, @Prod3, 1);
+CALL sp_AdicionarItemPedido(@Pedido4, @Prod4, 1);
+CALL sp_AdicionarItemPedido(@Pedido5, @Prod5, 2);
 SELECT * FROM tbItemPedido;
 
-CALL sp_CadastrarCartao(@Card1, @User1, 'Visa', '1234', 'Lucas Ferreira', '12/2030', '166');
-CALL sp_CadastrarCartao(@Card2, @User2, 'MasterCard', '2222', 'Mariana Alves', '11/2029', 'TOKEN_MARIANA_2');
-CALL sp_CadastrarCartao(@Card3, @User3, 'Visa', '3333', 'Rafael Costa', '10/2031', 'TOKEN_RAFAEL_3');
-CALL sp_CadastrarCartao(@Card4, @User4, 'Elo', '4444', 'Bianca Rocha', '09/2028', 'TOKEN_BIANCA_4');
-CALL sp_CadastrarCartao(@Card5, @User5, 'Amex', '5555', 'Gustavo Lima', '08/2032', 'TOKEN_GUSTAVO_5');
+CALL sp_CadastrarCartao(@IdCarrinho1, @User1, 'Visa', '1234', 'Lucas Ferreira', '12/2030', '166');
+CALL sp_CadastrarCartao(@IdCarrinho2, @User2, 'MasterCard', '2222', 'Mariana Alves', '11/2029', 'TOKEN_MARIANA_2');
+CALL sp_CadastrarCartao(@IdCarrinho3, @User3, 'Visa', '3553', 'Rafael Costa', '10/2031', 'TOKEN_RAFAEL_3');
+CALL sp_CadastrarCartao(@IdCarrinho4, @User4, 'Elo', '4454', 'Bianca Rocha', '09/2028', 'TOKEN_BIANCA_4');
+CALL sp_CadastrarCartao(@IdCarrinho5, @User5, 'Amex', '1565', 'Leonardo Píres', '08/2032', 'TOKEN_GUSTAVO_5');
 SELECT * FROM tbCartao;
 
-CALL sp_GerarPagamentoCartao(@Pay1, @Pedido1, @Card1, 549.90);
-CALL sp_GerarPagamentoCartao(@Pay2, @Pedido2, @Card2, 579.80);
-CALL sp_GerarPagamentoCartao(@Pay3, @Pedido3, @Card3, 289.90);
-CALL sp_GerarPagamentoCartao(@Pay4, @Pedido4, @Card4, 1149.90);
-CALL sp_GerarPagamentoCartao(@Pay5, @Pedido5, @Card5, 879.80);
+CALL sp_GerarPagamentoCartao(@Pay1, @Pedido1, @IdCarrinho1, 549.90);
+CALL sp_GerarPagamentoCartao(@Pay2, @Pedido2, @IdCarrinho2, 579.80);
+CALL sp_GerarPagamentoCartao(@Pay3, @Pedido3, @IdCarrinho3, 289.90);
+CALL sp_GerarPagamentoCartao(@Pay4, @Pedido4, @IdCarrinho4, 1149.90);
+CALL sp_GerarPagamentoCartao(@Pay5, @Pedido5, @IdCarrinho5, 879.80);
 SELECT * FROM tbPagamento;
 
 CALL sp_RegistrarPagamento(@Reg1, @Pedido1, 'PIX', 549.90, 'Pago', 'PIX-2025001');
