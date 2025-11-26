@@ -1,4 +1,4 @@
-﻿@model List<AutoCollections.Models.Produto>
+﻿@model List<AutoCollections.Models.ProdutoViewModel>
 
 <div class="carrinho-container">
 
@@ -8,16 +8,16 @@
         @foreach (var item in Model)
         {
             <div class="produto-card">
-                <img class="produto-img" src="@item.ImgProduto" alt="@item.NomeProduto" />
+                <img class="produto-img" src="@item.CaminhoImagem" alt="@item.NomeProduto" />
 
                 <div class="produto-info">
                     <h3>@item.NomeProduto</h3>
-                    <p>Cor: @item.Cor &nbsp;&nbsp;&nbsp; Escala: @item.Escala</p>
+                    <p>Cor: @item.CorProduto &nbsp;&nbsp;&nbsp; Escala: @item.Escala</p>
                 </div>
 
                 <div class="produto-qtd">
                     <button class="btn-qtd">-</button>
-                    <span>@item.Quantidade</span>
+                    <span>Quantidade: @item.QuantidadeEstoque</span>
                     <button class="btn-qtd">+</button>
                 </div>
 

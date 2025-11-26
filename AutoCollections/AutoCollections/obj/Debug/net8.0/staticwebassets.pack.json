@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\AutoCollections.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\wwwroot\\css\\Carrinho.css",
+      "PackagePath": "staticwebassets\\css\\Carrinho.css"
+    },
+    {
+      "Id": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\wwwroot\\css\\Produto.css",
+      "PackagePath": "staticwebassets\\css\\Produto.css"
+    },
+    {
       "Id": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

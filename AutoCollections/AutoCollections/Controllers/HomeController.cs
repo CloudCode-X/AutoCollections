@@ -33,6 +33,11 @@ namespace AutoCollections.Controllers
             return View();
         }
 
+        public IActionResult LoginColaborador()
+        {
+            return View();
+        }
+
         public IActionResult Produto()
         {
             return View();

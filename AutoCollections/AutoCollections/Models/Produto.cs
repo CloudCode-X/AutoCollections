@@ -45,5 +45,8 @@ namespace AutoCollections.Models
 
         [Display(Description = "Id da Categoria")]
         public int IdCategoria { get; set; }
+
+        [Display(Description = "Cor do Produto")]
+        public string CorProduto { get; set; }
     }
 }

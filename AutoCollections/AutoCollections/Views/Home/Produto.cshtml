@@ -1,16 +1,13 @@
-﻿@model AutoCollections.Models.Produto
+﻿@model AutoCollections.Models.ProdutoViewModel
 
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
 
 <div class="produto-container">
 
     <div class="produto-imagens">
-        <img class="img-principal" src="@Model.ImgProduto[0]" alt="@Model.NomeProduto" />
+        <img class="img-principal" src="@Model.CaminhoImagem[0]" alt="@Model.NomeProduto" />
 
         <div class="imagens-minis">
-            @foreach (var img in Model.ImgProduto)
+            @foreach (var img in Model.CaminhoImagem)
             {
                 <img class="mini" src="@img" alt="@Model.NomeProduto" />
             }
@@ -21,7 +18,7 @@
         <h2>@Model.NomeProduto</h2>
 
         <div class="avaliacao">
-            <span>@Model.Avaliacao</span>
+            <span></span>
             <span class="estrelas">★★★★★</span>
         </div>
 
