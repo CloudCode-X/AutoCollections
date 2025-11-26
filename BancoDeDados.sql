@@ -43,12 +43,12 @@ CREATE TABLE tbEndereco (
 
 CREATE TABLE tbUsuario (
     IdUsuario INT PRIMARY KEY AUTO_INCREMENT,
-    CPF CHAR(11) NOT NULL,
-    Nome VARCHAR(150) NOT NULL,
+    CPFUsuario CHAR(11) NOT NULL,
+    NomeUsuario VARCHAR(150) NOT NULL,
     DataNascimento DATE NOT NULL,
-    Telefone VARCHAR(15) NOT NULL,
-    Email VARCHAR(150) NOT NULL UNIQUE,
-    Senha VARCHAR(100) NOT NULL,
+    TelefoneUsuario VARCHAR(15) NOT NULL,
+    EmailUsuario VARCHAR(150) NOT NULL UNIQUE,
+    SenhaUsuario VARCHAR(100) NOT NULL,
     NumeroEndereco CHAR(6) NOT NULL,
     ComplementoEndereco VARCHAR(50),
     Cep CHAR(8) NOT NULL,
@@ -100,7 +100,7 @@ CREATE TABLE tbMarca (
     NomeMarca VARCHAR(50) NOT NULL,
     LogoMarca VARCHAR(255) NULL
 );
-
+ 
 -- TABELA PRODUTO
 
 CREATE TABLE tbProduto (
@@ -231,6 +231,8 @@ CREATE TABLE tbCartao (
 );
 
 ALTER TABLE tbPagamento ADD IdCartao INT NULL, ADD CONSTRAINT fk_pagamento_cartao FOREIGN KEY (IdCartao) REFERENCES tbCartao(IdCartao);
+ALTER TABLE tbMarca ADD DescricaoMarca VARCHAR(150) NOT NULL;
+ALTER TABLE tbCategoria ADD DescricaoCategiria VARCHAR(150) NOT NULL;
 -- Procedures 
 
 -- procedure para adicionar a estado
@@ -304,7 +306,6 @@ BEGIN
     INSERT INTO tbEndereco(Logradouro, CEP, IdUf, IdCidade, IdBairro) VALUES (vLogradouro, vCEP, vUFId, vCidadeId, vBairroId);
     
 END $$
-
 CREATE OR REPLACE VIEW vwEndereco AS
 SELECT  e.Logradouro, e.CEP, e.IdUF, es.UF AS Estado, e.IdCidade, c.Cidade AS Cidade, e.IdBairro, b.Bairro AS Bairro
 FROM tbEndereco e INNER JOIN tbEstado es ON e.IdUF = es.UFId INNER JOIN tbCidade c ON e.IdCidade = c.CidadeId INNER JOIN tbBairro b ON e.IdBairro = b.BairroId;
@@ -380,10 +381,11 @@ DELIMITER $$
 CREATE PROCEDURE sp_CadastroMarca(
 	OUT vIdMarca INT,
     IN vNomeMarca VARCHAR(50),
-    IN vLogoMarca VARCHAR(255)
+    IN vLogoMarca VARCHAR(255),
+    IN vDescricaoMarca VARCHAR(150)
 )
 BEGIN
-	INSERT INTO tbMarca(NomeMarca, LogoMarca) VALUES (vNomeMarca, vLogoMarca);
+	INSERT INTO tbMarca(NomeMarca, LogoMarca, Descricao) VALUES (vNomeMarca, vLogoMarca, vDescricao);
     
     SET vIdMarca = LAST_INSERT_ID();
 END$$
@@ -396,10 +398,11 @@ SELECT * FROM tbMarca;
 DELIMITER $$
 CREATE PROCEDURE sp_CadastroCategoria(
 	OUT vIdCategoria INT,
-    IN vNomeCategoria VARCHAR(50)
+    IN vNomeCategoria VARCHAR(50),
+    IN vDescricaoCategoria VARCHAR(150)
 )
 BEGIN
-	INSERT INTO tbCategoria(NomeCategoria) VALUES (vNomeCategoria);
+	INSERT INTO tbCategoria(NomeCategoria, DescricaoCategoria) VALUES (vNomeCategoria, vDescricaoCategoria);
     
     SET vIdCategoria = LAST_INSERT_ID();
 END $$
@@ -438,7 +441,7 @@ SELECT p.IdProduto, p.NomeProduto, p.PrecoUnitario, p.Escala, p.Peso, p.Material
 FROM tbProduto p INNER JOIN tbCategoria c on p.IdCategoria = c.IdCategoria
 				INNER JOIN tbMarca m on p.IdMarca = m.IdMarca
                 INNER JOIN tbFornecedor f on p.IdFornecedor = f.IdFornecedor;
-
+                
 SELECT * FROM vwProduto;
 
 -- procedure para o cadastro de imagens
@@ -653,6 +656,9 @@ BEGIN
 	INSERT INTO tbNotaFiscal(ValorTotal, DataEmissao, NumeroSerie, IdPedido) VALUES(NEW.ValorTotal, CURRENT_DATE(), FLOOR(RAND() * 1000000), NEW.IdPedido);
 END $$   
 
+-- CALLS
+
+-- CALLS na procedure CadastroEstado
 
 CALL sp_CadastroEstado(@UF1, 'SP');
 CALL sp_CadastroEstado(@UF2, 'RJ');
@@ -660,7 +666,12 @@ CALL sp_CadastroEstado(@UF3, 'MG');
 CALL sp_CadastroEstado(@UF4, 'RS');
 CALL sp_CadastroEstado(@UF5, 'PR');
 CALL sp_CadastroEstado(@UF6, 'AL');
-SELECT * FROM tbEstado;
+SELECT 
+    *
+FROM
+    tbEstado;
+
+-- CALLS na procedure CadastroCidade
 
 CALL sp_CadastroCidade(@Cidade1, 'São Paulo', @UF1);
 CALL sp_CadastroCidade(@Cidade2, 'Rio de Janeiro', @UF2);
@@ -670,6 +681,8 @@ CALL sp_CadastroCidade(@Cidade5, 'Curitiba', @UF5);
 CALL sp_CadastroCidade(@Cidade6, 'Maceió', @UF6);
 SELECT * FROM tbCidade;
 
+-- CALLS na procedure CadastroBairro
+
 CALL sp_CadastroBairro(@Bairro1, 'Jardins', @Cidade1);
 CALL sp_CadastroBairro(@Bairro2, 'Ipanema', @Cidade2);
 CALL sp_CadastroBairro(@Bairro3, 'Savassi', @Cidade3);
@@ -677,6 +690,8 @@ CALL sp_CadastroBairro(@Bairro4, 'Moinhos de Vento', @Cidade4);
 CALL sp_CadastroBairro(@Bairro5, 'Batel', @Cidade5);
 CALL sp_CadastroBairro(@Bairro6, 'Tabuleiro do Martins', @Cidade6);
 SELECT * FROM tbBairro;
+
+-- CALLS na procedure CadastroEndereco
 
 CALL sp_CadastroEndereco('Rua das Palmeiras', '16203127', 'SP', 'São Paulo', 'Jardins');
 CALL sp_CadastroEndereco('Av. Vieira Souto', '22420004', 'RJ', 'Rio de Janeiro', 'Ipanema');
@@ -686,12 +701,16 @@ CALL sp_CadastroEndereco('Rua Joaquim Nabuco', '89720310', 'PR', 'Curitiba', 'Ba
 CALL sp_CadastroEndereco('Rua José Lôbo de Medeiros', '57061100', 'AL', 'Maceió', 'Tabuleiro do Martins');
 SELECT * FROM vwEndereco;
 
+-- CALLS na procedure CadastroUsuario
+
 CALL sp_CadastroUsuario(@User1, '15492367885', 'Lucas Ferreira', '12/04/1990', '(11)98765-0001', 'lucas.ferreira@mail.com', '12345678', '12', 'Apto 101', '16203127');
 CALL sp_CadastroUsuario(@User2, '97513286570', 'Mariana Alves', '05/09/1985', '(21)98888-0002', 'mariana.alves@mail.com', 'mariana123', '200', NULL, '22420004');
 CALL sp_CadastroUsuario(@User3, '48393038759', 'Rafael Costa', '30/11/1992', '(31)97777-0003', 'rafael.costa@mail.com', 'rafinhaCosta', '5', NULL, '34128910');
 CALL sp_CadastroUsuario(@User4, '28174197079', 'Bianca Rocha', '18/07/1995', '(51)96666-0004', 'bianca.rocha@mail.com', '56123', '88', NULL, '90425590');
 CALL sp_CadastroUsuario(@User5, '19430170007', 'Leonardo Pires', '02/02/1988', '(41)95555-0005', 'leo.pires@mail.com', 'adolfo', '10', 'Bloco B', '16203127');
 SELECT * FROM tbUsuario;
+
+-- CALLS na procedure NivelUsuario
 
 CALL sp_NivelUsuario(@User1, 1);
 CALL sp_NivelUsuario(@User2, 2);
@@ -700,12 +719,16 @@ CALL sp_NivelUsuario(@User4, 3);
 CALL sp_NivelUsuario(@User5, 3);
 SELECT * FROM vwUsu;
 
+-- CALLS na procedure CadastroFornecedor
+
 CALL sp_CadastroFornecedor(@For1, 'AutoParts Distribuição', '56103473000179', '(11)91234-0001', 'contato@autoparts.com', '16203127');
 CALL sp_CadastroFornecedor(@For2, 'Colecionáveis BR', '57548424000102', '(21)92345-0002', 'vendas@colecionaveis.com', '22420004'); 
 CALL sp_CadastroFornecedor(@For3, 'MiniWorld Import', '71669202000179', '(31)93456-0003', 'import@miniworld.com', '34128910');
 CALL sp_CadastroFornecedor(@For4, 'ScaleModels SA', '96121841000126', '(51)94567-0004', 'sac@scalemodels.com', '90425590');
 CALL sp_CadastroFornecedor(@For5, 'PremiumDiecast', '62689228000198', '(41)95678-0005', 'suporte@premiumdiecast.com', '89720310');
 SELECT * FROM tbFornecedor;
+
+-- CALLS na procedure CadastroMarca
 
 CALL sp_CadastroMarca(@IdMarca1, 'Mercedes-Benz', './img/logoMercedes');
 CALL sp_CadastroMarca(@IdMarca2, 'Porsche', '/logos/logoPorsche.png');
@@ -714,12 +737,16 @@ CALL sp_CadastroMarca(@IdMarca4, 'Audi', '/logos/logoAudi.png');
 CALL sp_CadastroMarca(@IdMarca5, 'Lamborghini', '/logos/logoLamborghini.png');
 SELECT * FROM tbMarca;
 
+-- CALLS na procedure CadastroCategoria
+
 CALL sp_CadastroCategoria(@IdCat1, 'Edição limitada');
 CALL sp_CadastroCategoria(@IdCat2, 'Pré-montado');
 CALL sp_CadastroCategoria(@IdCat3, 'Montável');
 CALL sp_CadastroCategoria(@IdCat4, 'Personalizáveis');
 CALL sp_CadastroCategoria(@IdCat5, 'Colecionáveis Vintage');
 SELECT * FROM tbCategoria;
+
+-- CALLS na procedure CadastroProduto
 
 CALL sp_CadastroProduto(
     @Prod1, @For1,
@@ -859,6 +886,8 @@ CALL sp_CadastroProduto(
 
 SELECT * FROM vwProduto;
 
+-- CALLS na procedure CadastroImagemProduto
+
 CALL sp_CadastroImagemProduto(@Img1, @Prod1, './img/miniMercedesSL');
 CALL sp_CadastroImagemProduto(@Img2, @Prod2, '/assets/img/miniPorscheCoupe.png');
 CALL sp_CadastroImagemProduto(@Img3, @Prod3, '/assets/img/miniBmwM6.png');
@@ -866,11 +895,15 @@ CALL sp_CadastroImagemProduto(@Img4, @Prod4, '/assets/img/miniAudiMadeira.png');
 CALL sp_CadastroImagemProduto(@Img5, @Prod5, '/assets/img/miniLamboHybrid.png');
 SELECT * FROM tbImagemProduto;
 
+-- CALLS na procedure CadastroCarrinho
+
 CALL sp_CadastroCarrinho(@Carrinho1, 1);
 CALL sp_CadastroCarrinho(@Carrinho2, 2);
 CALL sp_CadastroCarrinho(@Carrinho3, 3);
 CALL sp_CadastroCarrinho(@Carrinho4, 4);
 CALL sp_CadastroCarrinho(@Carrinho5, 5);
+
+-- CALLS na procedure AdicionarItemCarrinho
 
 CALL sp_AdicionarItemCarrinho(1, @Prod1, 1);
 CALL sp_AdicionarItemCarrinho(2, @Prod2, 2);
@@ -879,12 +912,16 @@ CALL sp_AdicionarItemCarrinho(4, @Prod4, 1);
 CALL sp_AdicionarItemCarrinho(5, @Prod5, 3);
 SELECT * FROM tbItemCarrinho;   
 
+-- CALLS na procedure CriarPedido
+
 CALL sp_CriarPedido(@Pedido1, @User1, 1);
 CALL sp_CriarPedido(@Pedido2, @User2, 1);
 CALL sp_CriarPedido(@Pedido3, @User3, 1);
 CALL sp_CriarPedido(@Pedido4, @User4, 1);
 CALL sp_CriarPedido(@Pedido5, @User5, 1);
 SELECT * FROM vwPedido;
+
+-- CALLS na procedure AdicionarItemPedido
 
 CALL sp_AdicionarItemPedido(@Pedido1, @Prod1, 1);
 CALL sp_AdicionarItemPedido(@Pedido2, @Prod2, 2);
@@ -893,6 +930,8 @@ CALL sp_AdicionarItemPedido(@Pedido4, @Prod4, 1);
 CALL sp_AdicionarItemPedido(@Pedido5, @Prod5, 2);
 SELECT * FROM tbItemPedido;
 
+-- CALLS na procedure CadastrarCartao
+
 CALL sp_CadastrarCartao(@IdCarrinho1, @User1, 'Visa', '1234', 'Lucas Ferreira', '12/2030', '166');
 CALL sp_CadastrarCartao(@IdCarrinho2, @User2, 'MasterCard', '2222', 'Mariana Alves', '11/2029', 'TOKEN_MARIANA_2');
 CALL sp_CadastrarCartao(@IdCarrinho3, @User3, 'Visa', '3553', 'Rafael Costa', '10/2031', 'TOKEN_RAFAEL_3');
@@ -900,12 +939,16 @@ CALL sp_CadastrarCartao(@IdCarrinho4, @User4, 'Elo', '4454', 'Bianca Rocha', '09
 CALL sp_CadastrarCartao(@IdCarrinho5, @User5, 'Amex', '1565', 'Leonardo Píres', '08/2032', 'TOKEN_GUSTAVO_5');
 SELECT * FROM tbCartao;
 
+-- CALLS na procedure GerarPagamentoCartao
+
 CALL sp_GerarPagamentoCartao(@Pay1, @Pedido1, @IdCarrinho1, 549.90);
 CALL sp_GerarPagamentoCartao(@Pay2, @Pedido2, @IdCarrinho2, 579.80);
 CALL sp_GerarPagamentoCartao(@Pay3, @Pedido3, @IdCarrinho3, 289.90);
 CALL sp_GerarPagamentoCartao(@Pay4, @Pedido4, @IdCarrinho4, 1149.90);
 CALL sp_GerarPagamentoCartao(@Pay5, @Pedido5, @IdCarrinho5, 879.80);
 SELECT * FROM tbPagamento;
+
+-- CALLS na procedure RegistrarPagamento
 
 CALL sp_RegistrarPagamento(@Reg1, @Pedido1, 'PIX', 549.90, 'Pago', 'PIX-2025001');
 CALL sp_RegistrarPagamento(@Reg2, @Pedido2, 'Boleto', 579.80, 'Pago', 'BOLETO-2025002');
