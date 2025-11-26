@@ -1,0 +1,34 @@
+﻿@model AutoCollections.Models.Usuario
+
+<div class="login-container">
+
+    <div class="login-texto">
+        <h1>Digite seu e-mail e senha<br />para iniciar sessão</h1>
+
+        <a class="btn-colaborador" asp-controller="Login" asp-action="LoginColaborador">Colaborador? Clique aqui</a>
+    </div>
+
+    <div class="login-card">
+        <form method="post">
+
+            <label>E-mail:</label>
+            <input type="text" name="Email" class="input-text" />
+
+            <label>Senha:</label>
+            <input type="password" name="Senha" class="input-text" />
+
+            <a class="criar-conta" href="/Conta/CriarConta">Criar Conta</a>
+
+            <button type="submit" class="btn-continuar">Continuar</button>
+
+        </form>
+
+        @if (ViewBag.Erro != null)
+        {
+            <p class="erro">@ViewBag.Erro</p>
+        }
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="/css/login.css" />
