@@ -1,0 +1,33 @@
+﻿@model AutoCollections.Models.Funcionario
+
+
+<div class="login-container">
+
+    <div class="login-texto">
+        <h1>Digite seu e-mail e senha<br />para iniciar sessão como <br />Colaborador</h1>
+    </div>
+
+    <div class="login-card">
+        <form method="post">
+
+            <label>E-mail:</label>
+            <input type="text" name="Email" class="input-text" />
+
+            <label>Senha:</label>
+            <input type="password" name="Senha" class="input-text" />
+
+            
+
+            <button type="submit" class="btn-continuar">Continuar</button>
+
+        </form>
+
+        @if (ViewBag.Erro != null)
+        {
+            <p class="erro">@ViewBag.Erro</p>
+        }
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="/css/login.css" />
