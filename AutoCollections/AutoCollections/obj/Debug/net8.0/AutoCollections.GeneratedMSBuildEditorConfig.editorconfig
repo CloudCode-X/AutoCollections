@@ -9,63 +9,65 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AutoCollections
 build_property.RootNamespace = AutoCollections
-build_property.ProjectDir = C:\Users\giova\Desktop\AutoCollections\AutoCollections\AutoCollections\
+build_property.ProjectDir = C:\Users\3ds\Desktop\AutoCollections\AutoCollections\AutoCollections\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\giova\Desktop\AutoCollections\AutoCollections\AutoCollections
+build_property.MSBuildProjectDirectory = C:\Users\3ds\Desktop\AutoCollections\AutoCollections\AutoCollections
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Carrinho/Index.cshtml]
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Carrinho/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmluaG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Categorias.cshtml]
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Categorias.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yaWFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Index.cshtml]
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/LoginColaborador.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbkNvbGFib3JhZG9yLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Marcas.cshtml]
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Marcas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYXJjYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Privacy.cshtml]
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Produto.cshtml]
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Home/Produto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdXRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Shared/Error.cshtml]
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Login/LoginColaborador.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5Db2xhYm9yYWRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/_ViewImports.cshtml]
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/_ViewStart.cshtml]
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giova/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Shared/_Layout.cshtml]
+[C:/Users/3ds/Desktop/AutoCollections/AutoCollections/AutoCollections/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-c6h2kqnm35
