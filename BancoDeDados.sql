@@ -98,7 +98,7 @@ CREATE TABLE tbCategoria(
 CREATE TABLE tbMarca (
     IdMarca INT PRIMARY KEY AUTO_INCREMENT,
     NomeMarca VARCHAR(50) NOT NULL,
-    LogoMarca VARCHAR(255) NULL,
+    LogoMarca VARCHAR(255) NULL
 );
  
 -- TABELA PRODUTO
@@ -330,7 +330,7 @@ CREATE PROCEDURE sp_CadastroUsuario(
 )
 BEGIN
 	INSERT INTO tbUsuario(CPFUsuario, NomeUsuario, DataNascimento, TelefoneUsuario, EmailUsuario, SenhaUsuario, NumeroEndereco, ComplementoEndereco, Cep) 
-    VALUES(vCPFUsuario, vNomeUsuario, (STR_TO_DATE(vDataNascimento, '%d/%m/%Y')), vTelefoneUsuario, vEmailUsuario, vSenha, vNumeroEndereco, vComplementoEndereco, vCep);
+    VALUES(vCPFUsuario, vNomeUsuario, (STR_TO_DATE(vDataNascimento, '%d/%m/%Y')), vTelefoneUsuario, vEmailUsuario, vSenhaUsuario, vNumeroEndereco, vComplementoEndereco, vCep);
     
     SET vIdUsuario = LAST_INSERT_ID();
 END$$
@@ -726,19 +726,19 @@ SELECT * FROM vwUsu;
 
 CALL sp_CadastroFornecedor(@For1, 'AutoParts Distribuição', '56103473000179', '(11)91234-0001', 'contato@autoparts.com', '01305000'); -- Consolação
 CALL sp_CadastroFornecedor(@For2, 'Colecionáveis BR', '57548424000102', '(21)92345-0002', 'vendas@colecionaveis.com', '22021000'); -- Copacabana
-CALL sp_CadastroFornecedor(@For3, 'MiniWorld Import', '71669202000179', '(31)93456-0003', 'import@miniworld.com', '3013000'); -- Centro
+CALL sp_CadastroFornecedor(@For3, 'MiniWorld Import', '71669202000179', '(31)93456-0003', 'import@miniworld.com', '30130001'); -- Centro
 CALL sp_CadastroFornecedor(@For4, 'ScaleModels SA', '96121841000126', '(51)94567-0004', 'sac@scalemodels.com', '90570020'); -- Floresta
 CALL sp_CadastroFornecedor(@For5, 'PremiumDiecast', '62689228000198', '(41)95678-0005', 'suporte@premiumdiecast.com', '80010000'); --  Centro
 SELECT * FROM tbFornecedor;
 
 -- CALLS na procedure CadastroMarca
 
-CALL sp_CadastroMarca(@IdMarca1, 'Mercedes-Benz', './img/logoMercedes', 'Marca alemã tradicional, conhecida por luxo, conforto e tecnologia avançada. Famosa por sedãs executivos e SUVs premium.');
-CALL sp_CadastroMarca(@IdMarca2, 'Porsche', '/logos/logoPorsche.png', 'Especialista alemã em esportivos de alto desempenho. Ícone pela precisão, engenharia e pelo clássico 911.');
-CALL sp_CadastroMarca(@IdMarca3, 'BMW', '/logos/logoBmw.png',  'Marca alemã focada em performance e dirigibilidade. Conhecida pelo slogan “prazer em dirigir” e por carros esportivos e premium.');
-CALL sp_CadastroMarca(@IdMarca4, 'Audi', '/logos/logoAudi.png', 'Mistura tecnologia, design moderno e tração quattro. Famosa por interiores refinados e pela identidade visual com luzes marcantes.');
-CALL sp_CadastroMarca(@IdMarca5, 'Lamborghini', '/logos/logoLamborghini.png', 'Marca italiana de supercarros agressivos e de alta performance. Conhecida pelo design extravagante e motores V10/V12.');
-CALL sp_CadastroMarca(@IdMarca6, 'Maserati', '/logos/logoMaserati.png', 'Italiana de luxo esportivo, combinando elegância e desempenho. Se destaca pelo estilo sofisticado e som característico do motor.');
+CALL sp_CadastroMarca(@IdMarca1, 'Mercedes-Benz', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/567px-Mercedes-Logo.svg.png?20230111203159', 'Marca alemã tradicional, conhecida por luxo, conforto e tecnologia avançada. Famosa por sedãs executivos e SUVs premium.');
+CALL sp_CadastroMarca(@IdMarca2, 'Porsche', 'https://upload.wikimedia.org/wikipedia/de/thumb/7/70/Porsche_Logo.svg/500px-Porsche_Logo.svg.png?20250407095904', 'Especialista alemã em esportivos de alto desempenho. Ícone pela precisão, engenharia e pelo clássico 911.');
+CALL sp_CadastroMarca(@IdMarca3, 'BMW', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/1024px-BMW.svg.png',  'Marca alemã focada em performance e dirigibilidade. Conhecida pelo slogan “prazer em dirigir” e por carros esportivos e premium.');
+CALL sp_CadastroMarca(@IdMarca4, 'Audi', 'https://toppng.com/uploads/preview/audi-car-logo-11530962094iugeww1llh.png', 'Mistura tecnologia, design moderno e tração quattro. Famosa por interiores refinados e pela identidade visual com luzes marcantes.');
+CALL sp_CadastroMarca(@IdMarca5, 'Lamborghini', 'https://e7.pngegg.com/pngimages/259/599/png-clipart-lamborghini-logo-lamborghini-sports-car-audi-logo-lamborghini-emblem-car-thumbnail.png', 'Marca italiana de supercarros agressivos e de alta performance. Conhecida pelo design extravagante e motores V10/V12.');
+CALL sp_CadastroMarca(@IdMarca6, 'Maserati', 'https://logosmarcas.net/wp-content/uploads/2021/04/Maserati-Logo.png', 'Italiana de luxo esportivo, combinando elegância e desempenho. Se destaca pelo estilo sofisticado e som característico do motor.');
 SELECT * FROM tbMarca;
 
 -- CALLS na procedure CadastroCategoria
@@ -759,17 +759,26 @@ CALL sp_CadastroProduto(
 );
 
 CALL sp_CadastroProduto(
+    @Prod2, @For1,
+    'Miniatura Lamborghini Countach', 349.90, '1:64', 100.00,
+    'Plástico', 'Pré-Montado', 1, 42, 1,
+    'O Lamborghini Countach foi um automóvel superesportivo produzido pela Lamborghini, na Itália. O primeiro protótipo surgiu em 1971, e aprodução durou até 1990. Feito em Plástico',
+    @IdCat1, @IdMarca1
+);
+
+CALL sp_CadastroProduto(
     @Prod1, @For1,
-    'Miniatura Mercedes-Benz 300 SL Gullwing', 549.90, '1:43', 320.00,
-    'Ferro', 'Edição limitada', 1, 11, 1,
-    'Miniatura Mercedes-Benz 300 SL “Gullwing” em ferro, edição de colecionador.', @IdCat1, @IdMarca1
+    'Miniatura Lamborghini Countach', 349.90, '1:64', 100.00,
+    'Plástico', 'Pré-Montado', 1, 42, 1,
+    'O Lamborghini Countach foi um automóvel superesportivo produzido pela Lamborghini, na Itália. O primeiro protótipo surgiu em 1971, e aprodução durou até 1990. Feito em Plástico',
+    @IdCat1, @IdMarca1
 );
 
 SELECT * FROM vwProduto;
 
 -- CALLS na procedure CadastroImagemProduto
 
-CALL sp_CadastroImagemProduto(@Img1, @Prod1, './img/miniMercedesSL');
+CALL sp_CadastroImagemProduto(@Img1, @Prod1, 'https://cdn.awsli.com.br/2500x2500/2571/2571273/produto/232947404/img_9814-0dv03gq0ud.JPG');
 CALL sp_CadastroImagemProduto(@Img2, @Prod2, '/assets/img/miniPorscheCoupe.png');
 CALL sp_CadastroImagemProduto(@Img3, @Prod3, '/assets/img/miniBmwM6.png');
 CALL sp_CadastroImagemProduto(@Img4, @Prod4, '/assets/img/miniAudiMadeira.png');
