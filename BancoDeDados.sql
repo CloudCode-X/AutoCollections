@@ -753,138 +753,16 @@ SELECT * FROM tbCategoria;
 
 CALL sp_CadastroProduto(
     @Prod1, @For1,
+    'Miniatura Lamborghini Revuelto Hybrid', 439.90, '1:18', 400.00,
+    'Metal', 'Edição limitada', 1, 39, 1,
+    'Miniatura de Lamborghini Revuelto Hybrid, ano 2023, da série Special Edition na escala 1:18. Feito em metal.', @IdCat1, @IdMarca1
+);
+
+CALL sp_CadastroProduto(
+    @Prod1, @For1,
     'Miniatura Mercedes-Benz 300 SL Gullwing', 549.90, '1:43', 320.00,
     'Ferro', 'Edição limitada', 1, 11, 1,
     'Miniatura Mercedes-Benz 300 SL “Gullwing” em ferro, edição de colecionador.', @IdCat1, @IdMarca1
-);
-CALL sp_CadastroProduto(
-    @Prod2, @For2,
-    'Miniatura Porsche 356 Coupe', 289.90, '1:43', 200.00,
-    'Metal', 'Edição limitada', 1, 16, 1,
-    'Miniatura Lucky Porsche 356 1952 Escala 1/43. Ideal para colecionadores.', @IdCat1, @IdMarca2
-);
-CALL sp_CadastroProduto(
-    @Prod3, @For3,
-    'Miniatura BMW M6 GT3', 289.90, '1:24', 450.00,
-    'Plástico', 'Edição limitada', 1, 13, 1,
-    'Miniatura BMW M6 GT3 com acabamento detalhado.', @IdCat1, @IdMarca3
-);
-CALL sp_CadastroProduto(
-    @Prod4, @For4,
-    'Miniatura Audi Q7 (Madeira)', 1149.90, '1:18', 1200.00,
-    'Madeira', 'Pré-montado', 1, 6, 1,
-    'Miniatura Audi Q7 em madeira, acabamento premium.', @IdCat2, @IdMarca4
-);
-CALL sp_CadastroProduto(
-    @Prod5, @For5,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCat1, @IdMarca5
-);
--- atualizar esses
-CALL sp_CadastroProduto(
-    @Prod6, @For5,
-    'Miniatura Lamborghini Countach 1:64', 349.90, '1:64', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod7, @For5,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod8, @For4,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod9, @For3,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod10, @For3,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod11, @For3,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod12, @For1,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod13, @For1,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod14, @For1,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod15, @For1,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod16, @For2,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod17, @For2,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod18, @For2,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod19, @For2,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
-);
-
-CALL sp_CadastroProduto(
-    @Prod20, @For4,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
 );
 
 SELECT * FROM vwProduto;
