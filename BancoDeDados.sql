@@ -310,30 +310,30 @@ CREATE OR REPLACE VIEW vwEndereco AS
 SELECT  e.Logradouro, e.CEP, e.IdUF, es.UF AS Estado, e.IdCidade, c.Cidade AS Cidade, e.IdBairro, b.Bairro AS Bairro
 FROM tbEndereco e INNER JOIN tbEstado es ON e.IdUF = es.UFId INNER JOIN tbCidade c ON e.IdCidade = c.CidadeId INNER JOIN tbBairro b ON e.IdBairro = b.BairroId;
 
+SELECT * FROM vwEndereco;
+
 -- procedure de Cadastro do Usuario
 -- drop procedure sp_CadastroUsuario
 
 DELIMITER $$
 CREATE PROCEDURE sp_CadastroUsuario(
 	OUT vIdUsuario INT,
-    IN vCPF CHAR(11),
-    IN vNome VARCHAR(150),
+    IN vCPFUsuario CHAR(11),
+    IN vNomeUsuario VARCHAR(150),
     IN vDataNascimento CHAR(10),
-	IN vTelefone VARCHAR(15),
-    IN vEmail VARCHAR(150),
-    IN vSenha VARCHAR(100),
+	IN vTelefoneUsuario VARCHAR(15),
+    IN vEmailUsuario VARCHAR(150),
+    IN vSenhaUsuario VARCHAR(100),
     IN vNumeroEndereco CHAR(6),
     IN vComplementoEndereco VARCHAR(50),
     IN vCep CHAR(8)
 )
 BEGIN
-	INSERT INTO tbUsuario(CPF, Nome, DataNascimento, Telefone, Email, Senha, NumeroEndereco, ComplementoEndereco, Cep) 
-    VALUES(vCPF, vNome, (STR_TO_DATE(vDataNascimento, '%d/%m/%Y')), vTelefone, vEmail, vSenha, vNumeroEndereco, vComplementoEndereco, vCep);
+	INSERT INTO tbUsuario(CPFUsuario, NomeUsuario, DataNascimento, TelefoneUsuario, EmailUsuario, SenhaUsuario, NumeroEndereco, ComplementoEndereco, Cep) 
+    VALUES(vCPFUsuario, vNomeUsuario, (STR_TO_DATE(vDataNascimento, '%d/%m/%Y')), vTelefoneUsuario, vEmailUsuario, vSenha, vNumeroEndereco, vComplementoEndereco, vCep);
     
     SET vIdUsuario = LAST_INSERT_ID();
 END$$
-
-SELECT * FROM tbUsuario;
 
 -- procedure para definir o nivel do usuario
 -- drop procedure sp_NivelUsuario
@@ -349,7 +349,7 @@ BEGIN
 END $$
 
 CREATE OR REPLACE VIEW vwUsu AS
-SELECT u.IdUsuario AS Codigo, u.CPF, u.Nome, u.Telefone, u.Email, u.Senha, u.Cep, n.IdNivel, n.NomeNivel 
+SELECT u.IdUsuario AS Codigo, u.CPFUsuario, u.NomeUsuario, u.TelefoneUsuario, u.EmailUsuario, u.SenhaUsuario, u.Cep, n.IdNivel, n.NomeNivel 
 FROM tbUsuario u INNER JOIN tbUsuNivel un ON u.IdUsuario = un.IdUsuario INNER JOIN tbNivelAcesso n ON n.IdNivel = un.IdNivel;
 
 SELECT * FROM vwUsu;
@@ -477,7 +477,7 @@ BEGIN
     SET vIdPedido = LAST_INSERT_ID();
 END $$
 CREATE OR REPLACE VIEW vwPedido AS
-SELECT p.IdPedido, p.DataPedido, p.ValorTotal, u.Nome AS Usuario, s.IdStatus, s.NomeStatus FROM tbPedido p INNER JOIN tbUsuario u ON p.IdUsuario = u.IdUsuario INNER JOIN tbStatusPedido s ON p.IdStatus = s.IdStatus;
+SELECT p.IdPedido, p.DataPedido, p.ValorTotal, u.NomeUsuario AS Usuario, s.IdStatus, s.NomeStatus FROM tbPedido p INNER JOIN tbUsuario u ON p.IdUsuario = u.IdUsuario INNER JOIN tbStatusPedido s ON p.IdStatus = s.IdStatus;
 
 SELECT * FROM vwPedido;
 
@@ -665,11 +665,7 @@ CALL sp_CadastroEstado(@UF2, 'RJ');
 CALL sp_CadastroEstado(@UF3, 'MG');
 CALL sp_CadastroEstado(@UF4, 'RS');
 CALL sp_CadastroEstado(@UF5, 'PR');
-CALL sp_CadastroEstado(@UF6, 'AL');
-SELECT 
-    *
-FROM
-    tbEstado;
+SELECT * FROM tbEstado;
 
 -- CALLS na procedure CadastroCidade
 
@@ -678,7 +674,6 @@ CALL sp_CadastroCidade(@Cidade2, 'Rio de Janeiro', @UF2);
 CALL sp_CadastroCidade(@Cidade3, 'Belo Horizonte', @UF3);
 CALL sp_CadastroCidade(@Cidade4, 'Porto Alegre', @UF4);
 CALL sp_CadastroCidade(@Cidade5, 'Curitiba', @UF5);
-CALL sp_CadastroCidade(@Cidade6, 'Maceió', @UF6);
 SELECT * FROM tbCidade;
 
 -- CALLS na procedure CadastroBairro
@@ -687,8 +682,12 @@ CALL sp_CadastroBairro(@Bairro1, 'Jardins', @Cidade1);
 CALL sp_CadastroBairro(@Bairro2, 'Ipanema', @Cidade2);
 CALL sp_CadastroBairro(@Bairro3, 'Savassi', @Cidade3);
 CALL sp_CadastroBairro(@Bairro4, 'Moinhos de Vento', @Cidade4);
-CALL sp_CadastroBairro(@Bairro5, 'Batel', @Cidade5);
-CALL sp_CadastroBairro(@Bairro6, 'Tabuleiro do Martins', @Cidade6);
+CALL sp_CadastroBairro(@Bairro5, 'Consolação', @Cidade1);
+CALL sp_CadastroBairro(@Bairro6, 'Copacabana', @Cidade2);
+CALL sp_CadastroBairro(@Bairro7, 'Centro', @Cidade3);
+CALL sp_CadastroBairro(@Bairro8, 'Floresta', @Cidade4);
+CALL sp_CadastroBairro(@Bairro9, 'Rebouças', @Cidade5);
+CALL sp_CadastroBairro(@Bairro10, 'Batel', @Cidade5);
 SELECT * FROM tbBairro;
 
 -- CALLS na procedure CadastroEndereco
@@ -698,16 +697,20 @@ CALL sp_CadastroEndereco('Av. Vieira Souto', '22420004', 'RJ', 'Rio de Janeiro',
 CALL sp_CadastroEndereco('Av. Afonso Pena', '34128910', 'MG', 'Belo Horizonte', 'Savassi');
 CALL sp_CadastroEndereco('Rua Padre Chagas', '90425590', 'RS', 'Porto Alegre', 'Moinhos de Vento');
 CALL sp_CadastroEndereco('Rua Joaquim Nabuco', '89720310', 'PR', 'Curitiba', 'Batel');
-CALL sp_CadastroEndereco('Rua José Lôbo de Medeiros', '57061100', 'AL', 'Maceió', 'Tabuleiro do Martins');
+CALL sp_CadastroEndereco('Rua Augusta', '01305000', 'SP', 'São Paulo', 'Consolação');
+CALL sp_CadastroEndereco('Avenida Atlântica', '22021000', 'RJ', 'Rio de Janeiro', 'Copacabana');
+CALL sp_CadastroEndereco('Avenida Afonso Pena', '30130001', 'MG', 'Belo Horizonte', 'Centro');
+CALL sp_CadastroEndereco('Rua Gonçalo de Carvalho', '90570020', 'RS', 'Porto Alegre', 'Floresta');
+CALL sp_CadastroEndereco('Rua XV de Novembro', '80010000', 'PR', 'Curitiba', 'Centro');
 SELECT * FROM vwEndereco;
 
 -- CALLS na procedure CadastroUsuario
 
-CALL sp_CadastroUsuario(@User1, '15492367885', 'Lucas Ferreira', '12/04/1990', '(11)98765-0001', 'lucas.ferreira@mail.com', '12345678', '12', 'Apto 101', '16203127');
-CALL sp_CadastroUsuario(@User2, '97513286570', 'Mariana Alves', '05/09/1985', '(21)98888-0002', 'mariana.alves@mail.com', 'mariana123', '200', NULL, '22420004');
-CALL sp_CadastroUsuario(@User3, '48393038759', 'Rafael Costa', '30/11/1992', '(31)97777-0003', 'rafael.costa@mail.com', 'rafinhaCosta', '5', NULL, '34128910');
-CALL sp_CadastroUsuario(@User4, '28174197079', 'Bianca Rocha', '18/07/1995', '(51)96666-0004', 'bianca.rocha@mail.com', '56123', '88', NULL, '90425590');
-CALL sp_CadastroUsuario(@User5, '19430170007', 'Leonardo Pires', '02/02/1988', '(41)95555-0005', 'leo.pires@mail.com', 'adolfo', '10', 'Bloco B', '16203127');
+CALL sp_CadastroUsuario(@User1, '15492367885', 'Lucas Ferreira', '12/04/1990', '(11)98765-0001', 'lucas.ferreira@mail.com', '12345678', '12', 'Apto 101', '16203127'); -- Jardins
+CALL sp_CadastroUsuario(@User2, '97513286570', 'Mariana Alves', '05/09/1985', '(21)98888-0002', 'mariana.alves@mail.com', 'mariana123', '200', NULL, '22420004'); -- Ipanema
+CALL sp_CadastroUsuario(@User3, '48393038759', 'Rafael Costa', '30/11/1992', '(31)97777-0003', 'rafael.costa@mail.com', 'rafinhaCosta', '5', NULL, '34128910'); -- Savassi
+CALL sp_CadastroUsuario(@User4, '28174197079', 'Bianca Rocha', '18/07/1995', '(51)96666-0004', 'bianca.rocha@mail.com', '56123', '88', NULL, '90425590'); -- Moinhos de Vento
+CALL sp_CadastroUsuario(@User5, '19430170007', 'Leonardo Pires', '02/02/1988', '(41)95555-0005', 'leo.pires@mail.com', 'adolfo', '10', 'Bloco B', '16203127'); -- Batel
 SELECT * FROM tbUsuario;
 
 -- CALLS na procedure NivelUsuario
@@ -721,11 +724,11 @@ SELECT * FROM vwUsu;
 
 -- CALLS na procedure CadastroFornecedor
 
-CALL sp_CadastroFornecedor(@For1, 'AutoParts Distribuição', '56103473000179', '(11)91234-0001', 'contato@autoparts.com', '16203127');
-CALL sp_CadastroFornecedor(@For2, 'Colecionáveis BR', '57548424000102', '(21)92345-0002', 'vendas@colecionaveis.com', '22420004'); 
-CALL sp_CadastroFornecedor(@For3, 'MiniWorld Import', '71669202000179', '(31)93456-0003', 'import@miniworld.com', '34128910');
-CALL sp_CadastroFornecedor(@For4, 'ScaleModels SA', '96121841000126', '(51)94567-0004', 'sac@scalemodels.com', '90425590');
-CALL sp_CadastroFornecedor(@For5, 'PremiumDiecast', '62689228000198', '(41)95678-0005', 'suporte@premiumdiecast.com', '89720310');
+CALL sp_CadastroFornecedor(@For1, 'AutoParts Distribuição', '56103473000179', '(11)91234-0001', 'contato@autoparts.com', '01305000'); -- Consolação
+CALL sp_CadastroFornecedor(@For2, 'Colecionáveis BR', '57548424000102', '(21)92345-0002', 'vendas@colecionaveis.com', '22021000'); -- Copacabana
+CALL sp_CadastroFornecedor(@For3, 'MiniWorld Import', '71669202000179', '(31)93456-0003', 'import@miniworld.com', '3013000'); -- Centro
+CALL sp_CadastroFornecedor(@For4, 'ScaleModels SA', '96121841000126', '(51)94567-0004', 'sac@scalemodels.com', '90570020'); -- Floresta
+CALL sp_CadastroFornecedor(@For5, 'PremiumDiecast', '62689228000198', '(41)95678-0005', 'suporte@premiumdiecast.com', '80010000'); --  Centro
 SELECT * FROM tbFornecedor;
 
 -- CALLS na procedure CadastroMarca
@@ -781,7 +784,7 @@ CALL sp_CadastroProduto(
 -- atualizar esses
 CALL sp_CadastroProduto(
     @Prod6, @For5,
-    'Miniatura Lamborghini Revuelto Hybrid 1:18', 439.90, '1:18', 500.00,
+    'Miniatura Lamborghini Countach 1:64', 349.90, '1:64', 500.00,
     'Metal', 'Edição limitada', 1, 39, 1,
     'Miniatura Lamborghini Revuelto Hybrid, Special Edition 2023, 1:18.', @IdCatA, @IdMarcaE
 );
