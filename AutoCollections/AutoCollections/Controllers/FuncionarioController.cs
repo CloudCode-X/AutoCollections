@@ -12,7 +12,7 @@ namespace AutoCollections.Controllers
         [HttpGet]
         public async Task<IActionResult> CadastrarP()
         {
-            var produtos = await _produtoRep.TodosProdutos();
+            var produtos = await _produtoRepository.TodosProdutos();
             return View(produtos);
         }
         [HttpPost]
@@ -24,13 +24,13 @@ namespace AutoCollections.Controllers
                 _inFuncionario.CadastrarProduto(produto);
             }
 
-            var produtos = await _produtoRep.TodosProdutos();
+            var produtos = await _produtoRepository.TodosProdutos();
             return View(produtos);
         }
         [HttpPost]
         public async Task<IActionResult> Excluir(int id)
         {
-            var produtoExcluido = await _produtoRep.Excluir(id);
+            var produtoExcluido = await _produtoRepository.Excluir(id);
 
             if (produtoExcluido == null)
             {
@@ -52,7 +52,7 @@ namespace AutoCollections.Controllers
                 TempData["TipoMensagem"] = "warning";
                 return RedirectToAction("Login", "Funcionario");
             }
-            var result = _inFuncionario.Login(Email, Senha);
+            var result = _IFuncionarioRepository.Login(Email, Senha);
 
 
             if (result == null)
@@ -63,9 +63,9 @@ namespace AutoCollections.Controllers
             }
 
             HttpContext.Session.SetInt32("UserId", funcionario.IdFuncionario);
-            HttpContext.Session.SetString("UserEmail", funcionario.Email);
-            HttpContext.Session.SetString("UserSenha", funcionario.Senha);
-            return RedirectToAction("CadastrarP", "Funcionario");
+            HttpContext.Session.SetString("UserEmail", funcionario.EmailFuncionario);
+            HttpContext.Session.SetString("UserSenha", funcionario.SenhaFuncionario);
+            return RedirectToAction("CadastrarProduto", "Funcionario");
         }
     }
 }

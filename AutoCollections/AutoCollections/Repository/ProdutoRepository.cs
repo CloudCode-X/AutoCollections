@@ -5,7 +5,7 @@ using AutoCollections.Repository.Interfaces;
 
 namespace AutoCollections.Repository
 {
-    public class ProdutoRepository
+    public class ProdutoRepository : IProdutoRepository
     {
         private readonly string _connectionString;
 
@@ -22,19 +22,19 @@ namespace AutoCollections.Repository
         }
 
 
-        public async Task<Produto?> ProdutosPorId(int id)
+        public async Task<Produto?> ProdutosPorId(int idProduto)
         {
             using var connection = new MySqlConnection(_connectionString);
             var sql = "SELECT IdProduto, IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, TipoProduto, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, IdCategoria, IdMarca WHERE IdProduto = @IdProduto";
-            return await connection.QueryFirstOrDefaultAsync<Produto>(sql, new { Id = id });
+            return await connection.QueryFirstOrDefaultAsync<Produto>(sql, new { IdProduto = idProduto });
         }
 
-        public async Task<Produto?> Excluir(int id)
+        public async Task<Produto?> Excluir(int idProduto)
         {
             using var connection = new MySqlConnection(_connectionString);
             var produto = await connection.QueryFirstOrDefaultAsync<Produto>(
                 "SELECT * FROM tbProduto WHERE IdProduto = @IdProduto",
-                new { Id = id }
+                new { IdProduto = idProduto }
             );
 
             if (produto == null)
@@ -44,7 +44,7 @@ namespace AutoCollections.Repository
 
             await connection.ExecuteAsync(
                 "DELETE FROM tbProduto WHERE IdProduto = @IdProduto",
-                new { Id = id }
+                new { IdProduto = idProduto }
             );
 
             return produto;

@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\repository\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\repository\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\repository\\funcionariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\funcionariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\repository\\funcionariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\funcionariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,16 +35,8 @@
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\repository\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\repository\\carrinhorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\carrinhorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\giova\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -106,17 +110,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "UsuarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\UsuarioRepository.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Repository\\UsuarioRepository.cs",
               "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\UsuarioRepository.cs",
               "RelativeToolTip": "AutoCollections\\Repository\\UsuarioRepository.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAQwDUAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAA1wDUAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T20:03:55.432Z",
               "IsPinned": true,
@@ -124,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Models\\Usuario.cs",
@@ -138,7 +142,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "ProdutoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\ProdutoRepository.cs",
+              "RelativeDocumentMoniker": "AutoCollections\\Repository\\ProdutoRepository.cs",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\ProdutoRepository.cs",
+              "RelativeToolTip": "AutoCollections\\Repository\\ProdutoRepository.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowC4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T20:28:29.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IProdutoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
+              "RelativeDocumentMoniker": "AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
+              "RelativeToolTip": "AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T20:26:38.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Funcionario.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Funcionario.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Models\\Funcionario.cs",
@@ -157,14 +187,14 @@
               "RelativeDocumentMoniker": "AutoCollections\\Repository\\FuncionarioRepository.cs",
               "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\FuncionarioRepository.cs",
               "RelativeToolTip": "AutoCollections\\Repository\\FuncionarioRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wAkAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T19:43:48.419Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Produto.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Produto.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Models\\Produto.cs",
@@ -177,20 +207,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "FuncionarioController.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\FuncionarioController.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Controllers\\FuncionarioController.cs",
               "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\FuncionarioController.cs",
               "RelativeToolTip": "AutoCollections\\Controllers\\FuncionarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAiwEMAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T19:22:54.115Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ProdutoController.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\ProdutoController.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Controllers\\ProdutoController.cs",
@@ -203,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "CarrinhoRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\CarrinhoRepositorio.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Repository\\CarrinhoRepositorio.cs",
@@ -216,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Controllers\\ClienteController.cs",
@@ -229,20 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProdutoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\ProdutoRepository.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Repository\\ProdutoRepository.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\ProdutoRepository.cs",
-              "RelativeToolTip": "AutoCollections\\Repository\\ProdutoRepository.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAcwFAAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T23:40:53.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ItemCarrinho.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\ItemCarrinho.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Models\\ItemCarrinho.cs",
@@ -254,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "LoginColaborador.cshtml",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Login\\LoginColaborador.cshtml",
               "RelativeDocumentMoniker": "AutoCollections\\Views\\Login\\LoginColaborador.cshtml",
@@ -267,7 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "AutoCollections\\Views\\Login\\Index.cshtml",
@@ -279,7 +296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Controllers\\LoginController.cs",
@@ -291,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "CaminhoImagemRepository.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\CaminhoImagemRepository.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Repository\\CaminhoImagemRepository.cs",
@@ -303,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ProdutoViewModel.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\ProdutoViewModel.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Models\\ProdutoViewModel.cs",
@@ -315,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Controllers\\HomeController.cs",
@@ -327,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AutoCollections\\Views\\Shared\\_Layout.cshtml",
@@ -339,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Cartao.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Cartao.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Models\\Cartao.cs",
@@ -351,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Produto.cshtml",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Produto.cshtml",
               "RelativeDocumentMoniker": "AutoCollections\\Views\\Home\\Produto.cshtml",
@@ -363,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "AutoCollections\\Views\\Home\\Index.cshtml",
@@ -375,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Carrinho\\Index.cshtml",
               "RelativeDocumentMoniker": "AutoCollections\\Views\\Carrinho\\Index.cshtml",
@@ -387,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Program.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Program.cs",
@@ -399,7 +416,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\appsettings.json",
               "RelativeDocumentMoniker": "AutoCollections\\appsettings.json",
