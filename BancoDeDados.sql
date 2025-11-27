@@ -98,7 +98,7 @@ CREATE TABLE tbCategoria(
 CREATE TABLE tbMarca (
     IdMarca INT PRIMARY KEY AUTO_INCREMENT,
     NomeMarca VARCHAR(50) NOT NULL,
-    LogoMarca VARCHAR(255) NULL
+    LogoMarca VARCHAR(255) NULL,
 );
  
 -- TABELA PRODUTO
@@ -232,7 +232,7 @@ CREATE TABLE tbCartao (
 
 ALTER TABLE tbPagamento ADD IdCartao INT NULL, ADD CONSTRAINT fk_pagamento_cartao FOREIGN KEY (IdCartao) REFERENCES tbCartao(IdCartao);
 ALTER TABLE tbMarca ADD DescricaoMarca VARCHAR(150) NOT NULL;
-ALTER TABLE tbCategoria ADD DescricaoCategiria VARCHAR(150) NOT NULL;
+ALTER TABLE tbCategoria ADD DescricaoCategoria VARCHAR(150) NOT NULL;
 -- Procedures 
 
 -- procedure para adicionar a estado
@@ -385,7 +385,7 @@ CREATE PROCEDURE sp_CadastroMarca(
     IN vDescricaoMarca VARCHAR(150)
 )
 BEGIN
-	INSERT INTO tbMarca(NomeMarca, LogoMarca, Descricao) VALUES (vNomeMarca, vLogoMarca, vDescricao);
+	INSERT INTO tbMarca(NomeMarca, LogoMarca, DescricaoMarca) VALUES (vNomeMarca, vLogoMarca, vDescricaoMarca);
     
     SET vIdMarca = LAST_INSERT_ID();
 END$$
@@ -733,20 +733,20 @@ SELECT * FROM tbFornecedor;
 
 -- CALLS na procedure CadastroMarca
 
-CALL sp_CadastroMarca(@IdMarca1, 'Mercedes-Benz', './img/logoMercedes');
-CALL sp_CadastroMarca(@IdMarca2, 'Porsche', '/logos/logoPorsche.png');
-CALL sp_CadastroMarca(@IdMarca3, 'BMW', '/logos/logoBmw.png');
-CALL sp_CadastroMarca(@IdMarca4, 'Audi', '/logos/logoAudi.png');
-CALL sp_CadastroMarca(@IdMarca5, 'Lamborghini', '/logos/logoLamborghini.png');
+CALL sp_CadastroMarca(@IdMarca1, 'Mercedes-Benz', './img/logoMercedes', 'Marca alemã tradicional, conhecida por luxo, conforto e tecnologia avançada. Famosa por sedãs executivos e SUVs premium.');
+CALL sp_CadastroMarca(@IdMarca2, 'Porsche', '/logos/logoPorsche.png', 'Especialista alemã em esportivos de alto desempenho. Ícone pela precisão, engenharia e pelo clássico 911.');
+CALL sp_CadastroMarca(@IdMarca3, 'BMW', '/logos/logoBmw.png',  'Marca alemã focada em performance e dirigibilidade. Conhecida pelo slogan “prazer em dirigir” e por carros esportivos e premium.');
+CALL sp_CadastroMarca(@IdMarca4, 'Audi', '/logos/logoAudi.png', 'Mistura tecnologia, design moderno e tração quattro. Famosa por interiores refinados e pela identidade visual com luzes marcantes.');
+CALL sp_CadastroMarca(@IdMarca5, 'Lamborghini', '/logos/logoLamborghini.png', 'Marca italiana de supercarros agressivos e de alta performance. Conhecida pelo design extravagante e motores V10/V12.');
+CALL sp_CadastroMarca(@IdMarca6, 'Maserati', '/logos/logoMaserati.png', 'Italiana de luxo esportivo, combinando elegância e desempenho. Se destaca pelo estilo sofisticado e som característico do motor.');
 SELECT * FROM tbMarca;
 
 -- CALLS na procedure CadastroCategoria
 
-CALL sp_CadastroCategoria(@IdCat1, 'Edição limitada');
-CALL sp_CadastroCategoria(@IdCat2, 'Pré-montado');
-CALL sp_CadastroCategoria(@IdCat3, 'Montável');
-CALL sp_CadastroCategoria(@IdCat4, 'Personalizáveis');
-CALL sp_CadastroCategoria(@IdCat5, 'Colecionáveis Vintage');
+CALL sp_CadastroCategoria(@IdCat1, 'Edição limitada', 'Modelos produzidos em quantidade restrita, numerados ou exclusivos. Muito valorizados por colecionadores devido à raridade.');
+CALL sp_CadastroCategoria(@IdCat2, 'Pré-montado', 'Miniaturas prontas para uso, já montadas de fábrica. Perfeitas para colecionadores que querem apenas expor ou colecionar sem montagem.');
+CALL sp_CadastroCategoria(@IdCat3, 'Montável', 'Miniaturas que vêm em peças para o cliente montar. Ideais para quem gosta da experiência de construção e personalização desde o início.');
+CALL sp_CadastroCategoria(@IdCat4, 'Personalizáveis', 'Miniaturas que permitem alterações de cores, peças, rodas ou detalhes especiais. Ideais para quem deseja criar um modelo único.');
 SELECT * FROM tbCategoria;
 
 -- CALLS na procedure CadastroProduto
