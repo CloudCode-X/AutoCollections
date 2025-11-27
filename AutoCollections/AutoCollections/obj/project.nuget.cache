@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t2ZnFTJuBPQ=",
+  "dgSpecHash": "zWZ45eewfE0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\AutoCollections.csproj",
+  "projectFilePath": "C:\\Users\\3ds\\Documents\\AutoCollections\\AutoCollections\\AutoCollections\\AutoCollections.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\3ds\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
     "C:\\Users\\3ds\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
