@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AutoCollections.Repository
 {
-    public class FuncionarioRepository
+    public class FuncionarioRepository : IFuncionarioRepository
     {
         private readonly string _connectionString;
 
