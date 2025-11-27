@@ -763,15 +763,24 @@ CALL sp_CadastroProduto(
     'Miniatura Lamborghini Countach', 349.90, '1:64', 100.00,
     'Plástico', 'Pré-Montado', 1, 42, 1,
     'O Lamborghini Countach foi um automóvel superesportivo produzido pela Lamborghini, na Itália. O primeiro protótipo surgiu em 1971, e aprodução durou até 1990. Feito em Plástico',
-    @IdCat1, @IdMarca1
+    @IdCat2, @IdMarca1
 );
 
 CALL sp_CadastroProduto(
-    @Prod1, @For1,
-    'Miniatura Lamborghini Countach', 349.90, '1:64', 100.00,
-    'Plástico', 'Pré-Montado', 1, 42, 1,
-    'O Lamborghini Countach foi um automóvel superesportivo produzido pela Lamborghini, na Itália. O primeiro protótipo surgiu em 1971, e aprodução durou até 1990. Feito em Plástico',
-    @IdCat1, @IdMarca1
+    @Prod3, @For1,
+    'Miniatura Lamborghini Aventador Roadster', 229.90, '1:24', 200.00,
+    'Metal', 'Montável', 7, 18, 1,
+    'Miniatura de carro Lamborghini Aventador Roadster, Assembly Line Kit, na escala 1:24. Produzida em metal com detalhes em plástico.',
+    @IdCat3, @IdMarca1
+);
+
+CALL sp_CadastroProduto(
+    @Prod4, @For1,
+    'Miniatura Porsche 356 Coupe', 289.90, '1:43', 200.00,
+    'Metal', 'Edição Limitada', 1, 16, 1,
+    'Miniatura Lucky Porsche 356 1952. Escala 1:43, feito em metal. Reviva a era de ouro dos carros esportivos alemães com esta réplica impecável 
+    do Porsche 356 1952, um clássico que marcou a época.',
+    @IdCat1, @IdMarca2
 );
 
 SELECT * FROM vwProduto;
