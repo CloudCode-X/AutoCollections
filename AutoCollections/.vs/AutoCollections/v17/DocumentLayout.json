@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\repository\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\repository\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\repository\\funcionariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\funcionariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\repository\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,10 +51,6 @@
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\carrinhorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -49,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,20 +83,12 @@
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\views\\home\\produto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\home\\produto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\3ds\\desktop\\autocollections\\autocollections\\autocollections\\models\\cartao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -122,7 +122,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "UsuarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\UsuarioRepository.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Repository\\UsuarioRepository.cs",
@@ -136,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "IUsuarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\Interfaces\\IUsuarioRepository.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Repository\\Interfaces\\IUsuarioRepository.cs",
@@ -149,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "IFuncionarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\Interfaces\\IFuncionarioRepository.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Repository\\Interfaces\\IFuncionarioRepository.cs",
@@ -162,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "FuncionarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\FuncionarioRepository.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Repository\\FuncionarioRepository.cs",
@@ -176,6 +176,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "IProdutoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
+              "RelativeDocumentMoniker": "AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
+              "RelativeToolTip": "AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T20:26:38.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FuncionarioController.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\FuncionarioController.cs",
+              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\FuncionarioController.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\FuncionarioController.cs",
+              "RelativeToolTip": "AutoCollections\\Controllers\\FuncionarioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T19:22:54.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProdutoController.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\ProdutoController.cs",
+              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\ProdutoController.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\ProdutoController.cs",
+              "RelativeToolTip": "AutoCollections\\Controllers\\ProdutoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T19:22:36.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "AutoCollections\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T10:49:52.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "AutoCollections\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwCMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T22:21:29.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ProdutoRepository.cs",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\ProdutoRepository.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Repository\\ProdutoRepository.cs",
@@ -188,33 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IProdutoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs*",
-              "RelativeToolTip": "AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T20:26:38.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CarrinhoRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\CarrinhoRepositorio.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Repository\\CarrinhoRepositorio.cs",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\CarrinhoRepositorio.cs",
-              "RelativeToolTip": "AutoCollections\\Repository\\CarrinhoRepositorio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T12:19:02.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "CaminhoImagemRepository.cs",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\CaminhoImagemRepository.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Repository\\CaminhoImagemRepository.cs",
@@ -227,19 +266,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FuncionarioController.cs",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\FuncionarioController.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\FuncionarioController.cs",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\FuncionarioController.cs",
-              "RelativeToolTip": "AutoCollections\\Controllers\\FuncionarioController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAiwEMAAAA1AAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "CarrinhoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\CarrinhoRepositorio.cs",
+              "RelativeDocumentMoniker": "AutoCollections\\Repository\\CarrinhoRepositorio.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Repository\\CarrinhoRepositorio.cs",
+              "RelativeToolTip": "AutoCollections\\Repository\\CarrinhoRepositorio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T19:22:54.115Z"
+              "WhenOpened": "2025-11-27T12:19:02.803Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Produto.cs",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Produto.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Models\\Produto.cs",
@@ -251,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Funcionario.cs",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Funcionario.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Models\\Funcionario.cs",
@@ -263,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Models\\Usuario.cs",
@@ -275,19 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ProdutoController.cs",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\ProdutoController.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\ProdutoController.cs",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\ProdutoController.cs",
-              "RelativeToolTip": "AutoCollections\\Controllers\\ProdutoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T19:22:36.739Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Controllers\\ClienteController.cs",
@@ -299,7 +327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "ItemCarrinho.cs",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Models\\ItemCarrinho.cs",
               "RelativeDocumentMoniker": "AutoCollections\\Models\\ItemCarrinho.cs",
@@ -311,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "LoginColaborador.cshtml",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Login\\LoginColaborador.cshtml",
               "RelativeDocumentMoniker": "AutoCollections\\Views\\Login\\LoginColaborador.cshtml",
@@ -323,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "AutoCollections\\Views\\Login\\Index.cshtml",
@@ -332,18 +360,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-26T10:50:26.164Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "AutoCollections\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T10:49:52.74Z"
             },
             {
               "$type": "Document",
@@ -359,19 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "AutoCollections\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAwwCMAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T22:21:29.896Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AutoCollections\\Views\\Shared\\_Layout.cshtml",
@@ -395,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Produto.cshtml",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Produto.cshtml",
               "RelativeDocumentMoniker": "AutoCollections\\Views\\Home\\Produto.cshtml",
@@ -407,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "AutoCollections\\Views\\Home\\Index.cshtml",

@@ -1,27 +1,36 @@
 ﻿using AutoCollections.Models;
 using Microsoft.AspNetCore.Mvc;
+using AutoCollections.Repository.Interfaces;
 
 namespace AutoCollections.Controllers
 {
     public class FuncionarioController : Controller
     {
+        private IFuncionarioRepository _IFuncionarioRepo;
+        private IProdutoRepository _IProdutoRepo;
+
+        public FuncionarioController(IFuncionarioRepository FuncionarioRepo, IProdutoRepository ProdutoRepo)
+        {
+            _IFuncionarioRepo = FuncionarioRepo;
+            _IProdutoRepo = ProdutoRepo;
+        }
         public IActionResult Index()
         {
             return View();
         }
         [HttpGet]
-        public async Task<IActionResult> CadastrarP()
+        public async Task<IActionResult> CadastrarProduto()
         {
             var produtos = await _produtoRepository.TodosProdutos();
             return View(produtos);
         }
         [HttpPost]
-        public async Task<IActionResult> CadastrarP(Produto produto)
+        public async Task<IActionResult> CadastrarProduto(Produto produto)
         {
 
             if (ModelState.IsValid)
             {
-                _inFuncionario.CadastrarProduto(produto);
+                _IFuncionarioRepository.CadastrarProduto(produto);
             }
 
             var produtos = await _produtoRepository.TodosProdutos();
