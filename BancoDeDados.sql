@@ -169,17 +169,6 @@ CREATE TABLE tbItemPedido (
     CONSTRAINT fk_itempedido_produto FOREIGN KEY (IdProduto) REFERENCES tbProduto(IdProduto)
 );
 
--- TABELA NOTA FISCAL
-
-CREATE TABLE tbNotaFiscal (
-    IdNF INT PRIMARY KEY AUTO_INCREMENT,
-    ValorTotal DECIMAL(10,2) NOT NULL,
-    DataEmissao DATE NOT NULL,
-    NumeroSerie INT NOT NULL,
-    IdPedido INT NOT NULL,
-    CONSTRAINT fk_notafiscal_pedido FOREIGN KEY (IdPedido) REFERENCES tbPedido(IdPedido)
-);
-
 -- TABELA CARRINHO
 
 CREATE TABLE tbCarrinho (
@@ -647,15 +636,7 @@ BEGIN
 	END IF;
 
 END $$    
-
-DELIMITER $$
-CREATE TRIGGER trg_GerarNotaFiscal
-AFTER INSERT ON tbPedido
-FOR EACH ROW
-BEGIN
-	INSERT INTO tbNotaFiscal(ValorTotal, DataEmissao, NumeroSerie, IdPedido) VALUES(NEW.ValorTotal, CURRENT_DATE(), FLOOR(RAND() * 1000000), NEW.IdPedido);
-END $$   
-
+ 
 -- CALLS
 
 -- CALLS na procedure CadastroEstado
