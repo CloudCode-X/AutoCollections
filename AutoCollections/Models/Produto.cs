@@ -48,7 +48,5 @@ namespace AutoCollections.Models
 
         [Display(Description = "Cor do Produto")]
         public string CorProduto { get; set; }
-
-        public List<string> CaminhoImagem { get; set; }
     }
 }

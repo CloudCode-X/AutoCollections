@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AutoCollections</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="shortcut icon" href="img/LogoCliente.png" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AutoCollections.styles.css" asp-append-version="true" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,24 +15,23 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                    <img src="img/LogoCliente.png" alt="LogoCliente" width="90" height="90">
+                <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="img/LogoCliente.png" alt="LogoCliente.png" width="90" height="90"/></a>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <input type="text" class="align-center" placeholder="Busque Aqui!" />
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Busque aqui!" aria-label="Busque aqui!" />
+                    </form>
                     <ul class="navbar-nav align-content-right">
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Marcas">Marcas</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Categorias">Categorias</a>
-                        </li>
                     </ul>
-                    <a class="nav-link text-white" asp-area="" asp-controller="Login" asp-action="Index"><img src="img/Login.png" alt="IconLogin.png" /></a>
+                    <a class="nav-link text-white" asp-area="" asp-controller="Login" asp-action="Index"><img src="img/IconLogin.png" alt="IconLogin.png" /></a>
                 </div>
             </div>
         </nav>

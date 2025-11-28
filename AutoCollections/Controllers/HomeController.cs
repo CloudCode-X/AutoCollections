@@ -6,6 +6,8 @@ namespace AutoCollections.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -32,6 +34,11 @@ namespace AutoCollections.Controllers
         }
 
         public IActionResult LoginColaborador()
+        {
+            return View();
+        }
+
+        public IActionResult Produto()
         {
             return View();
         }

@@ -13,10 +13,5 @@ namespace AutoCollections.Controllers
         {
             return View();
         }
-
-        public IActionResult CadastroCliente()
-        {
-            return View();
-        }
     }
 }
