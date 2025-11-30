@@ -36,6 +36,7 @@
         @foreach (var produto in Model.Take(4))
         {
             <div class="col-12 col-md-6">
+                <a asp-controller="Produto" asp-action="Detalhes" asp-route-id="@produto.IdProduto" class="text-decoration-none w-100">
                 <div class="card h-100 text-center">
                     <img src="https://limahobbies.vteximg.com.br/arquivos/ids/228353/Miniatura-Carro-Lamborghini-Countack-1-64-Maisto-15541.jpg?v=638670416111000000" class="card-img-top" style="height:230px; object-fit:cover;">
                     <div class="card-body">
@@ -43,6 +44,7 @@
                         <p class="card-text text-success fw-bold">R$999.ToString("F2")</p>
                     </div>
                 </div>
+                </a>
             </div>
         }
     </div>
