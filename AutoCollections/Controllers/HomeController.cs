@@ -1,5 +1,4 @@
 using AutoCollections.Models;
-using AutoCollections.Repository;
 using AutoCollections.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -11,7 +10,7 @@ namespace AutoCollections.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IProdutoRepository _produtoRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProdutoRepository produtoRepository)
         {
             _logger = logger;
             _produtoRepository = produtoRepository;
@@ -25,22 +24,22 @@ namespace AutoCollections.Controllers
 
         public IActionResult Marcas()
         {
-            return View(marcas);
+            return View();
         }
 
         public IActionResult Categorias()
         {
-            return View(categorias);
+            return View();
         }
 
         public IActionResult Login()
         {
-            return View(login);
+            return View();
         }
 
         public IActionResult LoginColaborador()
         {
-            return View(loginColaborador);
+            return View();
         }
 
         public async  Task<IActionResult> Produto(int id)

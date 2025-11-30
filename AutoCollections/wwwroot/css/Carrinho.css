@@ -2,10 +2,12 @@
     display: flex;
     gap: 40px;
     margin: 40px;
+    max-width: 1200px
 }
 
 .lista-produtos {
     flex: 3;
+
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
