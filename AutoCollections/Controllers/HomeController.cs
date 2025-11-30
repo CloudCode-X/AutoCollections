@@ -25,6 +25,8 @@ namespace AutoCollections.Controllers
         public IActionResult Marcas()
         {
             return View();
+            var marcas = _produtoRepository.TodasMarcas();
+            return View(marcas);
         }
 
         public IActionResult Categorias()
@@ -40,6 +42,10 @@ namespace AutoCollections.Controllers
         public IActionResult LoginColaborador()
         {
             return View();
+        }
+
+            var categorias = _produtoRepository.TodasCategorias();
+            return View(categorias);
         }
 
         public async  Task<IActionResult> Produto(int id)

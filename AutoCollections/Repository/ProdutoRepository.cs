@@ -21,6 +21,19 @@ namespace AutoCollections.Repository
             return await connection.QueryAsync<Produto>(sql);
         }
 
+        public async Task<IEnumerable<Produto>> TodasMarcas()
+        {
+            using var connection = new MySqlConnection(_connectionString);
+            var sql = "SELECT IdProduto, IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, TipoProduto, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, IdCategoria, IdMarca FROM tbProduto";
+            return await connection.QueryAsync<Produto>(sql);
+        }
+
+        public async Task<IEnumerable<Produto>> TodasCategorias()
+        {
+            using var connection = new MySqlConnection(_connectionString);
+            var sql = "SELECT IdProduto, IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, TipoProduto, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, IdCategoria, IdMarca FROM tbProduto";
+            return await connection.QueryAsync<Produto>(sql);
+        }
 
         public async Task<Produto?> ProdutosPorId(int idProduto)
         {
