@@ -1,0 +1,42 @@
+﻿@model AutoCollections.Models.ProdutoViewModel
+
+<div class="container my-5 produto-container">
+
+    <div class="produto-imagens">
+        <img id="imgPrincipal" class="img-principal" src="@Model.CaminhoImagem[0]" alt="@Model.NomeProduto" />
+
+        @if (Model.CaminhoImagem.Count > 1)
+        {
+            <div class="imagens-minis mt-2">
+                @foreach (var img in Model.CaminhoImagem)
+                {
+                    <img class="mini" src="@img" alt="@Model.NomeProduto" onclick="trocarImagem(this.src)" />
+                }
+            </div>
+        }
+    </div>
+
+    <div class="produto-dados">
+        <h2>@Model.NomeProduto</h2>
+
+        <div class="avaliacao mb-3">
+            <span class="estrelas">★★★★★</span>
+        </div>
+
+        <h3 class="preco">R$ @Model.PrecoUnitario.ToString("F2")</h3>
+
+        <p class="descricao">@Model.Descricao</p>
+
+        <button class="btn-carrinho">Adicionar ao carrinho</button>
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="~/css/Produto.css" />
+
+
+<script>
+    function trocarImagem(src) {
+        document.getElementById('imgPrincipal').src = src;
+    }
+</script>

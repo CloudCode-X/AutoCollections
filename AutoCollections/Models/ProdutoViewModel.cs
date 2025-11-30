@@ -4,7 +4,7 @@
     {
         public string NomeProduto { get; set; }
 
-        public string CaminhoImagem { get; set; }
+        public List<string> CaminhoImagem { get; set; } = new List<string>();
 
         public int QuantidadeEstoque { get; set; }
 

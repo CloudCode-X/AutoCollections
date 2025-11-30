@@ -1,5 +1,4 @@
 using AutoCollections.Models;
-using AutoCollections.Repository;
 using AutoCollections.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -25,12 +24,26 @@ namespace AutoCollections.Controllers
 
         public IActionResult Marcas()
         {
+            return View();
             var marcas = _produtoRepository.TodasMarcas();
             return View(marcas);
         }
 
         public IActionResult Categorias()
         {
+            return View();
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult LoginColaborador()
+        {
+            return View();
+        }
+
             var categorias = _produtoRepository.TodasCategorias();
             return View(categorias);
         }

@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using AutoCollections.Models;
+﻿using AutoCollections.Models;
 using AutoCollections.Repository.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AutoCollections.Controllers
 {
@@ -23,7 +23,23 @@ namespace AutoCollections.Controllers
         public async Task<IActionResult> Detalhes(int id)
         {
             var produto = await _repo.ProdutosPorId(id);
-            return View(produto);
+            if (produto == null)
+                return NotFound();
+
+            var viewModel = new ProdutoViewModel
+            {
+                NomeProduto = produto.NomeProduto,
+                PrecoUnitario = produto.PrecoUnitario,
+                Descricao = produto.Descricao,
+                CaminhoImagem = new List<string>
+                {
+                    "https://limahobbies.vteximg.com.br/arquivos/ids/228353/Miniatura-Carro-Lamborghini-Countack-1-64-Maisto-15541.jpg?v=638670416111000000",
+                    "https://limahobbies.vteximg.com.br/arquivos/ids/228353/Miniatura-Carro-Lamborghini-Countack-1-64-Maisto-15541.jpg?v=638670416111000000",
+                    "https://limahobbies.vteximg.com.br/arquivos/ids/228353/Miniatura-Carro-Lamborghini-Countack-1-64-Maisto-15541.jpg?v=638670416111000000"
+                }
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]

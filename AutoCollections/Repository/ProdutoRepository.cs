@@ -9,9 +9,9 @@ namespace AutoCollections.Repository
     {
         private readonly string _connectionString;
 
-        public ProdutoRepository(string connectionString)
+        public ProdutoRepository(IConfiguration configuration)
         {
-            _connectionString = connectionString;
+            _connectionString = configuration.GetConnectionString("DefaultConnection"); ;
         }
 
         public async Task<IEnumerable<Produto>> TodosProdutos()
