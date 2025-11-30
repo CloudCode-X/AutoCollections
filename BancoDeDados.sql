@@ -97,7 +97,7 @@ CREATE TABLE tbCategoria(
 -- TABELA MARCA
 CREATE TABLE tbMarca (
     IdMarca INT PRIMARY KEY AUTO_INCREMENT,
-    NomeMarca VARCHAR(50) NOT NULL,
+    NomeMarca VARCHAR(50) NULL,
     LogoMarca VARCHAR(255) NULL
 );
  
@@ -115,7 +115,7 @@ CREATE TABLE tbProduto (
     QuantidadePecas INT NOT NULL,
     QuantidadeEstoque INT NOT NULL,
     QuantidadeMinima INT NOT NULL,
-    Descricao VARCHAR(200) NOT NULL,
+    Descricao VARCHAR(400) NOT NULL,
     IdCategoria INT NOT NULL,
     IdMarca INT NOT NULL,
 	CONSTRAINT fk_produto_categoria FOREIGN KEY (IdCategoria) REFERENCES tbCategoria(IdCategoria),
@@ -128,7 +128,7 @@ CREATE TABLE tbProduto (
 CREATE TABLE tbImagemProduto (
 	ImagemId INT PRIMARY KEY AUTO_INCREMENT,
     ProdutoId INT NOT NULL,
-    CaminhoImagem VARCHAR(255) NOT NULL,
+    CaminhoImagem VARCHAR(400) NOT NULL,
     FOREIGN KEY (ProdutoId) REFERENCES tbProduto(IdProduto)
 );
 
@@ -837,34 +837,43 @@ CALL sp_RegistrarPagamento(@Reg4, @Pedido4, 'Boleto', 1149.90, 'Pago', 'BOLETO-2
 CALL sp_RegistrarPagamento(@Reg5, @Pedido5, 'PIX', 879.80, 'Pago', 'PIX-2025005');
 SELECT * FROM tbPagamento;
 
-CALL sp_CadastroProduto(@Prod5, @For1, 'Miniatuta BMW M6 GT3', 289.90, '1:24', 100, 'Plástico', 'Edição Limitada', 1, 13, 1, "A miniatura BMW M6 GT3 é uma réplica detalhada do lendário carro de corrida da BMW, conhecido por sua potência, aerodinâmica e desempenho nas pistas de endurance. Feito em plástico.", @IdCat1, @IdMarca3);
-CALL sp_CadastroProduto(@Prod6, @For1, 'Miniatura Porsche 911 992.2 GT3', 649.90, '1:10', 200, 'Impressão 3D', 'Montável', 1, 22, 1, "'A miniatura Porsche 911 (992.2) GT3 é uma reprodução precisa e moderna de um dos carros esportivos mais icônicos do mundo, desenvolvida por meio de impressão 3D de alta definição. Com design fiel ao modelo real, este kit oferece uma experiência única de montagem, personalização e exposição.", @IdCat3, @IdMarca2);
-CALL sp_CadastroProduto(@Prod7, @For2, 'Miniatura Maserati MC12', 749.90, '1:24', 150, 'Plástico', 'Edição Limitada', 1, 17, 1, 'O Maserati MC12 é um veículo esportivo de alta performance produzido pela fabricante italiana Maserati. Lançado em 2004, o MC12 foi desenvolvido com base no modelo de corrida MC12 GT1, projetado para competir na série de corridas FIA GT Championship.', @IdCat1, @IdMarca6);
-CALL sp_CadastroProduto(@Prod8, @For4, 'Miniatura Audi Q7', 1149.90, '1:18', 400, 'Madeira', 'Pré-Montado', 1, 6, 1, "'A miniatura Audi Q7 em madeira é uma peça elegante e detalhada que representa com fidelidade o design robusto e sofisticado do SUV de luxo da Audi. Produzido em madeira de alta qualidade, o modelo combina artesanato e precisão, destacando linhas suaves, proporções realistas e acabamento refinado.", @IdCat2, @IdMarca4);
-CALL sp_CadastroProduto(@Prod9, @For3, 'Miniatura Maserati Quattroporte 2003', 349.90, '1:43', 170, 'Plástico', 'Pré-Montado', 1, 12, 1, "A miniatura Maserati Quattroporte é uma reprodução fiel do sedã de luxo italiano que combina potência, sofisticação e design atemporal. Conhecido por seu equilíbrio entre desempenho esportivo e conforto refinado, o Quattroporte é um ícone da engenharia automotiva da Maserati — e essa miniatura traduz perfeitamente toda essa essência em detalhes.", @IdCat2, @IdMarca6);
-CALL sp_CadastroProduto(@Prod10, @For3, 'Miniatura Porsche 911 Speedster', 749.90, '1:24', 350, 'Pré-Montado', 1, 6, 1, "'A miniatura Porsche 911 Speedster 1989 em madeira é uma homenagem artesanal a um dos modelos mais icônicos da história da Porsche. Famoso por seu design clássico, linhas curvas e espírito esportivo, o Speedster de 1989 é reproduzido aqui com precisão e acabamento refinado, transformando engenharia automotiva em arte decorativa.", @IdCat2, @IdMarca1);
-CALL sp_CadastroProduto(@Prod11, @For5, 'Miniatura Mercedes-Benz 300 SL', 549.90, '1:43', 400, 'Edição Limitada', 1, 11, 1, 'A miniatura em madeira do Mercedes-Benz 300 SL “Gullwing” é uma verdadeira obra de arte artesanal que homenageia um dos carros mais lendários da história do automobilismo. Famoso por suas portas tipo asa de gaivota e design aerodinâmico atemporal, o 300 SL foi um marco de inovação e elegância.', @IdCat1, @IdMarca1);
-CALL sp_CadastroProduto(@Prod12, @For2, 'Miniatura SUV Maserati Levante', 229.90, '1:43', 250, 'Pré-Montado', 1, 20, 1, "A exemplo de outras marcas premium, a Maserati entrou na seara dos utilitários esportivos. O SUV Maserati Levante foi lançado em 2016 e em 2020 chega ao Brasil em três versões: 3.0 V6 Turbo, 3.0 V6 Turbo S e 3.8 Turbo Trofeo. A transmissão das três é automática de oito marchas. SEndo personalizável em cores.", @IdCat2, @IdMarca6);
-CALL sp_CadastroProduto(@Prod13, @For2, 'Miniatura Audi R8 conversível ', 199.90, '1:24', 280, 'Resina', 'Edição Limitada', 1, 21, 1, 'A miniatura Audi R8 Conversível em resina é uma réplica fiel de um dos superesportivos mais admirados do mundo. Com design arrojado, linhas agressivas e acabamento de alto padrão, esta peça captura toda a sofisticação e potência do modelo original em escala reduzida.', @IdCat1, @IdMarca4);
-CALL sp_CadastroProduto(@Prod14, @For2, 'Miniatura Mercedes-Benz 500 SL', 389.90, '1:43', 170, 'Resina', 'A miniatura Mercedes-Benz 500 SL é uma reprodução detalhada de um dos modelos mais elegantes e sofisticados da marca alemã. Conhecida por seu design atemporal, desempenho refinado e conforto incomparável, a 500 SL marcou época como símbolo de luxo e esportividade.', @IdCat3, @IdMarca1);
-CALL sp_CadastroProduto(@Prod15, @For3, 'Miniatura Mercedes-Benz G-Class', 419.90, '1:24', 200, 'Montável', 10, 14, 1, 'A miniatura Mercedes-Benz G-Class em impressão 3D é uma reprodução fiel do lendário utilitário de luxo da marca alemã, conhecido por seu design robusto e desempenho incomparável. O modelo combina linhas clássicas, traços modernos e acabamento detalhado, resultando em uma peça que traduz força, elegância e exclusividade.', @IdCat3, @IdMarca1);
-CALL sp_CadastroProduto(@Prod16, @For5, 'Miniatura BMW i4 M50', 149.90, '1:32', 300, 'Metal', 'Montável', 7, 7, 1, 'Miniatura montável de carro BMW i4 M50, da série California Action, na escala 1:32. Produzida em metal com partes plásticas, apresenta pneus emborrachados, abertura das portas e pintura na cor azul.', @IdCat3, @IdMarca3);
-CALL sp_CadastroProduto(@Prod17, @For5, 'Miniatura BMW 320i', 279.90, '1:32', 350, 'Metal', 'Pré-Montado', 1, 4, 1, 'Para os apaixonados por carros de luxo e miniaturas diecast de coleção, o BMW 320i em escala 1:32 é a escolha perfeita. Esta réplica é fiel ao design original do modelo BMW 320i, combinando elegância, sofisticação e esportividade em cada detalhe.', @IdCat2, @IdMarca3);
-CALL sp_CadastroProduto(@Prod18, @For4, 'Miniatura Audi RS6 Avant', 1299.90, '1:18', 300, 'Metal', 'Montável', 9, 24, 1, 'Miniatura Carro Audi RS 6 Avant, ano 2019, na escala 1:18. Produzida em metal com detalhes em plástico, apresenta alto grau de detalhamento, pneus emborrachados e pintura na cor laranja metálico.', @IdaCat3, @IdMarca4);
-CALL sp_CadastroProduyo(@Prod19, @For5, 'Miniatura Personalizável', 1599.90, 'Personalizável', NULL, 'Impressão 3D', 'Personalizáveis', 1, 24, 1, 'Dê vida às suas ideias com esta miniatura totalmente personalizável, criada através da mais moderna tecnologia de impressão 3D. Produzida com materiais de alta qualidade, ela permite ajustes de tamanho, cor, detalhes e acabamento, tornando cada peça única e exclusiva.', @IdCat4, NULL);
 
-CALL sp_CadastroImagemProduto(@Img6,@Prod5,'https://images.tcdn.com.br/.../miniatura_bmw_m6_gt3.png');
-CALL sp_CadastroImagemProduto(@Img7,@Prod6,'https://i.redd.it/...pjpg&auto=webp');
-CALL sp_CadastroImagemProduto(@Img8,@Prod7,'https://www.minimundi.com.br/.../mc12.jpg');
-CALL sp_CadastroImagemProduto(@Img9,@Prod8,'https://s2-autoesporte.glbimg.com/.../q7madeira.jpg');
-CALL sp_CadastroImagemProduto(@Img10,@Prod9,'https://acdn-us.mitiendanube.com/...quattroporte.jpg');
-CALL sp_CadastroImagemProduto(@Img11,@Prod10,'https://i0.statig.com.br/...speedster.jpg');
-CALL sp_CadastroImagemProduto(@Img12,@Prod11,'https://s2-autoesporte.glbimg.com/.../300SL.jpg');
-CALL sp_CadastroImagemProduto(@Img13,@Prod12,'https://a-static.mlcdn.com.br/...maserati_levante.jpeg');
-CALL sp_CadastroImagemProduto(@Img14,@Prod13,'https://img.olx.com.br/.../Audi_R8.jpg');
-CALL sp_CadastroImagemProduto(@Img15,@Prod14,'https://images.tcdn.com.br/.../mercedes_500SL.jpg');
-CALL sp_CadastroImagemProduto(@Img16,@Prod15,'https://lh3.googleusercontent.com/proxy/.../GClass');
-CALL sp_CadastroImagemProduto(@Img17,@Prod16,'https://www.minimundi.com.br/.../bmw_i4.jpeg');
-CALL sp_CadastroImagemProduto(@Img18,@Prod17,'https://http2.mlstatic.com/.../BMW320i.webp');
-CALL sp_CadastroImagemProduto(@Img19,@Prod18,'https://http2.mlstatic.com/.../RS6Avant.webp');
-CALL sp_CadastroImagemProduto(@Img20,@Prod19,'https://http2.mlstatic.com/...Personalizavel.webp');
+CALL sp_CadastroProduto(@Prod1, @For2, 'Miniatura Lamborghini Revuelto Hybrid: ', 259.90, '1:43', 100, 'Plástico', 'Edição Limitada', 1, 13, 1, "A miniatura BMW M6 GT3 é uma réplica detalhada do lendário carro de corrida da BMW, conhecido por sua potência, aerodinâmica e desempenho nas pistas de endurance. Feito em plástico.", @IdCat1, @IdMarca3);
+CALL sp_CadastroProduto(@Prod2, @For3, 'Miniatura Lamborghini Countach: ', 300.90, '1:32', 100, 'Plástico', 'Edição Limitada', 1, 13, 1, "A miniatura BMW M6 GT3 é uma réplica detalhada do lendário carro de corrida da BMW, conhecido por sua potência, aerodinâmica e desempenho nas pistas de endurance. Feito em plástico.", @IdCat1, @IdMarca3);
+CALL sp_CadastroProduto(@Prod3, @For5, 'Miniatura Lamborghini Aventador Roadster', 546.90, '1:24', 100, 'Plástico', 'Edição Limitada', 1, 13, 1, "A miniatura BMW M6 GT3 é uma réplica detalhada do lendário carro de corrida da BMW, conhecido por sua potência, aerodinâmica e desempenho nas pistas de endurance. Feito em plástico.", @IdCat1, @IdMarca3);
+CALL sp_CadastroProduto(@Prod4, @For1, 'Miniatura Porsche 356 Coupe', 139.90, '1:24', 100, 'Plástico', 'Edição Limitada', 1, 13, 1, "A miniatura BMW M6 GT3 é uma réplica detalhada do lendário carro de corrida da BMW, conhecido por sua potência, aerodinâmica e desempenho nas pistas de endurance. Feito em plástico.", @IdCat1, @IdMarca3);
+CALL sp_CadastroProduto(@Prod5, @For3, 'Miniatuta BMW M6 GT3', 289.90, '1:24', 100, 'Plástico', 'Edição Limitada', 1, 13, 1, "A miniatura BMW M6 GT3 é uma réplica detalhada do lendário carro de corrida da BMW, conhecido por sua potência, aerodinâmica e desempenho nas pistas de endurance. Feito em plástico.", @IdCat1, @IdMarca3);
+CALL sp_CadastroProduto(@Prod6, @For1, 'Miniatura Porsche 911 992.2 GT3', 649.90, '1:10', 200, 'Impressão 3D', 'Montável', 1, 22, 1, "'A miniatura Porsche 911 (992.2) GT3 é uma reprodução precisa e moderna de um dos carros esportivos mais icônicos do mundo, desenvolvida por meio de impressão 3D de alta definição.", @IdCat3, @IdMarca2);
+CALL sp_CadastroProduto(@Prod7, @For2, 'Miniatura Maserati MC12', 749.90, '1:24', 150, 'Plástico', 'Edição Limitada', 1, 17, 1, 'O Maserati MC12 é um veículo esportivo de alta performance produzido pela fabricante italiana Maserati. Lançado em 2004, o MC12 foi desenvolvido com base no modelo de corrida MC12 GT1.', @IdCat1, @IdMarca6);
+CALL sp_CadastroProduto(@Prod8, @For4, 'Miniatura Audi Q7', 1149.90, '1:18', 400, 'Madeira', 'Pré-Montado', 1, 6, 1, "'A miniatura Audi Q7 em madeira é uma peça elegante e detalhada que representa com fidelidade o design robusto e sofisticado do SUV de luxo da Audi. Produzido em madeira de alta qualidade.", @IdCat2, @IdMarca4);
+CALL sp_CadastroProduto(@Prod9, @For3, 'Miniatura Maserati Quattroporte 2003', 349.90, '1:43', 170, 'Plástico', 'Pré-Montado', 1, 12, 1, "A miniatura Maserati Quattroporte é uma reprodução fiel do sedã de luxo italiano que combina potência, sofisticação e design atemporal.", @IdCat2, @IdMarca6);
+CALL sp_CadastroProduto(@Prod10, @For3, 'Miniatura Porsche 911 Speedster', 749.90, '1:24', 350, 'Plástico', 'Pré-Montado', 1, 6, 1, "'A miniatura Porsche 911 Speedster 1989 em madeira é uma homenagem artesanal a um dos modelos mais icônicos da história da Porsche.", @IdCat2, @IdMarca1);
+CALL sp_CadastroProduto(@Prod11, @For5, 'Miniatura Mercedes-Benz 300 SL', 549.90, '1:43', 400, 'Plástico', 'Edição Limitada', 1, 11, 1, 'A miniatura em madeira do Mercedes-Benz 300 SL “Gullwing” é uma verdadeira obra de arte artesanal que homenageia um dos carros mais lendários da história do automobilismo.', @IdCat1, @IdMarca1);
+CALL sp_CadastroProduto(@Prod12, @For2, 'Miniatura SUV Maserati Levante', 229.90, '1:43', 250, 'Plástico', 'Pré-Montado', 1, 20, 1, "O SUV Maserati Levante foi lançado em 2016 e em 2020 chega ao Brasil em três versões: 3.0 V6 Turbo, 3.0 V6 Turbo S e 3.8 Turbo Trofeo.", @IdCat2, @IdMarca6);
+CALL sp_CadastroProduto(@Prod13, @For2, 'Miniatura Audi R8 conversível ', 199.90, '1:24', 280, 'Resina', 'Edição Limitada', 1, 21, 1, 'A miniatura Audi R8 Conversível em resina é uma réplica fiel de um dos superesportivos mais admirados do mundo.', @IdCat1, @IdMarca4);
+CALL sp_CadastroProduto(@Prod14, @For2, 'Miniatura Mercedes-Benz 500 SL', 389.90, '1:43', 170, 'Resina', 'Edição Limitada', 1, 21, 1, 'A miniatura Mercedes-Benz 500 SL é uma reprodução detalhada de um dos modelos mais elegantes e sofisticados da marca alemã.', @IdCat3, @IdMarca1);
+CALL sp_CadastroProduto(@Prod15, @For3, 'Miniatura Mercedes-Benz G-Class', 419.90, '1:24', 200, 'Plástico', 'Montável', 10, 14, 1, 'A miniatura Mercedes-Benz G-Class em impressão 3D é uma reprodução fiel do lendário utilitário de luxo da marca alemã, conhecido por seu design robusto e desempenho incomparável.', @IdCat3, @IdMarca1);
+CALL sp_CadastroProduto(@Prod16, @For5, 'Miniatura BMW i4 M50', 149.90, '1:32', 300, 'Metal', 'Montável', 7, 7, 1, 'Miniatura montável de carro BMW i4 M50, da série California Action, na escala 1:32. Produzida em metal com partes plásticas, apresenta pneus emborrachados, abertura das portas e pintura na cor azul.', @IdCat3, @IdMarca3);
+CALL sp_CadastroProduto(@Prod17, @For5, 'Miniatura BMW 320i', 279.90, '1:32', 350, 'Metal', 'Pré-Montado', 1, 4, 1, 'Para os apaixonados por carros de luxo e miniaturas diecast de coleção, o BMW 320i em escala 1:32 é a escolha perfeita. Esta réplica é fiel ao design original do modelo BMW 320i..', @IdCat2, @IdMarca3);
+CALL sp_CadastroProduto(@Prod18, @For4, 'Miniatura Audi RS6 Avant', 1299.90, '1:18', 300, 'Metal', 'Montável', 9, 24, 1, 'Miniatura Carro Audi RS 6 Avant, ano 2019, na escala 1:18. Produzida em metal com detalhes em plástico, apresenta alto grau de detalhamento, pneus emborrachados e pintura na cor laranja metálico.', @IdCat3, @IdMarca4);
+CALL sp_CadastroProduto(@Prod19, @For5, 'Miniatura Personalizável', 1599.90, '1:24', 200, 'Impressão 3D', 'Personalizáveis', 1, 24, 1, 'Dê vida às suas ideias com esta miniatura totalmente personalizável, criada através da mais moderna tecnologia de impressão 3D.', @IdCat4, NULL);
+
+CALL sp_CadastroImagemProduto(@Img1,@Prod1,'https://rihappy.vtexassets.com/arquivos/ids/7471009/17333050687094.jpg?v=638754876308300000');
+CALL sp_CadastroImagemProduto(@Img2,@Prod2,'https://limahobbies.vteximg.com.br/arquivos/ids/228353/Miniatura-Carro-Lamborghini-Countack-1-64-Maisto-15541.jpg?v=638670416111000000');
+CALL sp_CadastroImagemProduto(@Img3,@Prod3,'https://m.media-amazon.com/images/I/51-d2cf1mSL.jpg');
+CALL sp_CadastroImagemProduto(@Img4,@Prod4,'https://www.atacadocollections.com/produtos_img/g/carro-lucky-porsche-356-1952-escala-1-43-azul-marinho-img_27427_1.jpg');
+CALL sp_CadastroImagemProduto(@Img5,@Prod5,'https://images.tcdn.com.br/img/img_prod/1083089/miniatura_bmw_m6_gt3_escala_1_24_353_1_3b91696725161df8d041ba24f3d8b1a7.png');
+CALL sp_CadastroImagemProduto(@Img6,@Prod6,'https://i.redd.it/i-designed-a-3d-printable-1-10-scale-porsche-911-992-2-gt3-v0-42acx41zd9te1.jpg?width=3840&format=pjpg&auto=webp&s=a530f9aacb5774f21b3465095972a7dadad5d9d5');
+CALL sp_CadastroImagemProduto(@Img7,@Prod7,'https://www.minimundi.com.br/cdn/imagens/produtos/det/b-1_1902211618028818.jpg');
+CALL sp_CadastroImagemProduto(@Img8,@Prod8,'https://s2-autoesporte.glbimg.com/WjBXXQRiIh730jFrz-12l1A7YbY=/0x0:1340x912/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2021/6/I/sx4BOKTsKzu1AszXQMsA/q7madeira.jpg');
+CALL sp_CadastroImagemProduto(@Img9,@Prod9,'https://acdn-us.mitiendanube.com/stores/907/564/products/11-69be1b8872f23d9f3016016728529472-640-0.jpg');
+CALL sp_CadastroImagemProduto(@Img10,@Prod10,'https://i0.statig.com.br/bancodeimagens/as/ev/8k/asev8kh2ox69d8j9rokkfwty4.jpg');
+CALL sp_CadastroImagemProduto(@Img11,@Prod11,'https://s2-autoesporte.glbimg.com/ss76j0_VK9wYnWMd1L5YJMujUfA=/0x0:1340x932/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2021/i/x/Pj0Su6Qmu1fFZBwfVG5g/asagaivotamadeira.jpg');
+CALL sp_CadastroImagemProduto(@Img12,@Prod12,'https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/miniatura-carro-suv-maserati-levante-prata-1-24-burago-cinza-bburago-21081/limahobbies/32198/5fb59332685e389da9773727a3444d0c.jpeg');
+CALL sp_CadastroImagemProduto(@Img13,@Prod13,'https://images.tcdn.com.br/img/img_prod/747391/miniatura_mercedes_benz_500_sl_1_18_kk_scale_12345_1_61f9eb12955b5115b08ab50ae9a2900f.jpg');
+CALL sp_CadastroImagemProduto(@Img14,@Prod14,'https://lh3.googleusercontent.com/proxy/1is2kHyo9lgxbXNbR7p38dzx-LQSDyi5Clc7RFla7J4N0OOH4vkbRD4si-FwgNs7tIPB6Dyne67_pI47tP-l2vVLi6xYvKJgXJQRCkrHkl3T5yingW3wa6cjODWbDt_eI1ZjRivo329C4W9lwyHB6vJ1ZxpJvWaGVA');
+CALL sp_CadastroImagemProduto(@Img15,@Prod15,'https://www.minimundi.com.br/cdn/imagens/produtos/det/miniatura-carro-bmw-i4-m50-azul-c-luz-e-som-california-action-1-32-california-toys-68323.jpeg');
+CALL sp_CadastroImagemProduto(@Img16,@Prod16,'https://www.minimundi.com.br/cdn/imagens/produtos/det/miniatura-carro-bmw-i4-m50-azul-c-luz-e-som-california-action-1-32-california-toys-68323.jpeg');
+CALL sp_CadastroImagemProduto(@Img17,@Prod17,'https://http2.mlstatic.com/D_NQ_NP_962929-MLB92491404046_092025-O.webp');
+CALL sp_CadastroImagemProduto(@Img18,@Prod18,'https://http2.mlstatic.com/D_NQ_NP_906748-MLB93582157033_092025-O.webp');
+CALL sp_CadastroImagemProduto(@Img19,@Prod19,'https://http2.mlstatic.com/D_NQ_NP_781103-MLB92343684131_092025-O.webp');

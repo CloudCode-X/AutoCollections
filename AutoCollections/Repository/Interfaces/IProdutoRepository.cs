@@ -6,7 +6,8 @@ namespace AutoCollections.Repository.Interfaces
     {
         public Task<IEnumerable<Produto>> TodosProdutos();
         public Task<Produto?> ProdutosPorId(int idProduto);
+        public Task<Produto?> Cadastrar(Produto produto);
         public Task<Produto?> Excluir(int id);
-        public void Atualizar(Produto produto);
+        public Task<Produto?> Atualizar(Produto produto);
     }
 }

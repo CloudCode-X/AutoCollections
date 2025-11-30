@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<AutoCollections.Models.Produto>
+@{
     ViewData["Title"] = "AutoCollections";
 }
 
@@ -13,32 +14,42 @@
             <img src="img/NissanSkyline1.png" class="d-block w-100" alt="NissanSkyline1.png">
         </div>
         <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="">
+            <img src="img/FerrariFXX-K1.png" class="d-block w-100" alt="">
         </div>
         <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="">
+            <img src="img/LamboRevuelto1.png" class="d-block w-100" alt="">
         </div>
     </div>
 </div>
 
 <h3 class="align-text-left">Mais Vendidos</h3>
-<div class="container text-center">
-    <div class="row row-cols-2">
-        <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Produto"><div class="col"><img src="img/FerrariFXX-K1.png" alt="FerrariFXX-K1.png" /></div></a>
-        <div class="col"><img src="img/LamboRevuelto1.png" alt="LamboRevuelto1.png" /></div>
-        <div class="col"><img src="img/MilleniumFalcon1.png" alt="MilleniumFalcon1.png" /></div>
-        <div class="col"><img src="img/CruzadorVenator1.png" alt="CruzadorVenator1.png" /></div>
-    </div>
+<div class="container produtos-grid">
+        <div class="card-produto">
+            <img src="https://carrefourbr.vtexassets.com/arquivos/ids/189648827/nissan-speed-skyline-lego-gtr-76917-2.jpg?v=638796433635230000" />
+
+            <h5>Nissan SkyLine</h5>
+            <p>R$ 349.90</p>
+        </div>
+   
 </div>
-<h2 class="align-text-left">Ver Mais</h2>
+
+<button class="btn-full">Ver mais</button>
 
 <h3 class="align-text-left">Recomendados</h3>
-<div class="container text-center">
-    <div class="row row-cols-2">
-        <div class="col"><img src="img/FerrariFXX-K1.png" alt="FerrariFXX-K1.png" /></div>
-        <div class="col"><img src="img/LamboRevuelto1.png" alt="LamboRevuelto1.png" /></div>
-        <div class="col"><img src="img/MilleniumFalcon1.png" alt="MilleniumFalcon1.png" /></div>
-        <div class="col"><img src="img/CruzadorVenator1.png" alt="CruzadorVenator1.png" /></div>
+<div class="container produtos-grid">
+    <div class="card-produto">
+        <div class="col"><img src="img/https://images.tcdn.com.br/img/img_prod/1233679/ferrari_fxx_k_4111142212_lego_2_20251002143802_c82ccd22add0.jpg" alt="FerrariFXX-K1.png" /></div>
+        <h5>Nissan SkyLine</h5>
+        <p>R$ 349.90</p>
+        <div class="col"><img src="img/https://rihappy.vtexassets.com/arquivos/ids/7471009/17333050687094.jpg?v=638754876308300000" alt="LamboRevuelto1.png" /></div>
+        <h5>Nissan SkyLine</h5>
+        <p>R$ 349.90</p>
+        <div class="col"><img src="img/https://limahobbies.vteximg.com.br/arquivos/ids/228353/Miniatura-Carro-Lamborghini-Countack-1-64-Maisto-15541.jpg?v=638670416111000000" alt="MilleniumFalcon1.png" /></div>
+        <h5>Nissan SkyLine</h5>
+        <p>R$ 349.90</p>
+        <div class="col"><img src="img/https://m.media-amazon.com/images/I/51-d2cf1mSL.jpg" alt="CruzadorVenator1.png" /></div>
+        <h5>Nissan SkyLine</h5>
+        <p>R$ 349.90</p>
     </div>
 </div>
-<h2 class="align-text-left">Ver Mais</h2>
+<button class="btn-full">Ver mais</button>

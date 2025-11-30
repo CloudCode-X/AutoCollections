@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\t\u00E9o\\desktop\\autocollections\\autocollections\\models\\imagemproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\imagemproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\t\u00E9o\\desktop\\autocollections\\autocollections\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\t\u00E9o\\desktop\\autocollections\\autocollections\\models\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\t\u00E9o\\desktop\\autocollections\\autocollections\\models\\constantes\\clienteconstante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\constantes\\clienteconstante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\t\u00E9o\\desktop\\autocollections\\autocollections\\models\\constantes\\funcionarioconstante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\constantes\\funcionarioconstante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\t\u00E9o\\desktop\\autocollections\\autocollections\\views\\carrinho\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\carrinho\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ImagemProduto.cs",
-              "DocumentMoniker": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Models\\ImagemProduto.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\ImagemProduto.cs",
-              "ToolTip": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Models\\ImagemProduto.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\ImagemProduto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T15:23:23.493Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "AutoCollections\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "AutoCollections\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwCQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-30T16:25:34.922Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Carrinho.cs",
-              "DocumentMoniker": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Models\\Carrinho.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Carrinho.cs",
-              "ToolTip": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Models\\Carrinho.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Carrinho.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T15:18:49.389Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FuncionarioConstante.cs",
-              "DocumentMoniker": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Models\\Constantes\\FuncionarioConstante.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Constantes\\FuncionarioConstante.cs",
-              "ToolTip": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Models\\Constantes\\FuncionarioConstante.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Constantes\\FuncionarioConstante.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T15:16:20.459Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClienteConstante.cs",
-              "DocumentMoniker": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Models\\Constantes\\ClienteConstante.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Constantes\\ClienteConstante.cs",
-              "ToolTip": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Models\\Constantes\\ClienteConstante.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Constantes\\ClienteConstante.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T15:14:23.196Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Carrinho\\Index.cshtml",
+              "RelativeDocumentMoniker": "AutoCollections\\Views\\Carrinho\\Index.cshtml",
+              "ToolTip": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Carrinho\\Index.cshtml",
+              "RelativeToolTip": "AutoCollections\\Views\\Carrinho\\Index.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-30T16:21:35.186Z",
               "EditorCaption": ""
             }
           ]

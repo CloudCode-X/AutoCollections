@@ -25,8 +25,17 @@ namespace AutoCollections.Repository
         public async Task<Produto?> ProdutosPorId(int idProduto)
         {
             using var connection = new MySqlConnection(_connectionString);
-            var sql = "SELECT IdProduto, IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, TipoProduto, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, IdCategoria, IdMarca WHERE IdProduto = @IdProduto";
+            var sql = "SELECT * FROM tbProduto WHERE IdProduto = @IdProduto";
             return await connection.QueryFirstOrDefaultAsync<Produto>(sql, new { IdProduto = idProduto });
+        }
+
+        public async Task<Produto?> Cadastrar(Produto produto)
+        {
+            using var connection = new MySqlConnection(_connectionString);
+            var sql = "INSERT INTO tbProduto(IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, TipoProduto, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, IdCategoria, IdMarca, CorProduto, ImagemURL)" +
+                "VALUES (@IdFornecedor, @NomeProduto, @PrecoUnitario, @Escala, @Peso, @Material, @TipoProduto, @QuantidadePecas, @QuantidadeEstoque, @QuantidadeMinima, @Descricao, @IdCategoria, @IdMarca, @CorProduto, @ImagemURL)";
+            var novoProduto = await connection.QueryFirstOrDefaultAsync<Produto>(sql, produto);
+            return novoProduto;
         }
 
         public async Task<Produto?> Excluir(int idProduto)
@@ -49,36 +58,22 @@ namespace AutoCollections.Repository
 
             return produto;
         }
-        public void Atualizar(Produto produto)
+        public async Task<bool> Atualizar(Produto produto)
         {
-            /*try
             {
+                using var connection = new MySqlConnection(_connectionString);
 
-                using (var connection = new MySqlConnection(_connectionString))
-                {
-                    connection.Open();
-                    MySqlCommand cmd = new MySqlCommand("update tbProduto set NomeProduto=@NomeProduto, Descricao=@Descricao, PrecoUnitario=@PrecoUnitario,  CaminhoImagem=@CaminhoImagem, " +
-                        " Quantidade=@Quantidade, Categoria=@Categoria WHERE IdProduto=@IdProduto", connection);
+                var sql = "UPDATE tbPoduto SET IdFornecedor = @IdFornecedor, NomeProduto = @NomeProduto, PrecoUnitario = @PrecoUnitario, Escala = @Escala, Peso = @Peso, Material = @Material, TipoProduto = @TipoProduto, QuantidadePecas = @QuantidadePecas, QuantidadeEstoque = @QuantidadeEstoque, QuantidadeMinima = @QuantidadeMinima, Descricao = @Descricao, IdCategoria = @IdCategoria, IdMarca = @IdMarca, CorProduto = @CorProduto, ImagemURL = @ImagemURL WHERE IdProduto = @IdProduto";
 
-                    cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = produto.NomeProduto;
-                    cmd.Parameters.Add("@Descricao", MySqlDbType.VarChar).Value = produto.Descricao;
-                    cmd.Parameters.Add("@Preco", MySqlDbType.VarChar).Value = produto.PrecoUnitario;
-                    cmd.Parameters.Add("@ImageUrl", MySqlDbType.VarChar).Value = produto.CaminhoImagem;
-                    cmd.Parameters.Add("@Quantidade", MySqlDbType.VarChar).Value = produto.Quantidade;
-                    cmd.Parameters.Add("@Categoria", MySqlDbType.VarChar).Value = produto.IdCategoria;
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                }
+                int linhasAfetadas = await connection.ExecuteAsync(sql, produto);
 
+                return linhasAfetadas > 0;
             }
-            catch (MySqlException ex)
-            {
-                throw new Exception("Erro no banco ao atualizar cliente" + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro na aplicação ao atualizar cliente" + ex.Message);
-            }*/
+        }
+
+        Task<Produto?> IProdutoRepository.Atualizar(Produto produto)
+        {
+            throw new NotImplementedException();
         }
     }
 }
