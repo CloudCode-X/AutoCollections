@@ -11,6 +11,7 @@ namespace AutoCollections.Models
         public int IdFornecedor { get; set; }
 
         [Display(Description = "Nome do Produto")]
+        [Required]
         public string NomeProduto { get; set; }
 
         [Display(Description = "Preço Unitário do produto")]
@@ -35,7 +36,7 @@ namespace AutoCollections.Models
         public int QuantidadeEstoque { get; set; }
 
         [Display(Description = "Quantidade mínima do produto no estoque")]
-        public string QuantidadeMinima { get; set; }
+        public int QuantidadeMinima { get; set; }
 
         [Display(Description = "Descrição do produto")]
         public string Descricao { get; set; }
@@ -48,5 +49,18 @@ namespace AutoCollections.Models
 
         [Display(Description = "Cor do Produto")]
         public string CorProduto { get; set; }
+
+        [Display(Description = "Nome da Categoria")]
+        public string NomeCategoria { get; set; }
+
+        [Display(Description = "Nome da Marca")]
+        public string NomeMarca { get; set; }
+
+        [Display(Description = "Logo da Marca")]
+        public string LogoMarca { get; set; }
+
+        [Display(Description = "Caminho da Imagem")]
+        [Required]
+        public string ImagemURL { get; set; }
     }
 }
