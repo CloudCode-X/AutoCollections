@@ -11,7 +11,7 @@ namespace AutoCollections.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IProdutoRepository _produtoRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProdutoRepository produtoRepository)
         {
             _logger = logger;
             _produtoRepository = produtoRepository;
@@ -25,22 +25,14 @@ namespace AutoCollections.Controllers
 
         public IActionResult Marcas()
         {
+            var marcas = _produtoRepository.TodasMarcas();
             return View(marcas);
         }
 
         public IActionResult Categorias()
         {
+            var categorias = _produtoRepository.TodasCategorias();
             return View(categorias);
-        }
-
-        public IActionResult Login()
-        {
-            return View(login);
-        }
-
-        public IActionResult LoginColaborador()
-        {
-            return View(loginColaborador);
         }
 
         public async  Task<IActionResult> Produto(int id)

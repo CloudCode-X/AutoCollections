@@ -71,6 +71,7 @@ namespace AutoCollections.Repository
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Senha", Senha);
 
+                connection.Close();
                 using (MySqlDataReader dr = cmd.ExecuteReader())
                 {
                     if (dr.Read())

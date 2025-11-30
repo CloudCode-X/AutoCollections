@@ -3,9 +3,7 @@
 <div class="login-container">
 
     <div class="login-texto">
-        <h1>Digite seu e-mail e senha<br />para iniciar sessão</h1>
-
-        <a class="btn-colaborador" asp-controller="Login" asp-action="LoginColaborador">Colaborador? Clique aqui</a>
+        <h1>Digite seu e-mail e senha<br />para iniciar sessão como <br />colaborador.</h1>
     </div>
 
     <div class="login-card">
@@ -17,9 +15,7 @@
             <label>Senha:</label>
             <input type="password" name="Senha" class="input-text" />
 
-            <a class="criar-conta" asp-controller="Usuario" asp-action="CadastrarUsuario">Criar Conta</a>
-
-            <button type="submit" class="btn-continuar" asp-controller="Usuario" asp-action="Login">Continuar</button>
+            <button type="submit" class="btn-continuar" asp-action="">Continuar</button>
 
         </form>
 
