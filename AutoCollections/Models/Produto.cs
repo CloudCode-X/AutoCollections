@@ -48,5 +48,18 @@ namespace AutoCollections.Models
 
         [Display(Description = "Cor do Produto")]
         public string CorProduto { get; set; }
+
+        [Display(Description = "Nome da Categoria")]
+        public int NomeCategoria { get; set; }
+
+        [Display(Description = "Nome da Marca")]
+        public int NomeMarca { get; set; }
+
+        [Display(Description = "Logo da Marca")]
+        public string LogoMarca { get; set; }
+
+        [Display(Description = "Caminho da Imagem")]
+        [Required]
+        public string ImagemURL { get; set; }
     }
 }
