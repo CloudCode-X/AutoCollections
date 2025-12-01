@@ -21,8 +21,7 @@ namespace AutoCollections.Controllers
         [HttpGet]
         public IActionResult CadastrarUsuario()
         {
-            TempData["Mensagem"] = "Conta criada com sucesso!";
-            TempData["TipoMensagem"] = "success";
+
             return View();
         }
         [HttpPost]
@@ -32,6 +31,10 @@ namespace AutoCollections.Controllers
             if (ModelState.IsValid)
             {
                 _IUsuarioRepo.CadastrarUsuario(usuario);
+                TempData["Mensagem"] = "Conta criada com sucesso!";
+                TempData["TipoMensagem"] = "success";
+
+
                 return RedirectToAction("Index", "Home");
             }
             return View(usuario);

@@ -31,7 +31,8 @@ namespace AutoCollections.Controllers
 
         public IActionResult Categorias()
         {
-            return View();
+            var categorias = _produtoRepository.TodasCategorias();
+            return View(categorias);
         }
 
         public IActionResult Login()
@@ -44,9 +45,8 @@ namespace AutoCollections.Controllers
             return View();
         }
 
-            var categorias = _produtoRepository.TodasCategorias();
-            return View(categorias);
-        }
+        
+
 
         public async  Task<IActionResult> Produto(int id)
         {

@@ -8,6 +8,8 @@ namespace AutoCollections.Models
         public string Logradouro { get; set; }
 
         [Display(Description = "CEP")]
+        [Required(ErrorMessage = "O CEP é obrigatório.")]
+
         public string CEP { get; set; }
 
         [Display(Description = "Estado")]
