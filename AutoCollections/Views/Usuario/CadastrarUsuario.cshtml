@@ -64,12 +64,27 @@
                 </div>
 
                 <div class="row mb-3">
+                    <div class="col">
+                        @Html.LabelFor(m => m.NumeroEndereco)
+                        @Html.TextBoxFor(m => m.NumeroEndereco, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.NumeroEndereco, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col">
+                        @Html.LabelFor(m => m.ComplementoEndereco)
+                        @Html.TextBoxFor(m => m.ComplementoEndereco, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ComplementoEndereco, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="row mb-3">
                     <div class="col-6">
                         @Html.LabelFor(m => m.CEP)
                         @Html.TextBoxFor(m => m.CEP, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.CEP, "", new { @class = "text-danger" })
                     </div>
                 </div>
+
 
                 <button type="submit" class="btn btn-danger w-25">Continuar</button>
             }

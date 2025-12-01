@@ -22,15 +22,18 @@ namespace AutoCollections.Repository
             using (var connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
-                MySqlCommand comand = new MySqlCommand("CALL sp_CadastrarUsuario(@CPF, @Nome, @DataNascimento, @Telefone, @Email, @Senha, @CEP)", connection);
+                MySqlCommand comand = new MySqlCommand("CALL sp_CadastroUsuario(@IdUsuario, @CPFUsuario, @NomeUsuario, @DataNascimento, @TelefoneUsuario, @EmailUsuario, @SenhaUsuario, @NumeroEndereco, @ComplementoEndereco, @Cep)", connection);
 
-                comand.Parameters.Add("@CPF", MySqlDbType.String).Value = usuario.CPF;
-                comand.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = usuario.Nome;
-                comand.Parameters.Add("@Nome", MySqlDbType.Date).Value = usuario.DataNascimento;
-                comand.Parameters.Add("@Telefone", MySqlDbType.Int32).Value = usuario.Telefone;
-                comand.Parameters.Add("@Email", MySqlDbType.VarChar).Value = usuario.Email;
-                comand.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = usuario.Senha;
-                comand.Parameters.Add("@CEP", MySqlDbType.Int32).Value = usuario.CEP;
+                comand.Parameters.Add("@IdUsuario", MySqlDbType.Int32).Value = usuario.IdUsuario;
+                comand.Parameters.Add("@CPFUsuario", MySqlDbType.String).Value = usuario.CPF;
+                comand.Parameters.Add("@NomeUsuario", MySqlDbType.VarChar).Value = usuario.Nome;
+                comand.Parameters.Add("@DataNascimento", MySqlDbType.Date).Value = usuario.DataNascimento;
+                comand.Parameters.Add("@TelefoneUsuario", MySqlDbType.VarChar).Value = usuario.Telefone;
+                comand.Parameters.Add("@EmailUsuario", MySqlDbType.VarChar).Value = usuario.Email;
+                comand.Parameters.Add("@SenhaUsuario", MySqlDbType.VarChar).Value = usuario.Senha;
+                comand.Parameters.Add("@NumeroEndereco", MySqlDbType.VarChar).Value = usuario.NumeroEndereco;
+                comand.Parameters.Add("@ComplementoEndereco", MySqlDbType.VarChar).Value = usuario.ComplementoEndereco;
+                comand.Parameters.Add("@Cep", MySqlDbType.Int32).Value = usuario.CEP;
 
                 comand.ExecuteNonQuery();
                 connection.Close();
@@ -53,7 +56,7 @@ namespace AutoCollections.Repository
                 {
                     usuario.IdUsuario = (Int32)(dr["IdUsuario"]);
                     usuario.Nome = (string)(dr["Nome"]);
-                    usuario.Telefone = (Int32)(dr["Telefone"]);
+                    usuario.Telefone = (string)(dr["Telefone"]);
                     usuario.Email = (string)(dr["Email"]);
                     usuario.Senha = (string)(dr["Senha"]);
 

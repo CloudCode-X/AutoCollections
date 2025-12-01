@@ -21,7 +21,7 @@ namespace AutoCollections.Models
 
         [Display(Description = "Telefone do Usuário")]
         [Required(ErrorMessage = "O telefone é obrigatório.")]
-        public int Telefone { get; set; }
+        public string Telefone { get; set; }
 
         [Display(Description = "Email do Usuário")]
         [EmailAddress(ErrorMessage = " O Email não é valido.")]
@@ -33,6 +33,13 @@ namespace AutoCollections.Models
         [Required(ErrorMessage = "A senha é obrigatória.")]
         [StringLength(10, MinimumLength = 8, ErrorMessage = "A senha deve ter entre 8 e 10 caracteres.")]
         public string Senha { get; set; }
+
+        [Display(Description = "Número de Endereço do Usuário")]
+        [Required(ErrorMessage = "O número de endereço é obrigatório.")]
+        public string NumeroEndereco { get; set; }
+
+        [Display(Description = "Complemento do endereço do usuário")]
+        public string ComplementoEndereco { get; set; }
 
         [Display(Description = "CEP do Usuário")]
         [Required(ErrorMessage = "O CEP é obrigatório.")]
