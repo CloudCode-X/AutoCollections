@@ -1,8 +1,10 @@
-﻿using MySql.Data.MySqlClient;
-using AutoCollections.Models;
+﻿using AutoCollections.Models;
 using AutoCollections.Repository.Interfaces;
+using Dapper;
+using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace AutoCollections.Repository
 {
@@ -17,26 +19,29 @@ namespace AutoCollections.Repository
             _config = conf;
         }
 
-        public void CadastrarUsuario(Usuario usuario)
+        public async Task<int> CadastrarUsuario(Usuario usuario)
         {
             using (var connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
-                MySqlCommand comand = new MySqlCommand("CALL sp_CadastroUsuario(@IdUsuario, @CPFUsuario, @NomeUsuario, @DataNascimento, @TelefoneUsuario, @EmailUsuario, @SenhaUsuario, @NumeroEndereco, @ComplementoEndereco, @Cep)", connection);
 
-                comand.Parameters.Add("@IdUsuario", MySqlDbType.Int32).Value = usuario.IdUsuario;
-                comand.Parameters.Add("@CPFUsuario", MySqlDbType.String).Value = usuario.CPF;
-                comand.Parameters.Add("@NomeUsuario", MySqlDbType.VarChar).Value = usuario.Nome;
-                comand.Parameters.Add("@DataNascimento", MySqlDbType.Date).Value = usuario.DataNascimento;
-                comand.Parameters.Add("@TelefoneUsuario", MySqlDbType.VarChar).Value = usuario.Telefone;
-                comand.Parameters.Add("@EmailUsuario", MySqlDbType.VarChar).Value = usuario.Email;
-                comand.Parameters.Add("@SenhaUsuario", MySqlDbType.VarChar).Value = usuario.Senha;
-                comand.Parameters.Add("@NumeroEndereco", MySqlDbType.VarChar).Value = usuario.NumeroEndereco;
-                comand.Parameters.Add("@ComplementoEndereco", MySqlDbType.VarChar).Value = usuario.ComplementoEndereco;
-                comand.Parameters.Add("@Cep", MySqlDbType.Int32).Value = usuario.CEP;
+                var parametros = new DynamicParameters();
+                // id de saida do usuario   
+                parametros.Add("vIdUsuario", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-                comand.ExecuteNonQuery();
+                parametros.Add("vCPFUsuario", usuario.CPF);
+                parametros.Add("vNomeUsuario", usuario.Nome);
+                parametros.Add("vDataNascimento", usuario.DataNascimento);
+                parametros.Add("vTelefoneUsuario", usuario.Telefone);
+                parametros.Add("vEmailUsuario", usuario.Email);
+                parametros.Add("vSenhaUsuario", usuario.Senha);
+                parametros.Add("vNumeroEndereco", usuario.NumeroEndereco);
+                parametros.Add("vComplementoEndereco", usuario.ComplementoEndereco);
+                parametros.Add("vCep", usuario.CEP);
+
+                await connection.ExecuteAsync("sp_CadastroUsuario", parametros, commandType: CommandType.StoredProcedure);
                 connection.Close();
+                return parametros.Get<int>("vIdUsuario");
             }
         }
         public Usuario ObterUsuario(int IdUsuario)
@@ -44,13 +49,13 @@ namespace AutoCollections.Repository
             using (var connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from tbUsuario WHERE IdUsuario=@IdUsuario;", connection);
+                MySqlCommand cmd = new MySqlCommand("select * from tbUsuario WHERE IdUsuario =@ IdUsuario;", connection);
                 cmd.Parameters.AddWithValue("@IdUsuario", IdUsuario);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 MySqlDataReader dr;
 
-                Usuario usuario = new Usuario();
+                Usuario? usuario = new Usuario();
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dr.Read())
                 {
@@ -70,11 +75,10 @@ namespace AutoCollections.Repository
             using (var connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT IdUsuario, Email, Senha FROM tbUsuario WHERE Email=@Email AND Senha=@Senha", connection);
+                MySqlCommand cmd = new MySqlCommand("SELECT IdUsuario, EmailUsuario, SenhaUsuario FROM tbUsuario WHERE EmailUsuario=@Email AND SenhaUsuario=@Senha", connection);
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Senha", Senha);
 
-                connection.Close();
                 using (MySqlDataReader dr = cmd.ExecuteReader())
                 {
                     if (dr.Read())
@@ -86,11 +90,12 @@ namespace AutoCollections.Repository
                             IdUsuario = (int)dr["IdUsuario"],
                             Email = (string)dr["Email"]
                         };
-                        return usuario;
 
+                        return usuario;
                     }
                 }
                 return null;
+                connection.Close();
             }
         }
     }
