@@ -1,7 +1,8 @@
-﻿using Dapper;
-using MySql.Data.MySqlClient;
-using AutoCollections.Models;
+﻿using AutoCollections.Models;
 using AutoCollections.Repository.Interfaces;
+using Dapper;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace AutoCollections.Repository
 {
@@ -21,17 +22,10 @@ namespace AutoCollections.Repository
             return await connection.QueryAsync<Produto>(sql);
         }
 
-        public async Task<IEnumerable<Produto>> TodasMarcas()
+        public async Task<IEnumerable<Produto>> TodosProdutosCatalogo()
         {
             using var connection = new MySqlConnection(_connectionString);
-            var sql = "SELECT IdProduto, IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, Categoria, Marca FROM tbProduto";
-            return await connection.QueryAsync<Produto>(sql);
-        }
-
-        public async Task<IEnumerable<Produto>> TodasCategorias()
-        {
-            using var connection = new MySqlConnection(_connectionString);
-            var sql = "SELECT IdProduto, IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, Categoria, Marca FROM tbProduto";
+            var sql = "SELECT p.IdProduto, p.NomeProduto, p.PrecoUnitario, (SELECT ImagemURL FROM tbImagemProduto i WHERE i.ProdutoId = p.IdProduto LIMIT 1) AS ImagemURL FROM tbProduto p";
             return await connection.QueryAsync<Produto>(sql);
         }
 

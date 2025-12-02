@@ -4,10 +4,10 @@
 <div class="produto-container">
 
     <div class="produto-imagens">
-        <img class="img-principal" src="@Model.CaminhoImagem[0]" alt="@Model.NomeProduto" />
+        <img class="img-principal" src="@Model.ImagemURL[0]" alt="@Model.NomeProduto" />
 
         <div class="imagens-minis">
-            @foreach (var img in Model.CaminhoImagem)
+            @foreach (var img in Model.ImagemURL)
             {
                 <img class="mini" src="@img" alt="@Model.NomeProduto" />
             }

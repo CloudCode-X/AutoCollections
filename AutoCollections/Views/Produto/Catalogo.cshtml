@@ -1,5 +1,27 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model List<AutoCollections.Models.ProdutoCatalogoViewModel>
+
+<link rel="stylesheet" href="~/css/Catalogo.css" />
+
+<div class="container my-5">
+    <h2 class="mb-4">Catálogo</h2>
+
+    <div class="row g-4">
+
+        @foreach (var p in Model)
+        {
+            <div class="col-12 col-md-6 col-lg-4">
+                <a asp-controller="Produto" asp-action="Detalhes" asp-route-id="@p.IdProduto" class="produto-card">
+                    <div class="card-content">
+                        <img src="@p.ImagemURL" alt="@p.NomeProduto" class="produto-img" />
+                        <h5 class="titulo-produto mt-3">@p.NomeProduto</h5>
+
+                        <p class="preco">R$ @p.PrecoUnitario.ToString("F2")</p>
+                        <button class="btn-adicionar">Adicionar ao carrinho</button>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+
+</div>
+

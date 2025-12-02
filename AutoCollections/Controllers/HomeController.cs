@@ -22,19 +22,6 @@ namespace AutoCollections.Controllers
             return View(produtos);
         }
 
-        public IActionResult Marcas()
-        {
-            return View();
-            var marcas = _produtoRepository.TodasMarcas();
-            return View(marcas);
-        }
-
-        public IActionResult Categorias()
-        {
-            var categorias = _produtoRepository.TodasCategorias();
-            return View(categorias);
-        }
-
         public IActionResult Login()
         {
             return View();

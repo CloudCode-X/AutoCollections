@@ -26,6 +26,27 @@ body {
     color: #111;
 }
 
+.btn-inicio-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-ir-catalogo {
+    background-color: #b2362c;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 18px;
+    transition: .2s;
+}
+
+    .btn-ir-catalogo:hover {
+        background-color: #992b23;
+        transform: scale(1.03);
+    }
+
 .FOOTER {
     margin-top: 17.1%;
 }
