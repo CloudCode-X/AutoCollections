@@ -2,9 +2,11 @@
 {
     public class ProdutoViewModel
     {
+        public int IdProduto { get; set; }
+
         public string NomeProduto { get; set; }
 
-        public List<string> CaminhoImagem { get; set; } = new List<string>();
+        public List<string> ImagemURL { get; set; } = new List<string>();
 
         public int QuantidadeEstoque { get; set; }
 

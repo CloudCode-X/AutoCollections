@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AutoCollections.Controllers
 {
+
     public class ProdutoController : Controller
     {
         private readonly IProdutoRepository _repo;
@@ -31,7 +32,7 @@ namespace AutoCollections.Controllers
                 NomeProduto = produto.NomeProduto,
                 PrecoUnitario = produto.PrecoUnitario,
                 Descricao = produto.Descricao,
-                CaminhoImagem = new List<string>
+                ImagemURL = new List<string>
                 {
                     "https://limahobbies.vteximg.com.br/arquivos/ids/228353/Miniatura-Carro-Lamborghini-Countack-1-64-Maisto-15541.jpg?v=638670416111000000",
                     "https://limahobbies.vteximg.com.br/arquivos/ids/228353/Miniatura-Carro-Lamborghini-Countack-1-64-Maisto-15541.jpg?v=638670416111000000",
@@ -40,6 +41,12 @@ namespace AutoCollections.Controllers
             };
 
             return View(viewModel);
+        }
+
+        public IActionResult Catalogo()
+        {
+            var produtos = _repo.TodosProdutosCatalogo();
+            return View(produtos);
         }
 
         [HttpPost]
