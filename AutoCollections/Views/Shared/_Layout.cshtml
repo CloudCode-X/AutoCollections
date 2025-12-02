@@ -9,7 +9,6 @@
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
 
-    <link rel="stylesheet" href="~/css/Botoes.css" />
 </head>
 <body>
 
@@ -22,9 +21,15 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarContent">
+    <div class="container my-4">
+        <form action="@Url.Action("Buscar", "Home")" method="get" class="input-group">
+            <input type="text" name="termo" class="form-control" placeholder="Buscar produtos..." />
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Marcas">Marcas</a>
+                        <a class="nav-link" asp-controller="Produto" asp-action="Catalogo">Catálogo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Login" asp-action="Index">
@@ -35,6 +40,7 @@
             </div>
         </div>
     </nav>
+
 
     <main class="my-4">
         @RenderBody()

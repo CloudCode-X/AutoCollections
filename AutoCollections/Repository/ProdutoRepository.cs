@@ -1,7 +1,8 @@
-﻿using Dapper;
-using MySql.Data.MySqlClient;
-using AutoCollections.Models;
+﻿using AutoCollections.Models;
 using AutoCollections.Repository.Interfaces;
+using Dapper;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace AutoCollections.Repository
 {
@@ -24,7 +25,7 @@ namespace AutoCollections.Repository
         public async Task<IEnumerable<Produto>> TodosProdutosCatalogo()
         {
             using var connection = new MySqlConnection(_connectionString);
-            var sql = "@SELECT p.IdProduto, p.NomeProduto, p.PrecoUnitario, (SELECT ImagemURL i WHERE i.IdProduto = p.IdProduto LIMIT 1) AS ImagemURL FROM tbProduto p";
+            var sql = "SELECT p.IdProduto, p.NomeProduto, p.PrecoUnitario, (SELECT ImagemURL FROM tbImagemProduto i WHERE i.ProdutoId = p.IdProduto LIMIT 1) AS ImagemURL FROM tbProduto p";
             return await connection.QueryAsync<Produto>(sql);
         }
 

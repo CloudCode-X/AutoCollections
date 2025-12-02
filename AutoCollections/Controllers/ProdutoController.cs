@@ -1,4 +1,5 @@
 ﻿using AutoCollections.Models;
+using AutoCollections.Repository;
 using AutoCollections.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -43,10 +44,19 @@ namespace AutoCollections.Controllers
             return View(viewModel);
         }
 
-        public IActionResult Catalogo()
+        public async Task<IActionResult> Catalogo()
         {
-            var produtos = _repo.TodosProdutosCatalogo();
-            return View(produtos);
+            var produtos = await _repo.TodosProdutosCatalogo();
+
+            var viewModel = produtos.Select(p => new ProdutoCatalogoViewModel
+            {
+                IdProduto = p.IdProduto,
+                NomeProduto = p.NomeProduto,
+                PrecoUnitario = p.PrecoUnitario,
+                ImagemURL = p.ImagemURL
+            }).ToList();
+
+            return View(viewModel);
         }
 
         [HttpPost]
