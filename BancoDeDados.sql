@@ -87,20 +87,6 @@ CREATE TABLE tbFornecedor (
     CONSTRAINT fk_fornecedor_endereco FOREIGN KEY (CepFornecedor) REFERENCES tbEndereco(CEP)
 );
 
--- TABELA CATEGORIA
-
-CREATE TABLE tbCategoria(
-	IdCategoria INT PRIMARY KEY AUTO_INCREMENT,
-    NomeCategoria VARCHAR(50) NOT NULL
-);
-
--- TABELA MARCA
-CREATE TABLE tbMarca (
-    IdMarca INT PRIMARY KEY AUTO_INCREMENT,
-    NomeMarca VARCHAR(50) NULL,
-    LogoMarca VARCHAR(255) NULL
-);
- 
 -- TABELA PRODUTO
 
 CREATE TABLE tbProduto (
@@ -111,15 +97,12 @@ CREATE TABLE tbProduto (
     Escala VARCHAR(10) NOT NULL, -- ex: "1:18"
     Peso DECIMAL(10,2) NOT NULL, -- em gramas
     Material VARCHAR(30) NOT NULL,
-    TipoProduto VARCHAR(30) NOT NULL,
     QuantidadePecas INT NOT NULL,
     QuantidadeEstoque INT NOT NULL,
     QuantidadeMinima INT NOT NULL,
     Descricao VARCHAR(400) NOT NULL,
-    IdCategoria INT NOT NULL,
-    IdMarca INT NOT NULL,
-	CONSTRAINT fk_produto_categoria FOREIGN KEY (IdCategoria) REFERENCES tbCategoria(IdCategoria),
-    CONSTRAINT fk_produto_marca FOREIGN KEY (IdMarca) REFERENCES tbMarca(IdMarca),
+    Categoria VARCHAR(100) NOT NULL,
+    Marca VARCHAR(50) NOT NULL,
     CONSTRAINT fk_produto_fornecedor FOREIGN KEY (IdFornecedor) REFERENCES tbFornecedor(IdFornecedor)
 );
 
@@ -128,7 +111,7 @@ CREATE TABLE tbProduto (
 CREATE TABLE tbImagemProduto (
 	ImagemId INT PRIMARY KEY AUTO_INCREMENT,
     ProdutoId INT NOT NULL,
-    CaminhoImagem VARCHAR(400) NOT NULL,
+    ImagemURL VARCHAR(400) NOT NULL,
     FOREIGN KEY (ProdutoId) REFERENCES tbProduto(IdProduto)
 );
 
@@ -220,8 +203,6 @@ CREATE TABLE tbCartao (
 );
 
 ALTER TABLE tbPagamento ADD IdCartao INT NULL, ADD CONSTRAINT fk_pagamento_cartao FOREIGN KEY (IdCartao) REFERENCES tbCartao(IdCartao);
-ALTER TABLE tbMarca ADD DescricaoMarca VARCHAR(150) NOT NULL;
-ALTER TABLE tbCategoria ADD DescricaoCategoria VARCHAR(150) NOT NULL;
 -- Procedures 
 
 -- procedure para adicionar a estado
@@ -363,41 +344,6 @@ END $$
 
 SELECT * FROM tbFornecedor;
 
--- procedure para cadastro das marcas
--- drop procedure sp_CadastroMarca
-
-DELIMITER $$
-CREATE PROCEDURE sp_CadastroMarca(
-	OUT vIdMarca INT,
-    IN vNomeMarca VARCHAR(50),
-    IN vLogoMarca VARCHAR(255),
-    IN vDescricaoMarca VARCHAR(150)
-)
-BEGIN
-	INSERT INTO tbMarca(NomeMarca, LogoMarca, DescricaoMarca) VALUES (vNomeMarca, vLogoMarca, vDescricaoMarca);
-    
-    SET vIdMarca = LAST_INSERT_ID();
-END$$
-
-SELECT * FROM tbMarca;
-
--- procedure para cadastro das categorias
--- drop procedure sp_CadastroCategorias
-
-DELIMITER $$
-CREATE PROCEDURE sp_CadastroCategoria(
-	OUT vIdCategoria INT,
-    IN vNomeCategoria VARCHAR(50),
-    IN vDescricaoCategoria VARCHAR(150)
-)
-BEGIN
-	INSERT INTO tbCategoria(NomeCategoria, DescricaoCategoria) VALUES (vNomeCategoria, vDescricaoCategoria);
-    
-    SET vIdCategoria = LAST_INSERT_ID();
-END $$
-
-SELECT * FROM tbCategoria;
-
 -- procedure para cadastro de produto
 -- drop procedure sp_CadastroProduto
 
@@ -410,26 +356,23 @@ CREATE PROCEDURE sp_CadastroProduto(
     IN vEscala VARCHAR(10),
     IN vPeso DECIMAL(10,2),
     IN vMaterial VARCHAR(30),
-    IN vTipoProduto VARCHAR(30),
     IN vQuantidadePecas INT,
     IN vQuantidadeEstoque INT,
     IN vQuantidadeMinima INT,
     IN vDescricao VARCHAR(200),
-    IN vIdCategoria INT,
-    IN vIdMarca INT
+    IN vCategoria VARCHAR(100),
+    IN vMarca VARCHAR(50)
 )
 BEGIN
-	INSERT INTO tbProduto(IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, TipoProduto, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, IdCategoria, IdMarca)
-    VALUES(vIdFornecedor, vNomeProduto, vPrecoUnitario, vEscala, vPeso, vMaterial, vTipoProduto, vQuantidadePecas, vQuantidadeEstoque, vQuantidadeMinima, vDescricao, vIdCategoria, vIdMarca);
+	INSERT INTO tbProduto(IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, Categoria, Marca)
+    VALUES(vIdFornecedor, vNomeProduto, vPrecoUnitario, vEscala, vPeso, vMaterial, vQuantidadePecas, vQuantidadeEstoque, vQuantidadeMinima, vDescricao, vCategoria, vMarca);
     
     SET vIdProduto = LAST_INSERT_ID();
 END $$
 
 CREATE OR REPLACE VIEW vwProduto AS
-SELECT p.IdProduto, p.NomeProduto, p.PrecoUnitario, p.Escala, p.Peso, p.Material, p.TipoProduto, p.QuantidadePecas, p.QuantidadeEstoque, p.QuantidadeMinima, p.Descricao, c.NomeCategoria, m.NomeMarca, f.NomeFornecedor
-FROM tbProduto p INNER JOIN tbCategoria c on p.IdCategoria = c.IdCategoria
-				INNER JOIN tbMarca m on p.IdMarca = m.IdMarca
-                INNER JOIN tbFornecedor f on p.IdFornecedor = f.IdFornecedor;
+SELECT p.IdProduto, p.NomeProduto, p.PrecoUnitario, p.Escala, p.Peso, p.Material, p.QuantidadePecas, p.QuantidadeEstoque, p.QuantidadeMinima, p.Descricao, p.Categoria, p.Marca, f.NomeFornecedor
+FROM tbProduto p INNER JOIN tbFornecedor f on p.IdFornecedor = f.IdFornecedor;
                 
 SELECT * FROM vwProduto;
 
@@ -440,10 +383,10 @@ DELIMITER $$
 CREATE PROCEDURE sp_CadastroImagemProduto(
 	OUT vImagemId INT,
     IN vProdutoId INT,
-    IN vCaminhoImagem VARCHAR(255)
+    IN vImagemURL VARCHAR(400)
 )
 BEGIN
-	INSERT INTO tbImagemProduto(ProdutoId, CaminhoImagem) VALUES (vProdutoId, vCaminhoImagem);
+	INSERT INTO tbImagemProduto(ProdutoId, ImagemURL) VALUES (vProdutoId, vImagemURL);
     
     SET vImagemId = LAST_INSERT_ID();
 END $$
@@ -712,57 +655,29 @@ CALL sp_CadastroFornecedor(@For4, 'ScaleModels SA', '96121841000126', '(51)94567
 CALL sp_CadastroFornecedor(@For5, 'PremiumDiecast', '62689228000198', '(41)95678-0005', 'suporte@premiumdiecast.com', '80010000'); --  Centro
 SELECT * FROM tbFornecedor;
 
--- CALLS na procedure CadastroMarca
-
-CALL sp_CadastroMarca(@IdMarca1, 'Mercedes-Benz', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/567px-Mercedes-Logo.svg.png?20230111203159', 'Marca alemã tradicional, conhecida por luxo, conforto e tecnologia avançada. Famosa por sedãs executivos e SUVs premium.');
-CALL sp_CadastroMarca(@IdMarca2, 'Porsche', 'https://upload.wikimedia.org/wikipedia/de/thumb/7/70/Porsche_Logo.svg/500px-Porsche_Logo.svg.png?20250407095904', 'Especialista alemã em esportivos de alto desempenho. Ícone pela precisão, engenharia e pelo clássico 911.');
-CALL sp_CadastroMarca(@IdMarca3, 'BMW', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/1024px-BMW.svg.png',  'Marca alemã focada em performance e dirigibilidade. Conhecida pelo slogan “prazer em dirigir” e por carros esportivos e premium.');
-CALL sp_CadastroMarca(@IdMarca4, 'Audi', 'https://toppng.com/uploads/preview/audi-car-logo-11530962094iugeww1llh.png', 'Mistura tecnologia, design moderno e tração quattro. Famosa por interiores refinados e pela identidade visual com luzes marcantes.');
-CALL sp_CadastroMarca(@IdMarca5, 'Lamborghini', 'https://e7.pngegg.com/pngimages/259/599/png-clipart-lamborghini-logo-lamborghini-sports-car-audi-logo-lamborghini-emblem-car-thumbnail.png', 'Marca italiana de supercarros agressivos e de alta performance. Conhecida pelo design extravagante e motores V10/V12.');
-CALL sp_CadastroMarca(@IdMarca6, 'Maserati', 'https://logosmarcas.net/wp-content/uploads/2021/04/Maserati-Logo.png', 'Italiana de luxo esportivo, combinando elegância e desempenho. Se destaca pelo estilo sofisticado e som característico do motor.');
-SELECT * FROM tbMarca;
-
--- CALLS na procedure CadastroCategoria
-
-CALL sp_CadastroCategoria(@IdCat1, 'Edição limitada', 'Modelos produzidos em quantidade restrita, numerados ou exclusivos. Muito valorizados por colecionadores devido à raridade.');
-CALL sp_CadastroCategoria(@IdCat2, 'Pré-montado', 'Miniaturas prontas para uso, já montadas de fábrica. Perfeitas para colecionadores que querem apenas expor ou colecionar sem montagem.');
-CALL sp_CadastroCategoria(@IdCat3, 'Montável', 'Miniaturas que vêm em peças para o cliente montar. Ideais para quem gosta da experiência de construção e personalização desde o início.');
-CALL sp_CadastroCategoria(@IdCat4, 'Personalizáveis', 'Miniaturas que permitem alterações de cores, peças, rodas ou detalhes especiais. Ideais para quem deseja criar um modelo único.');
-SELECT * FROM tbCategoria;
-
 -- CALLS na procedure CadastroProduto
 
-CALL sp_CadastroProduto(
-    @Prod1, @For1,
-    'Miniatura Lamborghini Revuelto Hybrid', 439.90, '1:18', 400.00,
-    'Metal', 'Edição limitada', 1, 39, 1,
-    'Miniatura de Lamborghini Revuelto Hybrid, ano 2023, da série Special Edition na escala 1:18. Feito em metal.', @IdCat1, @IdMarca1
-);
+CALL sp_CadastroProduto(@Prod1, @For1,'Miniatura Lamborghini Revuelto Hybrid', 439.90, '1:18', 400.00, 'Metal', 1, 39, 1, 'Miniatura de Lamborghini Revuelto Hybrid, ano 2023, da série Special Edition na escala 1:18. Feito em metal.', 'Edição limitada', 'Lamborghini');
+CALL sp_CadastroProduto(@Prod2, @For1, 'Miniatura Lamborghini Countach', 349.90, '1:64', 100.00, 'Plástico', 1, 42, 1, 'O Lamborghini Countach foi um automóvel superesportivo produzido pela Lamborghini, na Itália. O primeiro protótipo surgiu em 1971, e aprodução durou até 1990. Feito em Plástico', 'Pré-Montado', 'Lamborghini');
+CALL sp_CadastroProduto(@Prod3, @For1, 'Miniatura Lamborghini Aventador Roadster', 229.90, '1:24', 200.00, 'Metal', 7, 18, 1, 'Miniatura de carro Lamborghini Aventador Roadster, Assembly Line Kit, na escala 1:24. Produzida em metal com detalhes em plástico.', 'Montável', 'Lamborghini');
+CALL sp_CadastroProduto(@Prod4, @For1, 'Miniatura Porsche 356 Coupe', 289.90, '1:43', 200.00, 'Metal', 1, 16, 1, 'Miniatura Lucky Porsche 356 1952. Escala 1:43, feito em metal. Reviva a era de ouro dos carros esportivos alemães com esta réplica impecável  do Porsche 356 1952, um clássico que marcou a época.', 'Edição Limitada', 'Porsche');
+CALL sp_CadastroProduto(@Prod5, @For3, 'Miniatuta BMW M6 GT3', 289.90, '1:24', 100, 'Plástico', 1, 13, 1, "A miniatura BMW M6 GT3 é uma réplica detalhada do lendário carro de corrida da BMW, conhecido por sua potência, aerodinâmica e desempenho nas pistas de endurance. Feito em plástico.", 'Edição Limitada', 'Porsche');
+CALL sp_CadastroProduto(@Prod6, @For1, 'Miniatura Porsche 911 992.2 GT3', 649.90, '1:10', 200, 'Impressão 3D', 1, 22, 1, "'A miniatura Porsche 911 (992.2) GT3 é uma reprodução precisa e moderna de um dos carros esportivos mais icônicos do mundo, desenvolvida por meio de impressão 3D de alta definição.", 'Montável', 'Porsche');
+CALL sp_CadastroProduto(@Prod7, @For2, 'Miniatura Maserati MC12', 749.90, '1:24', 150, 'Plástico', 1, 17, 1, 'O Maserati MC12 é um veículo esportivo de alta performance produzido pela fabricante italiana Maserati. Lançado em 2004, o MC12 foi desenvolvido com base no modelo de corrida MC12 GT1.', 'Edição Limitada', 'Maserati');
+CALL sp_CadastroProduto(@Prod8, @For4, 'Miniatura Audi Q7', 1149.90, '1:18', 400, 'Madeira', 1, 6, 1, "'A miniatura Audi Q7 em madeira é uma peça elegante e detalhada que representa com fidelidade o design robusto e sofisticado do SUV de luxo da Audi. Produzido em madeira de alta qualidade.", 'Pré-Montado', 'Audi');
+CALL sp_CadastroProduto(@Prod9, @For3, 'Miniatura Maserati Quattroporte 2003', 349.90, '1:43', 170, 'Plástico', 1, 12, 1, "A miniatura Maserati Quattroporte é uma reprodução fiel do sedã de luxo italiano que combina potência, sofisticação e design atemporal.", 'Pré-Montado', 'Maserati');
+CALL sp_CadastroProduto(@Prod10, @For3, 'Miniatura Porsche 911 Speedster', 749.90, '1:24', 350, 'Plástico', 1, 6, 1, "'A miniatura Porsche 911 Speedster 1989 em madeira é uma homenagem artesanal a um dos modelos mais icônicos da história da Porsche.", 'Pré-Montado', 'Porsche');
+CALL sp_CadastroProduto(@Prod11, @For5, 'Miniatura Mercedes-Benz 300 SL', 549.90, '1:43', 400, 'Plástico', 1, 11, 1, 'A miniatura em madeira do Mercedes-Benz 300 SL “Gullwing” é uma verdadeira obra de arte artesanal que homenageia um dos carros mais lendários da história do automobilismo.', 'Edição Limitada', 'Mercedes-Benz');
+CALL sp_CadastroProduto(@Prod12, @For2, 'Miniatura SUV Maserati Levante', 229.90, '1:43', 250, 'Plástico', 1, 20, 1, "O SUV Maserati Levante foi lançado em 2016 e em 2020 chega ao Brasil em três versões: 3.0 V6 Turbo, 3.0 V6 Turbo S e 3.8 Turbo Trofeo.", 'Pré-Montado', 'Maserati');
+CALL sp_CadastroProduto(@Prod13, @For2, 'Miniatura Audi R8 conversível ', 199.90, '1:24', 280, 'Resina', 1, 21, 1, 'A miniatura Audi R8 Conversível em resina é uma réplica fiel de um dos superesportivos mais admirados do mundo.', 'Edição Limitada', 'Audi');
+CALL sp_CadastroProduto(@Prod14, @For2, 'Miniatura Mercedes-Benz 500 SL', 389.90, '1:43', 170, 'Resina', 1, 21, 1, 'A miniatura Mercedes-Benz 500 SL é uma reprodução detalhada de um dos modelos mais elegantes e sofisticados da marca alemã.', 'Edição Limitada', 'Mercedes-Benz');
+CALL sp_CadastroProduto(@Prod15, @For3, 'Miniatura Mercedes-Benz G-Class', 419.90, '1:24', 200, 'Plástico', 10, 14, 1, 'A miniatura Mercedes-Benz G-Class em impressão 3D é uma reprodução fiel do lendário utilitário de luxo da marca alemã, conhecido por seu design robusto e desempenho incomparável.', 'Montável', 'Mercedes-Benz');
+CALL sp_CadastroProduto(@Prod16, @For5, 'Miniatura BMW i4 M50', 149.90, '1:32', 300, 'Metal', 7, 7, 1, 'Miniatura montável de carro BMW i4 M50, da série California Action, na escala 1:32. Produzida em metal com partes plásticas, apresenta pneus emborrachados, abertura das portas e pintura na cor azul.', 'Montável', 'BMW');
+CALL sp_CadastroProduto(@Prod17, @For5, 'Miniatura BMW 320i', 279.90, '1:32', 350, 'Metal', 1, 4, 1, 'Para os apaixonados por carros de luxo e miniaturas diecast de coleção, o BMW 320i em escala 1:32 é a escolha perfeita. Esta réplica é fiel ao design original do modelo BMW 320i..', 'Pré-Montado', 'BMW');
+CALL sp_CadastroProduto(@Prod18, @For4, 'Miniatura Audi RS6 Avant', 1299.90, '1:18', 300, 'Metal', 9, 24, 1, 'Miniatura Carro Audi RS 6 Avant, ano 2019, na escala 1:18. Produzida em metal com detalhes em plástico, apresenta alto grau de detalhamento, pneus emborrachados e pintura na cor laranja metálico.', 'Montável', 'Audi');
+CALL sp_CadastroProduto(@Prod19, @For5, 'Miniatura Personalizável', 1599.90, '1:24', 200, 'Impressão 3D', 1, 24, 1, 'Dê vida às suas ideias com esta miniatura totalmente personalizável, criada através da mais moderna tecnologia de impressão 3D.', 'Personalizáveis', 'Audi' );
 
-CALL sp_CadastroProduto(
-    @Prod2, @For1,
-    'Miniatura Lamborghini Countach', 349.90, '1:64', 100.00,
-    'Plástico', 'Pré-Montado', 1, 42, 1,
-    'O Lamborghini Countach foi um automóvel superesportivo produzido pela Lamborghini, na Itália. O primeiro protótipo surgiu em 1971, e aprodução durou até 1990. Feito em Plástico',
-    @IdCat2, @IdMarca1
-);
 
-CALL sp_CadastroProduto(
-    @Prod3, @For1,
-    'Miniatura Lamborghini Aventador Roadster', 229.90, '1:24', 200.00,
-    'Metal', 'Montável', 7, 18, 1,
-    'Miniatura de carro Lamborghini Aventador Roadster, Assembly Line Kit, na escala 1:24. Produzida em metal com detalhes em plástico.',
-    @IdCat3, @IdMarca1
-);
-
-CALL sp_CadastroProduto(
-    @Prod4, @For1,
-    'Miniatura Porsche 356 Coupe', 289.90, '1:43', 200.00,
-    'Metal', 'Edição Limitada', 1, 16, 1,
-    'Miniatura Lucky Porsche 356 1952. Escala 1:43, feito em metal. Reviva a era de ouro dos carros esportivos alemães com esta réplica impecável 
-    do Porsche 356 1952, um clássico que marcou a época.',
-    @IdCat1, @IdMarca2
-);
 
 SELECT * FROM vwProduto;
 
@@ -836,27 +751,6 @@ CALL sp_RegistrarPagamento(@Reg3, @Pedido3, 'PIX', 289.90, 'Pago', 'PIX-2025003'
 CALL sp_RegistrarPagamento(@Reg4, @Pedido4, 'Boleto', 1149.90, 'Pago', 'BOLETO-2025004');
 CALL sp_RegistrarPagamento(@Reg5, @Pedido5, 'PIX', 879.80, 'Pago', 'PIX-2025005');
 SELECT * FROM tbPagamento;
-
-
-CALL sp_CadastroProduto(@Prod1, @For2, 'Miniatura Lamborghini Revuelto Hybrid: ', 259.90, '1:43', 100, 'Plástico', 'Edição Limitada', 1, 13, 1, "A miniatura BMW M6 GT3 é uma réplica detalhada do lendário carro de corrida da BMW, conhecido por sua potência, aerodinâmica e desempenho nas pistas de endurance. Feito em plástico.", @IdCat1, @IdMarca3);
-CALL sp_CadastroProduto(@Prod2, @For3, 'Miniatura Lamborghini Countach: ', 300.90, '1:32', 100, 'Plástico', 'Edição Limitada', 1, 13, 1, "A miniatura BMW M6 GT3 é uma réplica detalhada do lendário carro de corrida da BMW, conhecido por sua potência, aerodinâmica e desempenho nas pistas de endurance. Feito em plástico.", @IdCat1, @IdMarca3);
-CALL sp_CadastroProduto(@Prod3, @For5, 'Miniatura Lamborghini Aventador Roadster', 546.90, '1:24', 100, 'Plástico', 'Edição Limitada', 1, 13, 1, "A miniatura BMW M6 GT3 é uma réplica detalhada do lendário carro de corrida da BMW, conhecido por sua potência, aerodinâmica e desempenho nas pistas de endurance. Feito em plástico.", @IdCat1, @IdMarca3);
-CALL sp_CadastroProduto(@Prod4, @For1, 'Miniatura Porsche 356 Coupe', 139.90, '1:24', 100, 'Plástico', 'Edição Limitada', 1, 13, 1, "A miniatura BMW M6 GT3 é uma réplica detalhada do lendário carro de corrida da BMW, conhecido por sua potência, aerodinâmica e desempenho nas pistas de endurance. Feito em plástico.", @IdCat1, @IdMarca3);
-CALL sp_CadastroProduto(@Prod5, @For3, 'Miniatuta BMW M6 GT3', 289.90, '1:24', 100, 'Plástico', 'Edição Limitada', 1, 13, 1, "A miniatura BMW M6 GT3 é uma réplica detalhada do lendário carro de corrida da BMW, conhecido por sua potência, aerodinâmica e desempenho nas pistas de endurance. Feito em plástico.", @IdCat1, @IdMarca3);
-CALL sp_CadastroProduto(@Prod6, @For1, 'Miniatura Porsche 911 992.2 GT3', 649.90, '1:10', 200, 'Impressão 3D', 'Montável', 1, 22, 1, "'A miniatura Porsche 911 (992.2) GT3 é uma reprodução precisa e moderna de um dos carros esportivos mais icônicos do mundo, desenvolvida por meio de impressão 3D de alta definição.", @IdCat3, @IdMarca2);
-CALL sp_CadastroProduto(@Prod7, @For2, 'Miniatura Maserati MC12', 749.90, '1:24', 150, 'Plástico', 'Edição Limitada', 1, 17, 1, 'O Maserati MC12 é um veículo esportivo de alta performance produzido pela fabricante italiana Maserati. Lançado em 2004, o MC12 foi desenvolvido com base no modelo de corrida MC12 GT1.', @IdCat1, @IdMarca6);
-CALL sp_CadastroProduto(@Prod8, @For4, 'Miniatura Audi Q7', 1149.90, '1:18', 400, 'Madeira', 'Pré-Montado', 1, 6, 1, "'A miniatura Audi Q7 em madeira é uma peça elegante e detalhada que representa com fidelidade o design robusto e sofisticado do SUV de luxo da Audi. Produzido em madeira de alta qualidade.", @IdCat2, @IdMarca4);
-CALL sp_CadastroProduto(@Prod9, @For3, 'Miniatura Maserati Quattroporte 2003', 349.90, '1:43', 170, 'Plástico', 'Pré-Montado', 1, 12, 1, "A miniatura Maserati Quattroporte é uma reprodução fiel do sedã de luxo italiano que combina potência, sofisticação e design atemporal.", @IdCat2, @IdMarca6);
-CALL sp_CadastroProduto(@Prod10, @For3, 'Miniatura Porsche 911 Speedster', 749.90, '1:24', 350, 'Plástico', 'Pré-Montado', 1, 6, 1, "'A miniatura Porsche 911 Speedster 1989 em madeira é uma homenagem artesanal a um dos modelos mais icônicos da história da Porsche.", @IdCat2, @IdMarca1);
-CALL sp_CadastroProduto(@Prod11, @For5, 'Miniatura Mercedes-Benz 300 SL', 549.90, '1:43', 400, 'Plástico', 'Edição Limitada', 1, 11, 1, 'A miniatura em madeira do Mercedes-Benz 300 SL “Gullwing” é uma verdadeira obra de arte artesanal que homenageia um dos carros mais lendários da história do automobilismo.', @IdCat1, @IdMarca1);
-CALL sp_CadastroProduto(@Prod12, @For2, 'Miniatura SUV Maserati Levante', 229.90, '1:43', 250, 'Plástico', 'Pré-Montado', 1, 20, 1, "O SUV Maserati Levante foi lançado em 2016 e em 2020 chega ao Brasil em três versões: 3.0 V6 Turbo, 3.0 V6 Turbo S e 3.8 Turbo Trofeo.", @IdCat2, @IdMarca6);
-CALL sp_CadastroProduto(@Prod13, @For2, 'Miniatura Audi R8 conversível ', 199.90, '1:24', 280, 'Resina', 'Edição Limitada', 1, 21, 1, 'A miniatura Audi R8 Conversível em resina é uma réplica fiel de um dos superesportivos mais admirados do mundo.', @IdCat1, @IdMarca4);
-CALL sp_CadastroProduto(@Prod14, @For2, 'Miniatura Mercedes-Benz 500 SL', 389.90, '1:43', 170, 'Resina', 'Edição Limitada', 1, 21, 1, 'A miniatura Mercedes-Benz 500 SL é uma reprodução detalhada de um dos modelos mais elegantes e sofisticados da marca alemã.', @IdCat3, @IdMarca1);
-CALL sp_CadastroProduto(@Prod15, @For3, 'Miniatura Mercedes-Benz G-Class', 419.90, '1:24', 200, 'Plástico', 'Montável', 10, 14, 1, 'A miniatura Mercedes-Benz G-Class em impressão 3D é uma reprodução fiel do lendário utilitário de luxo da marca alemã, conhecido por seu design robusto e desempenho incomparável.', @IdCat3, @IdMarca1);
-CALL sp_CadastroProduto(@Prod16, @For5, 'Miniatura BMW i4 M50', 149.90, '1:32', 300, 'Metal', 'Montável', 7, 7, 1, 'Miniatura montável de carro BMW i4 M50, da série California Action, na escala 1:32. Produzida em metal com partes plásticas, apresenta pneus emborrachados, abertura das portas e pintura na cor azul.', @IdCat3, @IdMarca3);
-CALL sp_CadastroProduto(@Prod17, @For5, 'Miniatura BMW 320i', 279.90, '1:32', 350, 'Metal', 'Pré-Montado', 1, 4, 1, 'Para os apaixonados por carros de luxo e miniaturas diecast de coleção, o BMW 320i em escala 1:32 é a escolha perfeita. Esta réplica é fiel ao design original do modelo BMW 320i..', @IdCat2, @IdMarca3);
-CALL sp_CadastroProduto(@Prod18, @For4, 'Miniatura Audi RS6 Avant', 1299.90, '1:18', 300, 'Metal', 'Montável', 9, 24, 1, 'Miniatura Carro Audi RS 6 Avant, ano 2019, na escala 1:18. Produzida em metal com detalhes em plástico, apresenta alto grau de detalhamento, pneus emborrachados e pintura na cor laranja metálico.', @IdCat3, @IdMarca4);
-CALL sp_CadastroProduto(@Prod19, @For5, 'Miniatura Personalizável', 1599.90, '1:24', 200, 'Impressão 3D', 'Personalizáveis', 1, 24, 1, 'Dê vida às suas ideias com esta miniatura totalmente personalizável, criada através da mais moderna tecnologia de impressão 3D.', @IdCat4, NULL);
 
 CALL sp_CadastroImagemProduto(@Img1,@Prod1,'https://rihappy.vtexassets.com/arquivos/ids/7471009/17333050687094.jpg?v=638754876308300000');
 CALL sp_CadastroImagemProduto(@Img2,@Prod2,'https://limahobbies.vteximg.com.br/arquivos/ids/228353/Miniatura-Carro-Lamborghini-Countack-1-64-Maisto-15541.jpg?v=638670416111000000');

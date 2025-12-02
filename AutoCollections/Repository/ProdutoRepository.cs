@@ -17,21 +17,21 @@ namespace AutoCollections.Repository
         public async Task<IEnumerable<Produto>> TodosProdutos()
         {
             using var connection = new MySqlConnection(_connectionString);
-            var sql = "SELECT IdProduto, IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, TipoProduto, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, IdCategoria, IdMarca FROM tbProduto";
+            var sql = "SELECT IdProduto, IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, Categoria, Marca FROM tbProduto";
             return await connection.QueryAsync<Produto>(sql);
         }
 
         public async Task<IEnumerable<Produto>> TodasMarcas()
         {
             using var connection = new MySqlConnection(_connectionString);
-            var sql = "SELECT IdProduto, IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, TipoProduto, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, IdCategoria, IdMarca FROM tbProduto";
+            var sql = "SELECT IdProduto, IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, Categoria, Marca FROM tbProduto";
             return await connection.QueryAsync<Produto>(sql);
         }
 
         public async Task<IEnumerable<Produto>> TodasCategorias()
         {
             using var connection = new MySqlConnection(_connectionString);
-            var sql = "SELECT IdProduto, IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, TipoProduto, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, IdCategoria, IdMarca FROM tbProduto";
+            var sql = "SELECT IdProduto, IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, Categoria, Marca FROM tbProduto";
             return await connection.QueryAsync<Produto>(sql);
         }
 
@@ -45,8 +45,8 @@ namespace AutoCollections.Repository
         public async Task<Produto?> Cadastrar(Produto produto)
         {
             using var connection = new MySqlConnection(_connectionString);
-            var sql = "INSERT INTO tbProduto(IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, TipoProduto, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, IdCategoria, IdMarca, CorProduto, ImagemURL)" +
-                "VALUES (@IdFornecedor, @NomeProduto, @PrecoUnitario, @Escala, @Peso, @Material, @TipoProduto, @QuantidadePecas, @QuantidadeEstoque, @QuantidadeMinima, @Descricao, @IdCategoria, @IdMarca, @CorProduto, @ImagemURL)";
+            var sql = "INSERT INTO tbProduto(IdFornecedor, NomeProduto, PrecoUnitario, Escala, Peso, Material, QuantidadePecas, QuantidadeEstoque, QuantidadeMinima, Descricao, Categoria, Marca, CorProduto, ImagemURL)" +
+                "VALUES (@IdFornecedor, @NomeProduto, @PrecoUnitario, @Escala, @Peso, @Material, @QuantidadePecas, @QuantidadeEstoque, @QuantidadeMinima, @Descricao, @Categoria, Marca, @CorProduto, @ImagemURL)";
             var novoProduto = await connection.QueryFirstOrDefaultAsync<Produto>(sql, produto);
             return novoProduto;
         }
@@ -76,7 +76,7 @@ namespace AutoCollections.Repository
             {
                 using var connection = new MySqlConnection(_connectionString);
 
-                var sql = "UPDATE tbPoduto SET IdFornecedor = @IdFornecedor, NomeProduto = @NomeProduto, PrecoUnitario = @PrecoUnitario, Escala = @Escala, Peso = @Peso, Material = @Material, TipoProduto = @TipoProduto, QuantidadePecas = @QuantidadePecas, QuantidadeEstoque = @QuantidadeEstoque, QuantidadeMinima = @QuantidadeMinima, Descricao = @Descricao, IdCategoria = @IdCategoria, IdMarca = @IdMarca, CorProduto = @CorProduto, ImagemURL = @ImagemURL WHERE IdProduto = @IdProduto";
+                var sql = "UPDATE tbPoduto SET IdFornecedor = @IdFornecedor, NomeProduto = @NomeProduto, PrecoUnitario = @PrecoUnitario, Escala = @Escala, Peso = @Peso, Material = @Material, QuantidadePecas = @QuantidadePecas, QuantidadeEstoque = @QuantidadeEstoque, QuantidadeMinima = @QuantidadeMinima, Descricao = @Descricao, Categoria = @Categoria, Marca = @Marca, CorProduto = @CorProduto, ImagemURL = @ImagemURL WHERE IdProduto = @IdProduto";
 
                 int linhasAfetadas = await connection.ExecuteAsync(sql, produto);
 
