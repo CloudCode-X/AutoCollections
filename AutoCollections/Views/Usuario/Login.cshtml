@@ -1,5 +1,88 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Tela de Usuário";
 }
+
+<link rel="stylesheet" href="~/css/Usuario.css" />
+
+<div class="user-page-container">
+
+    <div class="user-card">
+        <img src="~/img/avatar.png" alt="Avatar do Usuário" class="user-photo" />
+        <h1 class="user-name">João Silva</h1>
+        <p class="user-email">joao.silva@email.com</p>
+
+        <div class="button-group">
+            <a asp-controller="Login" asp-action="Index" class="user-btn-secondary">Sair</a>
+        </div>
+    </div>
+
+    <div class="orders-card">
+        <h2>Meus Pedidos</h2>
+        <div class="orders-list">
+            <div class="order-card delivered" onclick="showDetails('001')">
+                <h3>Pedido #001</h3>
+                <p>Status: <span class="status delivered">Entregue</span></p>
+                <p>Produto: Miniatura Carro Lamborghini</p>
+            </div>
+
+            <div class="order-card in-progress" onclick="showDetails('002')">
+                <h3>Pedido #002</h3>
+                <p>Status: <span class="status in-progress">A caminho</span></p>
+                <p>Produto: Miniatura Carro Porsche</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-details" id="orderDetails">
+        <h2>Detalhes do Pedido</h2>
+        <div id="detailsContent">
+            <p>Clique em um pedido para ver os detalhes aqui.</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function showDetails(orderId) {
+        const details = {
+            '001': {
+                produto: 'Miniatura Carro Lamborghini',
+                quantidade: 1,
+                preco: 'R$ 150,00',
+                endereco: 'Rua A, 123, São Paulo',
+                status: 'Entregue'
+            },
+            '002': {
+                produto: 'Miniatura Carro Porsche',
+                quantidade: 2,
+                preco: 'R$ 300,00',
+                endereco: 'Rua B, 456, São Paulo',
+                status: 'A caminho'
+            }
+        };
+
+        const content = `
+            <div class="detail-item">
+                <div class="detail-label">Produto:</div>
+                <div class="detail-value">${details[orderId].produto}</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Quantidade:</div>
+                <div class="detail-value">${details[orderId].quantidade}</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Preço:</div>
+                <div class="detail-value">${details[orderId].preco}</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Endereço:</div>
+                <div class="detail-value">${details[orderId].endereco}</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Status:</div>
+                <div class="detail-value">${details[orderId].status}</div>
+            </div>
+        `;
+        document.getElementById('detailsContent').innerHTML = content;
+    }
+</script>
