@@ -1,0 +1,79 @@
+
+.main-image {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.thumbnail-img {
+    width: 90px;
+    height: 60px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+    .thumbnail-img:hover {
+        transform: scale(1.05);
+    }
+
+/* ===========================
+   LATERAL DIREITA (BOX)
+=========================== */
+
+.product-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    background-color: #fff;
+}
+
+    .product-box h5 {
+        font-weight: bold;
+    }
+
+.price-text {
+    font-size: 26px;
+    color: #b13626;
+    font-weight: bold;
+}
+
+.btn-buy {
+    background-color: #b13626;
+    border: none;
+    padding: 13px 0;
+    width: 100%;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: opacity .2s;
+}
+
+    .btn-buy:hover {
+        opacity: 0.85;
+    }
+
+/* ===========================
+   TEXTOS / DESCRIÇÃO
+=========================== */
+
+.description-text {
+    font-size: 15px;
+    color: #333;
+}
+
+/* ===========================
+   AVALIAÇÕES
+=========================== */
+
+.rating {
+    color: #ffcc00;
+    font-size: 18px;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #666;
+}

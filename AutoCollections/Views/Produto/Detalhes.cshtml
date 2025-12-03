@@ -1,42 +1,90 @@
-﻿@model AutoCollections.Models.ProdutoViewModel
+﻿@model AutoCollections.Models.Produto
+@{
+    ViewBag.Title = "Detalhes do Produto";
+}
 
-<div class="container my-5 produto-container">
+<!-- CSS da página -->
+<link rel="stylesheet" href="~/css/Detalhes.css" />
 
-    <div class="produto-imagens">
-        <img id="imgPrincipal" class="img-principal" src="@Model.ImagemURL[0]" alt="@Model.NomeProduto" />
+<div class="container my-5">
 
-        @if (Model.ImagemURL.Count > 1)
-        {
-            <div class="imagens-minis mt-2">
-                @foreach (var img in Model.ImagemURL)
-                {
-                    <img class="mini" src="@img" alt="@Model.NomeProduto" onclick="trocarImagem(this.src)" />
-                }
+    <div class="row">
+
+        <!-- IMAGEM PRINCIPAL -->
+        <div class="col-md-6">
+
+            <img src="https://cdn.awsli.com.br/2500x2500/2571/2571273/produto/232947404/img_9814-0dv03gq0ud.JPG"
+                 class="img-fluid main-image">
+
+            <div class="d-flex gap-3 mt-3">
+                <img src="https://cdn.awsli.com.br/2500x2500/2571/2571273/produto/232947404/img_9814-0dv03gq0ud.JPG" class="thumbnail-img" />
+                <img src="https://i.redd.it/i-designed-a-3d-printable-1-10-scale-porsche-911-992-2-gt3-v0-42acx41zd9te1.jpg?width=3840&format=pjpg&auto=webp&s=a530f9aacb5774f21b3465095972a7dadad5d9d5" class="thumbnail-img" />
+                <img src="https://www.minimundi.com.br/cdn/imagens/produtos/det/b-1_1902211618028818.jpg" class="thumbnail-img" />
             </div>
-        }
-    </div>
 
-    <div class="produto-dados">
-        <h2>@Model.NomeProduto</h2>
-
-        <div class="avaliacao mb-3">
-            <span class="estrelas">★★★★★</span>
         </div>
 
-        <h3 class="preco">R$ @Model.PrecoUnitario.ToString("F2")</h3>
 
-        <p class="descricao">@Model.Descricao</p>
+                <!-- LATERAL DIREITA -->
+                <div class="col-md-6">
+                    <div class="product-box">
 
-        <button class="btn-adicionar">Adicionar ao carrinho</button>
+                        <h5 class="mb-3">@Model.NomeProduto</h5>
+
+                        <div class="rating mb-2">
+                            ★★★★★ <span class="text-dark">4,8</span>
+                        </div>
+
+                <h3 class="price-text mb-3">R$ @Model.PrecoUnitario</h3>
+
+                        <p class="mb-4 description-text">
+                            @Model.Descricao
+                        </p>
+
+                        <button class="btn-buy">Adicionar ao carrinho</button>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DESCRIÇÃO -->
+            <div class="row mt-5">
+                <div class="col-12">
+
+                    <p class="description-text">
+                        @Model.Descricao
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- AVALIAÇÕES -->
+    <div class="row mt-5">
+        <div class="col-12">
+
+            <h5 class="mb-2">Avaliações</h5>
+            <hr />
+
+            <div class="mb-4">
+                <span class="rating">★★★★★</span> <span>4.8</span>
+                <p class="mt-2 review-text">Excelente produto! A qualidade superou minhas expectativas e o desempenho tem sido muito consistente desde o primeiro uso. O material é resistente, 
+                    o acabamento é muito bem feito e a experiência geral foi ótima. Recomendo para quem busca algo confiável e com bom custo-benefício.</p>
+            </div>
+
+            <div class="mb-4">
+                <span class="rating">★★★★</span> <span>4.2</span>
+                <p class="mt-2 review-text">O produto atende bem ao que promete e tem uma boa durabilidade. Poderia ter alguns ajustes no design ou em algumas funções, mas nada que comprometa o uso. 
+                    No geral, estou satisfeito e acho que vale a compra.</p>
+            </div>
+
+            <div class="mb-4">
+                <span class="rating">★★</span> <span>2.0</span>
+                <p class="mt-2 review-text">O produto é ok e cumpre o básico, mas não se destaca muito. Algumas partes poderiam ser mais bem trabalhadas e o desempenho poderia ser melhor. 
+                    Para quem precisa de algo simples, serve, mas há opções melhores no mercado.</p>
+            </div>
+
+        </div>
     </div>
 
 </div>
-
-<link rel="stylesheet" href="~/css/Produto.css" />
-
-
-<script>
-    function trocarImagem(src) {
-        document.getElementById('imgPrincipal').src = src;
-    }
-</script>

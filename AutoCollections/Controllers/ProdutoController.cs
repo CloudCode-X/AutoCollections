@@ -25,24 +25,20 @@ namespace AutoCollections.Controllers
         public async Task<IActionResult> Detalhes(int id)
         {
             var produto = await _repo.ProdutosPorId(id);
-            if (produto == null)
-                return NotFound();
-
-            var viewModel = new ProdutoViewModel
             {
-                NomeProduto = produto.NomeProduto,
-                PrecoUnitario = produto.PrecoUnitario,
-                Descricao = produto.Descricao,
-                ImagemURL = new List<string>
+                var model = new Produto
                 {
-                    "https://limahobbies.vteximg.com.br/arquivos/ids/228353/Miniatura-Carro-Lamborghini-Countack-1-64-Maisto-15541.jpg?v=638670416111000000",
-                    "https://limahobbies.vteximg.com.br/arquivos/ids/228353/Miniatura-Carro-Lamborghini-Countack-1-64-Maisto-15541.jpg?v=638670416111000000",
-                    "https://limahobbies.vteximg.com.br/arquivos/ids/228353/Miniatura-Carro-Lamborghini-Countack-1-64-Maisto-15541.jpg?v=638670416111000000"
-                }
-            };
+                    IdProduto = produto.IdProduto,
+                    NomeProduto = produto.NomeProduto,
+                    PrecoUnitario = produto.PrecoUnitario,
+                    Descricao = produto.Descricao
+                };
 
-            return View(viewModel);
+                return View(model);
+            }
         }
+
+
 
         public async Task<IActionResult> Catalogo()
         {
@@ -58,6 +54,8 @@ namespace AutoCollections.Controllers
 
             return View(viewModel);
         }
+
+        
 
         [HttpPost]
         public IActionResult Cadastrar(Produto p)
