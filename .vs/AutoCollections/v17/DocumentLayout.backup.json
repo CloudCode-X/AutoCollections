@@ -1,150 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\",
+  "WorkspaceRootPath": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\views\\produto\\detalhes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\produto\\detalhes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\wwwroot\\css\\produto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\wwwroot\\css\\produto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\wwwroot\\css\\detalhes.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\wwwroot\\css\\detalhes.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\views\\produto\\catalogo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\t\u00E9o\\desktop\\autocollections\\autocollections\\views\\produto\\catalogo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\produto\\catalogo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\repository\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\t\u00E9o\\desktop\\autocollections\\autocollections\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\t\u00E9o\\desktop\\autocollections\\autocollections\\wwwroot\\css\\catalogo.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\wwwroot\\css\\catalogo.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\views\\usuario\\cadastrarusuario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\usuario\\cadastrarusuario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\t\u00E9o\\desktop\\autocollections\\autocollections\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\models\\produtoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\produtoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\repository\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\views\\home\\produto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\home\\produto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\views\\carrinho\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\carrinho\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\wwwroot\\css\\carrinho.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\wwwroot\\css\\carrinho.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\repository\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\wwwroot\\css\\produto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\wwwroot\\css\\produto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\models\\produtoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\models\\produtoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\repository\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\repository\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\autocollections.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:1:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\autocollections.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\wwwroot\\css\\carrinho.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\wwwroot\\css\\carrinho.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\autocollections.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\autocollections.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|c:\\users\\jo\u00E3o\\desktop\\autocollections\\autocollections\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:2:0:{11BEBBEF-7805-4C11-93E7-0D4753A95529}|AutoCollections\\AutoCollections.csproj|solutionrelative:autocollections\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -154,458 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Detalhes.css",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\Detalhes.css",
-              "RelativeDocumentMoniker": "AutoCollections\\wwwroot\\css\\Detalhes.css",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\Detalhes.css",
-              "RelativeToolTip": "AutoCollections\\wwwroot\\css\\Detalhes.css",
-              "ViewState": "AgIAACYAAAAAAAAAAAAIwE8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Catalogo.css",
+              "DocumentMoniker": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\Catalogo.css",
+              "RelativeDocumentMoniker": "AutoCollections\\wwwroot\\css\\Catalogo.css",
+              "ToolTip": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\Catalogo.css",
+              "RelativeToolTip": "AutoCollections\\wwwroot\\css\\Catalogo.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-12-03T00:13:42.686Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CadastrarUsuario.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Usuario\\CadastrarUsuario.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Usuario\\CadastrarUsuario.cshtml",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Usuario\\CadastrarUsuario.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Usuario\\CadastrarUsuario.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAFgAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-30T16:25:34.922Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UsuarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Repository\\UsuarioRepository.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Repository\\UsuarioRepository.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Repository\\UsuarioRepository.cs",
-              "RelativeToolTip": "AutoCollections\\Repository\\UsuarioRepository.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCsAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T22:50:45.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Catalogo.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Produto\\Catalogo.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Produto\\Catalogo.cshtml",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Produto\\Catalogo.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Produto\\Catalogo.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T20:27:44.054Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ProdutoViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Models\\ProdutoViewModel.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\ProdutoViewModel.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Models\\ProdutoViewModel.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\ProdutoViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T18:54:37.185Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProdutoController.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Controllers\\ProdutoController.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\ProdutoController.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Controllers\\ProdutoController.cs",
-              "RelativeToolTip": "AutoCollections\\Controllers\\ProdutoController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAUwCYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T18:28:11.347Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProdutoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Repository\\ProdutoRepository.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Repository\\ProdutoRepository.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Repository\\ProdutoRepository.cs",
-              "RelativeToolTip": "AutoCollections\\Repository\\ProdutoRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAC8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T17:42:58.295Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Program.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Program.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Program.cs",
-              "RelativeToolTip": "AutoCollections\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T17:29:39.815Z",
+              "WhenOpened": "2025-12-03T03:33:30.611Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Detalhes.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Produto\\Detalhes.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Produto\\Detalhes.cshtml",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Produto\\Detalhes.cshtml*",
-              "RelativeToolTip": "AutoCollections\\Views\\Produto\\Detalhes.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABvAAAAAAAAAA==",
+              "Title": "Catalogo.cshtml",
+              "DocumentMoniker": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Produto\\Catalogo.cshtml",
+              "RelativeDocumentMoniker": "AutoCollections\\Views\\Produto\\Catalogo.cshtml",
+              "ToolTip": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Produto\\Catalogo.cshtml",
+              "RelativeToolTip": "AutoCollections\\Views\\Produto\\Catalogo.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-30T19:06:11.764Z",
+              "WhenOpened": "2025-12-03T03:32:04.528Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Produto.css",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\Produto.css",
-              "RelativeDocumentMoniker": "AutoCollections\\wwwroot\\css\\Produto.css",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\Produto.css",
-              "RelativeToolTip": "AutoCollections\\wwwroot\\css\\Produto.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-30T19:01:07.374Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\site.css",
+              "DocumentMoniker": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "AutoCollections\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\site.css",
               "RelativeToolTip": "AutoCollections\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAIwDEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-12-02T19:31:24.065Z",
+              "WhenOpened": "2025-12-03T03:20:13.324Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-01T03:49:58.768Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "AutoCollections\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T18:28:05.928Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IProdutoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
-              "RelativeToolTip": "AutoCollections\\Repository\\Interfaces\\IProdutoRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T20:15:54.658Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "AutoCollections\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\T\u00E9o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "AutoCollections\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAIIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-30T18:49:27.466Z",
+              "WhenOpened": "2025-12-03T03:11:15.404Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Produto.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Home\\Produto.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Home\\Produto.cshtml",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Home\\Produto.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Home\\Produto.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T20:58:04.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Carrinho.css",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\Carrinho.css",
-              "RelativeDocumentMoniker": "AutoCollections\\wwwroot\\css\\Carrinho.css",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\Carrinho.css",
-              "RelativeToolTip": "AutoCollections\\wwwroot\\css\\Carrinho.css",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAuwA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-30T17:44:27.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Carrinho\\Index.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Carrinho\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Carrinho\\Index.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Carrinho\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T20:57:49.782Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Models\\Usuario.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Usuario.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAwwCgAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T22:48:58.267Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "AutoCollections\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T18:19:43.974Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IUsuarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Repository\\Interfaces\\IUsuarioRepository.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Repository\\Interfaces\\IUsuarioRepository.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Repository\\Interfaces\\IUsuarioRepository.cs",
-              "RelativeToolTip": "AutoCollections\\Repository\\Interfaces\\IUsuarioRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T01:52:14.024Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-01T23:06:26.755Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ProdutoController.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Controllers\\ProdutoController.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\ProdutoController.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Controllers\\ProdutoController.cs",
-              "RelativeToolTip": "AutoCollections\\Controllers\\ProdutoController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAwwCMAAACbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T19:07:31.505Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Endereco.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Models\\Endereco.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\Endereco.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Models\\Endereco.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\Endereco.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T03:31:56.562Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "_Layout.cshtml.css",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Shared\\_Layout.cshtml.css",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Shared\\_Layout.cshtml.css",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Shared\\_Layout.cshtml.css",
-              "RelativeToolTip": "AutoCollections\\Views\\Shared\\_Layout.cshtml.css",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-12-01T03:51:00.346Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Login\\Index.cshtml",
-              "RelativeDocumentMoniker": "AutoCollections\\Views\\Login\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Views\\Login\\Index.cshtml",
-              "RelativeToolTip": "AutoCollections\\Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-30T16:21:35.186Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ProdutoViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Models\\ProdutoViewModel.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Models\\ProdutoViewModel.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Models\\ProdutoViewModel.cs",
-              "RelativeToolTip": "AutoCollections\\Models\\ProdutoViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T19:16:30.858Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Produto.css",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\Produto.css",
-              "RelativeDocumentMoniker": "AutoCollections\\wwwroot\\css\\Produto.css",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\Produto.css",
-              "RelativeToolTip": "AutoCollections\\wwwroot\\css\\Produto.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-30T19:24:31.562Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "ProdutoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Repository\\ProdutoRepository.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Repository\\ProdutoRepository.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Repository\\ProdutoRepository.cs",
-              "RelativeToolTip": "AutoCollections\\Repository\\ProdutoRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T18:20:26.194Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\appsettings.json",
-              "RelativeDocumentMoniker": "AutoCollections\\appsettings.json",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\appsettings.json",
-              "RelativeToolTip": "AutoCollections\\appsettings.json",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-30T17:50:07.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Program.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Program.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Program.cs",
-              "RelativeToolTip": "AutoCollections\\Program.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBwAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T17:30:47.493Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "AutoCollections.csproj",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections.csproj",
-              "RelativeDocumentMoniker": "AutoCollections\\AutoCollections.csproj",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections.csproj",
-              "RelativeToolTip": "AutoCollections\\AutoCollections.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-30T18:36:25.884Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Carrinho.css",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\Carrinho.css",
-              "RelativeDocumentMoniker": "AutoCollections\\wwwroot\\css\\Carrinho.css",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\wwwroot\\css\\Carrinho.css",
-              "RelativeToolTip": "AutoCollections\\wwwroot\\css\\Carrinho.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-30T18:27:05.139Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "AutoCollections.csproj",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections.csproj",
-              "RelativeDocumentMoniker": "AutoCollections\\AutoCollections.csproj",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\AutoCollections.csproj",
-              "RelativeToolTip": "AutoCollections\\AutoCollections.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-30T17:36:44.236Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\appsettings.json",
-              "RelativeDocumentMoniker": "AutoCollections\\appsettings.json",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\appsettings.json",
-              "RelativeToolTip": "AutoCollections\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-30T17:55:25.577Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "AutoCollections\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\Desktop\\AutoCollections\\AutoCollections\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "AutoCollections\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T17:09:38.958Z"
             }
           ]
         }
