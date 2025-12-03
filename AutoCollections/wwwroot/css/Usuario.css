@@ -25,19 +25,53 @@
     margin: 0 auto 20px auto;
 }
 
+.button-group {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    gap: 15px; /* espaço entre os botões */
+    margin-top: 20px;
+    flex-wrap: wrap; /* para que os botões se ajustem em telas menores */
+}
+
+/* Botões principais */
+.user-btn-primary {
+    background-color: #b2362c;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+    .user-btn-primary:hover {
+        background-color: #992b23;
+        transform: scale(1.05);
+    }
+
+/* Botão secundário */
 .user-btn-secondary {
     background-color: transparent;
     color: #b2362c;
     border: 2px solid #b2362c;
-    padding: 10px 28px;
+    padding: 12px 25px;
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
 
     .user-btn-secondary:hover {
         background-color: #b2362c;
         color: #fff;
+        transform: scale(1.05);
     }
 
 .orders-card h2 {

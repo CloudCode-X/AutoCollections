@@ -8,5 +8,12 @@ namespace AutoCollections.Controllers
         {
             return View();
         }
+
+        public IActionResult FinalizarCompra()
+        {
+            return View();
+        }
+        
     }
+
 }
