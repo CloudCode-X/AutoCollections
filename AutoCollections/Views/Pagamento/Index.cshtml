@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - AutoCollections</title>
+    <link rel="stylesheet" href="~/css/Pagamento.css">
+</head>
+<body>
+    <div class="payment-page-container">
+
+        <!-- Card de resumo do carrinho -->
+        <div class="order-summary-card">
+            <h2>Resumo do Pedido</h2>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="total">
+                <h3>Total: <span id="totalValue">R$ 0,00</span></h3>
+            </div>
+        </div>
+
+        <!-- Card de informações do cartão -->
+        <div class="card-info-card">
+            <h2>Informações do Cartão</h2>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="cardName">Nome no Cartão</label>
+                    <input type="text" id="cardName" placeholder="Nome como está no cartão" required>
+                </div>
+                <div class="form-group">
+                    <label for="cardNumber">Número do Cartão</label>
+                    <input type="text" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry">Validade</label>
+                    <input type="text" id="expiry" placeholder="MM/AA" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="XXX" required>
+                </div>
+                <button type="submit" class="btn-confirm">Finalizar Compra</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Mensagem de confirmação -->
+    <div class="confirmation-message" id="confirmationMessage">
+        Pagamento realizado com sucesso!
+    </div>
+
+    <script>
+        // Inicializa carrinho se não existir
+        if (!localStorage.getItem("carrinho")) {
+            localStorage.setItem("carrinho", JSON.stringify([
+                { id: '001', nome: 'Miniatura Carro Lamborghini', preco: 150, quantidade: 1 },
+                { id: '002', nome: 'Miniatura Carro Porsche', preco: 300, quantidade: 2 }
+            ]));
+        }
+
+        const cart = JSON.parse(localStorage.getItem("carrinho"));
+        const cartItemsContainer = document.getElementById("cartItems");
+        let total = 0;
+
+        cart.forEach(item => {
+            const itemDiv = document.createElement("div");
+            itemDiv.classList.add("cart-item");
+            itemDiv.innerHTML = `
+                <p><strong>${item.nome}</strong></p>
+                <p>Quantidade: ${item.quantidade}</p>
+                <p>Preço: R$ ${(item.preco * item.quantidade).toFixed(2)}</p>
+            `;
+            cartItemsContainer.appendChild(itemDiv);
+            total += item.preco * item.quantidade;
+        });
+
+        document.getElementById("totalValue").textContent = `R$ ${total.toFixed(2)}`;
+
+        // Finaliza pagamento
+        document.getElementById("paymentForm").addEventListener("submit", function(e){
+            e.preventDefault();
+            let pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+
+            cart.forEach(item => {
+                pedidos.push({
+                    id: (pedidos.length + 1).toString().padStart(3,'0'),
+                    produto: item.nome,
+                    quantidade: item.quantidade,
+                    preco: `R$ ${(item.preco * item.quantidade).toFixed(2)}`,
+                    endereco: 'Endereço do usuário',
+                    status: 'A caminho'
+                });
+            });
+
+            localStorage.setItem("pedidos", JSON.stringify(pedidos));
+            localStorage.removeItem("carrinho");
+
+            document.getElementById("confirmationMessage").style.display = "block";
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+            setTimeout(() => {
+                window.location.href = "Views/Usuario/Login.html";
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

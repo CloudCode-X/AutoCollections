@@ -57,9 +57,36 @@
                 </div>
             </div>
 
-            <a href="/Pagamento" class="btn-finalizar">Finalizar Compra</a>
+            <a asp-controller="Pagamento" asp-action="Index" class="btn-pagamento">Ir para o pagamento</a>
         </div>
 
     </div>
 
 </div>
+
+<script>
+    const cartItems = [
+        { produto: "Miniatura Carro Lamborghini", quantidade: 1, preco: 150.00 },
+        { produto: "Miniatura Carro Porsche", quantidade: 2, preco: 300.00 }
+    ];
+
+    const orderItemsContainer = document.getElementById('orderItems');
+    const totalPriceElem = document.getElementById('totalPrice');
+    let total = 0;
+
+    cartItems.forEach(item => {
+        const div = document.createElement('div');
+        div.className = "order-item";
+        div.innerHTML = `<span>${item.produto} x ${item.quantidade}</span> <span>R$ ${item.preco.toFixed(2)}</span>`;
+        orderItemsContainer.appendChild(div);
+        total += item.preco * item.quantidade;
+    });
+
+    totalPriceElem.textContent = `R$ ${total.toFixed(2)}`;
+
+    const paymentForm = document.getElementById('paymentForm');
+    paymentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Pagamento realizado com sucesso!');
+    });
+</script>

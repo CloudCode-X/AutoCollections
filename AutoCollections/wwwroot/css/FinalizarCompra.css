@@ -19,7 +19,6 @@
     align-items: flex-start;
 }
 
-/* Formulário do cliente */
 .checkout-left {
     flex: 1;
     background: #fff;
@@ -51,7 +50,6 @@
         font-size: 14px;
     }
 
-/* Resumo do pedido */
 .checkout-right {
     flex: 1;
     background: #fff;
@@ -84,8 +82,7 @@
     margin-top: 15px;
 }
 
-/* Botão finalizar */
-.btn-finalizar {
+.btn-pagamento {
     background-color: #b2362c;
     color: #fff;
     border: none;
@@ -99,7 +96,7 @@
     transition: background-color 0.2s, transform 0.2s;
 }
 
-    .btn-finalizar:hover {
+    .btn-pagamento:hover {
         background-color: #992b23;
         transform: translateY(-2px);
         text-decoration: none;
